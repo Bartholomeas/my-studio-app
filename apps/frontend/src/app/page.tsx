@@ -11,3 +11,7 @@ const Home = () => {
 };
 
 export default Home;
+
+const Section1 = () => {
+  return <section className="min-h-screen bg-red-500"></section>;
+};

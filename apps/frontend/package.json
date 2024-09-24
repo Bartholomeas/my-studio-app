@@ -37,6 +37,8 @@
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-react-compiler": "0.0.0-experimental-92aaa43-20240924",
     "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss": "^3.4.13",
     "typescript": "^5"
   }
