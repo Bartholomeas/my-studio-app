@@ -5,6 +5,7 @@ import React, { useRef } from 'react';
 import { motion, type MotionValue, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
+import { DynamicBlurImage } from "@/components/common/special/dynamic-blur-image";
 import { useDimension } from "@/hooks/use-dimension";
 
 const IMAGES = [
@@ -61,8 +62,13 @@ const Column = ({ images, y }: ColumnProps) => {
   return <motion.div style={{ y }} className='projects-trailer-column relative flex flex-col gap-[2vw] w-[25%] h-full min-w-[250px] first:top-[-45%] second:top-[-45%] third:top-[-45%] fourth:top-[-45%]'>
     {images.map(img => (
       <div key={`project-trailer-${img}`} className="relative rounded-[1vw] overflow-hidden w-full h-full">
-        <Image loading="lazy" src={img} alt="Project image" className="object-cover"
-          fill />
+        <Image
+          src={img}
+          alt="Project image"
+          className="object-cover"
+          loading="lazy"
+          fill
+        />
       </div>
     ))}
 
