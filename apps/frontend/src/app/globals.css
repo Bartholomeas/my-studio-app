@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
 	:root {
 		--background: 0 0% 100%;
@@ -73,5 +74,22 @@
 	h5,
 	h6 {
 		@apply font-bold;
+	}
+}
+
+@layer utilities {
+	.projects-trailer-column {
+		&:nth-child(1) {
+			top: -45%;
+		}
+		&:nth-child(2) {
+			top: -52%;
+		}
+		&:nth-child(3) {
+			top: -56%;
+		}
+		&:nth-child(4) {
+			top: -60%;
+		}
 	}
 }
