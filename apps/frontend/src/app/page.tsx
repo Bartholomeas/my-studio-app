@@ -5,13 +5,15 @@ import { HomeMainWrapper } from "@/components/home/wrappers/home-main-wrapper";
 const Home = () => {
 
   return (
-    <HomeMainWrapper className="relative">
-      <div className="relative h-[200vh]">
-        <LandingSection />
-        <AboutSection />
-      </div>
+    <main>
+      <HomeMainWrapper className="relative">
+        <div className="relative h-[200vh]">
+          <LandingSection />
+          <AboutSection />
+        </div>
+      </HomeMainWrapper>
       <div className="h-screen bg-white" />
-    </HomeMainWrapper>
+    </main>
   );
 };
 
