@@ -6,11 +6,9 @@ const Home = () => {
 
   return (
     <main>
-      <HomeMainWrapper className="relative">
-        <div className="relative h-[200vh]">
-          <LandingSection />
-          <AboutSection />
-        </div>
+      <HomeMainWrapper className="relative h-[200vh]">\
+        <LandingSection />
+        <AboutSection />
       </HomeMainWrapper>
       <div className="h-screen bg-white" />
     </main>
