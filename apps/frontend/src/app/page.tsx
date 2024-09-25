@@ -3,10 +3,13 @@ import { LandingSection } from "@/components/home/sections/landing-section";
 import { HomeMainWrapper } from "@/components/home/wrappers/home-main-wrapper";
 
 const Home = () => {
+
   return (
-    <HomeMainWrapper className="relative h-[200vh]">
-      <LandingSection />
-      <AboutSection />
+    <HomeMainWrapper className="relative">
+      <div className="relative h-[200vh]">
+        <LandingSection />
+        <AboutSection />
+      </div>
       <div className="h-screen bg-white" />
     </HomeMainWrapper>
   );
