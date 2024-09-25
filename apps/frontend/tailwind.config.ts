@@ -1,3 +1,6 @@
+import FormsPlugin from "@tailwindcss/forms";
+import Animate from "tailwindcss-animate";
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -29,7 +32,7 @@ export default {
 					foreground: "hsl(var(--popover-foreground))",
 				},
 				primary: {
-					DEFAULT: "hsl(var(--primary))",
+					DEFAULT: "var(--primary)",
 					foreground: "hsl(var(--primary-foreground))",
 				},
 				secondary: {
@@ -61,5 +64,5 @@ export default {
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [FormsPlugin, Animate],
 } satisfies Config;

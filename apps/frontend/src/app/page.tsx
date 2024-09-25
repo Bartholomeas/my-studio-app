@@ -6,11 +6,11 @@ const Home = () => {
 
   return (
     <main>
-      <HomeMainWrapper className="relative h-[200vh]">\
+      <HomeMainWrapper className="relative h-[200vh]">
         <LandingSection />
         <AboutSection />
       </HomeMainWrapper>
-      <div className="h-screen bg-white" />
+      <div className="h-screen z-[999] bg-white" />
     </main>
   );
 };
