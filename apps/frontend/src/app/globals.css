@@ -64,7 +64,11 @@
 		@apply border-border;
 	}
 	body {
-		@apply bg-background font-sans text-foreground;
+		@apply bg-black font-sans text-foreground;
+	}
+
+	a {
+		@apply text-foreground;
 	}
 
 	h1,
