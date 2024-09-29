@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 export const textVariants = cva("", {
 	variants: {
 		size: {
-			lg: "text-lg leading-[1.5]",
+			lg: "text-lg leading-normal",
 			md: "text-md leading-[1.6]",
 			sm: "text-sm leading-[1.7]",
 			xs: "text-xs leading-[1.8]",

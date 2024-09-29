@@ -7,15 +7,18 @@
 		"project": "tsconfig.json"
 	},
 	"extends": [
-		"@repo/eslint-config/next.json",
+		// "@repo/eslint-config/next.json",
 		"plugin:@typescript-eslint/recommended-type-checked",
 		"plugin:@typescript-eslint/stylistic-type-checked",
 		"plugin:import/typescript",
+		"plugin:tailwindcss/recommended",
+		"eslint-config-prettier",
 		"prettier",
 		"next/core-web-vitals"
 	],
 	"rules": {
 		// these rules are too slow
+
 		"import/no-cycle": "off",
 		"react-compiler/react-compiler": "off",
 		"@typescript-eslint/no-unsafe-assignment": "off",
@@ -112,7 +115,8 @@
 				"name": "next/router",
 				"message": "Please use next/navigation instead."
 			}
-		]
+		],
+		"tailwindcss/no-custom-classname": "off"
 	},
 	"overrides": [
 		{

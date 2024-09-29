@@ -40,7 +40,7 @@ const Home = () => {
       <div className="flex h-screen items-center justify-center bg-[#f4f4f4]" />
       <ScrollProgressContainer
         scrollOpts={{ offset: ["start start", "end start"] }}
-        className="h-[100vh] overflow-hidden"
+        className="h-screen overflow-hidden"
       >
         <ImageSentenceSection />
       </ScrollProgressContainer>
@@ -50,6 +50,8 @@ const Home = () => {
           <MagneticWrapper>
             <Button>Kliknij mnie</Button>
           </MagneticWrapper>
+          <Button>Kliknij mnie</Button>
+          <section className="grid place-content-center py-24"></section>
         </Title>
       </div>
     </main>
@@ -57,4 +59,3 @@ const Home = () => {
 };
 
 export default Home;
-
