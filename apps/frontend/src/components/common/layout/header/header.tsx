@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 
-import { type ClassValue } from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
@@ -14,10 +13,9 @@ import { Button } from "../../ui/button";
 
 const Nav = dynamic(() => import("./nav/nav").then(res => res.Nav));
 
-const burgerPseudoElements = (pseudoelement: 'before' | 'after'): ClassValue => `${pseudoelement}:absolute ${pseudoelement}:left-1/2 ${pseudoelement}:-translate-x-1/2 ${pseudoelement}:block ${pseudoelement}:h-[2px] ${pseudoelement}:w-2/5 ${pseudoelement}:bg-black ${pseudoelement}:transition-all ${pseudoelement}:duration-300 ${pseudoelement}:content-[""] ${pseudoelement}:rounded-full ${pseudoelement}:z-[150]`;
+const beforeClasses = 'before:absolute before:left-1/2 before:-translate-x-1/2 before:block before:h-[2px] before:w-2/5 before:bg-black before:transition-all before:duration-300 before:content-[""] before:rounded-full before:z-[150]';
 
-const beforeClasses = burgerPseudoElements('before');
-const afterClasses = burgerPseudoElements('after');
+const afterClasses = 'after:absolute after:left-1/2 after:-translate-x-1/2 after:block after:h-[2px] after:w-2/5 after:bg-black after:transition-all after:duration-300 after:content-[""] after:rounded-full after:z-[150]';
 
 export const Header = () => {
   const [isActive, setIsActive] = useState(false);
