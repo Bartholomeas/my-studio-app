@@ -1,11 +1,11 @@
 import { type Variants } from "framer-motion";
 
-const EASE = [0.76, 0, 0.24, 1];
+export const EASE_TRANSITION = [0.76, 0, 0.24, 1];
 
 export const menuSlide: Variants = {
 	initial: { x: "calc(100% + 100px)" },
-	enter: { x: "0", transition: { duration: 0.8, ease: EASE } },
-	exit: { x: "calc(100% + 100px)", transition: { duration: 0.8, ease: EASE } },
+	enter: { x: "0", transition: { duration: 0.8, ease: EASE_TRANSITION } },
+	exit: { x: "calc(100% + 100px)", transition: { duration: 0.8, ease: EASE_TRANSITION } },
 };
 
 export const slide: Variants = {
@@ -14,7 +14,7 @@ export const slide: Variants = {
 		x: 0,
 		transition: {
 			duration: 0.8,
-			ease: EASE,
+			ease: EASE_TRANSITION,
 			delay: 0.05 * i,
 		},
 	}),
@@ -22,7 +22,7 @@ export const slide: Variants = {
 		x: 80,
 		transition: {
 			duration: 0.8,
-			ease: EASE,
+			ease: EASE_TRANSITION,
 			delay: 0.05 * i,
 		},
 	}),

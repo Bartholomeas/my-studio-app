@@ -1,14 +1,29 @@
-export const routes = {
+export const APP_ROUTES = {
 	home: {
 		label: "Strona główna",
-		url: "/",
+		href: "/",
 	},
 	contact: {
 		label: "Kontakt",
-		url: "/kontakt",
+		href: "/kontakt",
 	},
 	blog: {
 		label: "Blog",
-		url: "/blog",
+		href: "/blog",
+	},
+} as const;
+
+export const SOCIALS_LINKS = {
+	facebook: {
+		label: "Facebook",
+		href: "",
+	},
+	instagram: {
+		label: "Instagram",
+		href: "",
+	},
+	linkedin: {
+		label: "Linkedin",
+		href: "",
 	},
 } as const;
