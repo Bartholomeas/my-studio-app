@@ -28,7 +28,7 @@ export const Nav = () => {
       initial={"initial"}
       animate={"enter"}
       exit={"exit"}
-      className={"fixed inset-y-0 right-0 z-20 h-screen bg-foreground text-background max-sm:w-full"}>
+      className={"fixed inset-y-0 right-0 z-20 h-screen overflow-hidden bg-foreground text-background max-sm:w-full"}>
       <div className={"flex h-full flex-col justify-between p-[48px]"}>
         <div onMouseLeave={selectIndicator} className={"mt-24 flex flex-col gap-4 text-xl"}>
           <div className={"text-md mb-4 border-b-2 border-white"}>
