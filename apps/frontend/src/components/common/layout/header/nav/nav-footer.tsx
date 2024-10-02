@@ -8,7 +8,7 @@ export const NavFooter = () => {
   const socials = useMemo(() => Object.values(SOCIALS_LINKS), []);
 
   return (
-    <div className={"flex w-full items-center gap-8 text-sm"}>
+    <div className={"flex w-full items-center gap-8"}>
       {socials.map(({ href, label }) => <NavFooterLink key={`navFooterSocialLink-${href}-${label}`} href={href} label={label} />)}
     </div>
   );

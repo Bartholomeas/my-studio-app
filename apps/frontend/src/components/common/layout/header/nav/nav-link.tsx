@@ -37,7 +37,7 @@ export const NavLink = ({ linkData: { href, label, index }, setSelectedIndicator
         variants={scale}
         animate={isActive ? 'open' : 'closed'} />
       <Link
-        className={"text-3xl text-background"}
+        className={"text-[48px] text-background"}
         href={href}
       >
         {label}
