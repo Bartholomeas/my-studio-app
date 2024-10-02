@@ -1,4 +1,14 @@
 export const routes = {
-	home: "/",
-	contact: "/kontakt",
+	home: {
+		label: "Strona główna",
+		url: "/",
+	},
+	contact: {
+		label: "Kontakt",
+		url: "/kontakt",
+	},
+	blog: {
+		label: "Blog",
+		url: "/blog",
+	},
 } as const;
