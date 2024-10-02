@@ -59,7 +59,7 @@ export const CursorHandler = () => {
     <motion.span
       animate={{ width: isHovering ? hoverSize : cursorSize, height: isHovering ? hoverSize : cursorSize }}
       style={{ left: smoothMouse.x, top: smoothMouse.y }}
-      className="pointer-events-none fixed size-[15px] rounded-full bg-black"
+      className={"pointer-events-none fixed size-[15px] rounded-full bg-black"}
     ></motion.span>
   );
 };

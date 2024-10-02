@@ -36,7 +36,7 @@ const RootLayout = ({
   children: ReactNode;
 }>) => {
   return (
-    <html lang="pl">
+    <html lang={"pl"}>
       <LenisWrapper>
         <body className={`${poppins.className} ${yrsa.className} antialiased`}>
           <Header />

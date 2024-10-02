@@ -1,6 +1,7 @@
 import React from "react";
 
 import Image, { type ImageProps } from "next/image";
+
 import { getPlaiceholder } from "plaiceholder";
 
 type DynamicBlurImageProps = Omit<ImageProps, "src" | "placeholder" | "blurDataUrl"> & {
@@ -16,7 +17,7 @@ export const DynamicBlurImage = async ({
 	const base64 = await getPlaceholderForUrl(url);
 
 	return (
-		<Image src={url} placeholder="blur" blurDataURL={base64} alt={alt} sizes={sizes} {...props} />
+		<Image src={url} placeholder={"blur"} blurDataURL={base64} alt={alt} sizes={sizes} {...props} />
 	);
 };
 
