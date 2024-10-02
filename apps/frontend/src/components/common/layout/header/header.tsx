@@ -31,31 +31,31 @@ export const Header = () => {
 
   return (<>
     <Button
+      onClick={toggleMenu}
       variant={"ghost"}
-      className={"fixed right-2 top-2 z-50 size-12 rounded-full p-0"}
+      className={"fixed right-2 top-2 z-50 size-12 rounded-full bg-primary p-0"}
       aria-label={isActive ? "Close menu" : "Open menu"}
       aria-expanded={isActive}
       aria-controls={"navigation-menu"}
     >
       <motion.div
-        onClick={toggleMenu}
-        className={'flex size-full cursor-pointer items-center justify-center rounded-full bg-primary'}
-        whileTap={{ scale: 0.95 }}
+
+        className={'flex size-full cursor-pointer items-center justify-center'}
+        whileTap={{ scale: 0.9 }}
         role={"presentation"}
       >
         <span
           className={cn(
-            'w-full h-full relative',
+            'w-full h-full relative before:top-[calc(50%-3px)] after:top-[calc(50%+3px)]',
             beforeClasses,
             afterClasses,
-            'before:top-[calc(50%-5px)] after:top-[calc(50%+5px)]',
             { 'before:rotate-45 before:top-1/2 after:-rotate-45 after:top-1/2': isActive }
           )}
           aria-hidden={"true"}
         ></span>
       </motion.div>
     </Button>
-    <AnimatePresence mode={"wait"}>
+    <AnimatePresence mode={"wait"} >
       {isActive && <Nav />}
     </AnimatePresence>
   </>
