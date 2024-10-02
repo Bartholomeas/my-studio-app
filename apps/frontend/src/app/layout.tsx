@@ -3,6 +3,7 @@ import { type ReactNode } from "react";
 import { Poppins, Yrsa } from "next/font/google";
 
 import { Footer } from "@/components/common/layout/footer";
+import { Header } from "@/components/common/layout/navbar";
 import { CursorHandler } from "@/components/common/special/cursor-handler";
 import { LenisWrapper } from "@/lib/lenis/lenis";
 
@@ -14,10 +15,10 @@ const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const kurale = Yrsa({
+const yrsa = Yrsa({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-serif",
@@ -37,7 +38,8 @@ const RootLayout = ({
   return (
     <html lang="pl">
       <LenisWrapper>
-        <body className={`${poppins.className} ${kurale.className} antialiased`}>
+        <body className={`${poppins.className} ${yrsa.className} antialiased`}>
+          <Header />
           {children}
           <Footer />
           <CursorHandler />

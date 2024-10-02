@@ -7,11 +7,11 @@ import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
   `relative z-0 inline-flex items-center justify-center gap-2 overflow-hidden
-  whitespace-nowrap rounded-sm border border-primary-300 px-4 py-2 text-sm font-semibold
+  whitespace-nowrap px-4 py-2 text-sm font-semibold
   uppercase text-primary-300 transition-all duration-500
+  
   before:absolute before:inset-0 before:-z-10
   before:translate-x-[150%] before:translate-y-[150%]
-  
   before:scale-[2.5] before:rounded-[100%]
   before:bg-primary-300 before:transition-transform
   before:duration-1000 before:content-[""]
@@ -26,7 +26,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: ``,
+        default: 'bg-foreground text-background',
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",

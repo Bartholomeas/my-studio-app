@@ -41,10 +41,10 @@ export const ProjectsTrailerSection = () => {
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 2.6]);
 
   return (
-    <section>
+    <section className=" bg-[#181818]">
       <div
         ref={container}
-        className="gallery flex h-[175vh] gap-[2vw] overflow-hidden bg-[#181818] p-[2vw]"
+        className="gallery container flex h-[175vh] gap-[2vw] overflow-hidden p-[2vw]"
       >
         <Column images={[IMAGES[0], IMAGES[1], IMAGES[2]]} y={y1} />
         <Column images={[IMAGES[3], IMAGES[4], IMAGES[5]]} y={y2} />
@@ -63,7 +63,7 @@ const Column = ({ images, y }: ColumnProps) => {
   return (
     <motion.div
       style={{ y }}
-      className="projects-trailer-column second:top-[-45%] third:top-[-45%] fourth:top-[-45%] relative flex h-full w-[25%] min-w-[250px] flex-col gap-[2vw] first:top-[-45%]"
+      className="projects-trailer-column second:top-[-45%] third:top-[-45%] fourth:top-[-45%] relative flex h-full w-1/4 min-w-[250px] flex-col gap-[2vw] first:top-[-45%]"
     >
       {images.map((img) => (
         <div
