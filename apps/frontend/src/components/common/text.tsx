@@ -41,6 +41,11 @@ export const textVariants = cva("", {
       center: "text-center",
       justify: "text-justify",
     },
+    family: {
+      sans: "font-sans",
+      serif: "font-serif",
+      mono: "font-mono",
+    },
     decorations: {
       default: "",
       underline: "underline",
@@ -52,6 +57,7 @@ export const textVariants = cva("", {
     weight: "normal",
     color: "default",
     align: "left",
+    family: 'sans',
     decorations: "default",
   },
 });
