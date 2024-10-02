@@ -2,8 +2,9 @@
 
 import { useRef } from "react";
 
-import { motion, type MotionValue, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+
+import { motion, type MotionValue, useScroll, useTransform } from "framer-motion";
 
 import { useDimension } from "@/hooks/use-dimension";
 
@@ -41,10 +42,10 @@ export const ProjectsTrailerSection = () => {
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 2.6]);
 
   return (
-    <section className=" bg-[#181818]">
+    <section className={" bg-[#181818]"}>
       <div
         ref={container}
-        className="gallery container flex h-[175vh] gap-[2vw] overflow-hidden p-[2vw]"
+        className={"gallery container flex h-[175vh] gap-[2vw] overflow-hidden p-[2vw]"}
       >
         <Column images={[IMAGES[0], IMAGES[1], IMAGES[2]]} y={y1} />
         <Column images={[IMAGES[3], IMAGES[4], IMAGES[5]]} y={y2} />
@@ -63,14 +64,14 @@ const Column = ({ images, y }: ColumnProps) => {
   return (
     <motion.div
       style={{ y }}
-      className="projects-trailer-column second:top-[-45%] third:top-[-45%] fourth:top-[-45%] relative flex h-full w-1/4 min-w-[250px] flex-col gap-[2vw] first:top-[-45%]"
+      className={"projects-trailer-column second:top-[-45%] third:top-[-45%] fourth:top-[-45%] relative flex h-full w-1/4 min-w-[250px] flex-col gap-[2vw] first:top-[-45%]"}
     >
       {images.map((img) => (
         <div
           key={`project-trailer-${img}`}
-          className="relative size-full overflow-hidden rounded-[1vw]"
+          className={"relative size-full overflow-hidden rounded-[1vw]"}
         >
-          <Image src={img} alt="Project image" className="object-cover" loading="lazy" fill />
+          <Image src={img} alt={"Project image"} className={"object-cover"} loading={"lazy"} fill />
         </div>
       ))}
     </motion.div>

@@ -26,7 +26,7 @@ const HomeSentenceSection = dynamic(() =>
 const Home = () => {
   return (
     <main>
-      <ScrollProgressContainer className="relative h-[200vh]">
+      <ScrollProgressContainer className={"relative h-[200vh]"}>
         <LandingSection />
         <AboutSection />
       </ScrollProgressContainer>
@@ -37,19 +37,19 @@ const Home = () => {
       {/*  </Title>*/}
       {/*</div>*/}
       <ProjectsTrailerSection />
-      <div className="flex h-screen items-center justify-center bg-[#f4f4f4]">
-        <Title type={"h2"} className="text-center text-[6vw]">
+      <div className={"flex h-screen items-center justify-center bg-[#f4f4f4]"}>
+        <Title type={"h2"} className={"text-center text-[6vw]"}>
           Fajne góry c'nie
           <MagneticWrapper>
             <Button>Kliknij mnie</Button>
           </MagneticWrapper>
           <Button>Kliknij mnie</Button>
-          <section className="grid place-content-center py-24"></section>
+          <section className={"grid place-content-center py-24"}></section>
         </Title>
       </div>
       <ScrollProgressContainer
         scrollOpts={{ offset: ["start start", "end start"] }}
-        className="h-screen overflow-hidden"
+        className={"h-screen overflow-hidden"}
       >
         <ImageSentenceSection />
       </ScrollProgressContainer>

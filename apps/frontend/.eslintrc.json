@@ -52,9 +52,19 @@
 						"pattern": "react",
 						"group": "external",
 						"position": "before"
+					},
+					{
+						"pattern": "next/**",
+						"group": "external",
+						"position": "before"
+					},
+					{
+						"pattern": "@/**",
+						"group": "internal",
+						"position": "after"
 					}
 				],
-				"pathGroupsExcludedImportTypes": ["react"]
+				"pathGroupsExcludedImportTypes": ["react", "next"]
 			}
 		],
 		// no let exports
@@ -116,7 +126,9 @@
 				"message": "Please use next/navigation instead."
 			}
 		],
-		"tailwindcss/no-custom-classname": "off"
+		"tailwindcss/no-custom-classname": "off",
+		// Enforce curly braces around string props
+		"react/jsx-curly-brace-presence": ["error", { "props": "always", "children": "ignore" }]
 	},
 	"overrides": [
 		{

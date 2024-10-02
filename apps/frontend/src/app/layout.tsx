@@ -3,7 +3,7 @@ import { type ReactNode } from "react";
 import { Poppins, Yrsa } from "next/font/google";
 
 import { Footer } from "@/components/common/layout/footer";
-import { Header } from "@/components/common/layout/navbar";
+import { Header } from "@/components/common/layout/header/header";
 import { CursorHandler } from "@/components/common/special/cursor-handler";
 import { LenisWrapper } from "@/lib/lenis/lenis";
 
@@ -36,7 +36,7 @@ const RootLayout = ({
   children: ReactNode;
 }>) => {
   return (
-    <html lang="pl">
+    <html lang={"pl"}>
       <LenisWrapper>
         <body className={`${poppins.className} ${yrsa.className} antialiased`}>
           <Header />
