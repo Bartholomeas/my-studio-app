@@ -1,6 +1,6 @@
 import { type Variants } from "framer-motion";
 
-export const EASE_TRANSITION = [0.76, 0, 0.24, 1];
+import { EASE_TRANSITION } from "@/misc/animations";
 
 export const menuSlide: Variants = {
 	initial: { x: "calc(100% + 100px)" },

@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Text } from "../text";
-import { Title } from "../title";
+import { Text } from "../common/text";
+import { Title } from "../common/title";
 
 export const Footer = () => {
   return (
