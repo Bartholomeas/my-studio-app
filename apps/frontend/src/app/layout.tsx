@@ -1,15 +1,18 @@
 import { type ReactNode } from "react";
 
+import dynamic from "next/dynamic";
 import { Poppins, Yrsa } from "next/font/google";
 
-import { Footer } from "@/components/common/layout/footer";
-import { Header } from "@/components/common/layout/header/header";
-import { CursorHandler } from "@/components/common/special/cursor-handler";
+import { Header } from "@/components/layout/header/header";
 import { LenisWrapper } from "@/lib/lenis/lenis";
+
 
 import type { Metadata } from "next";
 
 import "./globals.css";
+
+const CursorHandler = dynamic(() => import("@/components/common/special/cursor-handler").then(res => res.CursorHandler));
+const Footer = dynamic(() => import("@/components/layout/footer").then(res => res.Footer));
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,7 +43,9 @@ const RootLayout = ({
       <LenisWrapper>
         <body className={`${poppins.className} ${yrsa.className} antialiased`}>
           <Header />
-          {children}
+          <main>
+            {children}
+          </main>
           <Footer />
           <CursorHandler />
         </body>
