@@ -37,13 +37,6 @@ const Home = () => {
       {/*  </Title>*/}
       {/*</div>*/}
       <ProjectsTrailerSection />
-      <div className="flex h-screen items-center justify-center bg-[#f4f4f4]" />
-      <ScrollProgressContainer
-        scrollOpts={{ offset: ["start start", "end start"] }}
-        className="h-screen overflow-hidden"
-      >
-        <ImageSentenceSection />
-      </ScrollProgressContainer>
       <div className="flex h-screen items-center justify-center bg-[#f4f4f4]">
         <Title type={"h2"} className="text-center text-[6vw]">
           Fajne góry c'nie
@@ -54,6 +47,12 @@ const Home = () => {
           <section className="grid place-content-center py-24"></section>
         </Title>
       </div>
+      <ScrollProgressContainer
+        scrollOpts={{ offset: ["start start", "end start"] }}
+        className="h-screen overflow-hidden"
+      >
+        <ImageSentenceSection />
+      </ScrollProgressContainer>
     </main>
   );
 };
