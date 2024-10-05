@@ -20,11 +20,11 @@ const ImageSentenceSection = dynamic(() =>
 const HomeSentenceSection = dynamic(() =>
   import("@/components/home/sections/home-sentence-section").then((res) => res.HomeSentenceSection),
 );
+const WorkProcessSection = dynamic(() => import("@/components/home/sections/work-process-section").then(res => res.WorkProcessSection));
 
 const Home = () => {
   return (
     <>
-
       <ScrollProgressContainer className={"relative h-[200vh]"}>
         <LandingSection />
         <AboutSection />
@@ -38,6 +38,8 @@ const Home = () => {
       >
         <ImageSentenceSection />
       </ScrollProgressContainer>
+      <WorkProcessSection />
+
     </>
   );
 };
