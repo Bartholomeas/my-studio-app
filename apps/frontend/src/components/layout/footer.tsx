@@ -1,7 +1,7 @@
 
-import Image from "next/image";
 import Link from "next/link";
 
+import { Logo } from "../common/special/logo";
 import { Text } from "../common/text";
 import { Title } from "../common/title";
 
@@ -15,7 +15,7 @@ export const Footer = () => {
         <div className={"container sticky top-[calc(100vh-600px)] flex h-[600px] flex-col justify-end pb-4"}>
           <div className={"flex flex-wrap gap-8 pt-8"}>
             <div className={"flex flex-col gap-4"}>
-              <Image src={"/logo.png"} alt={"Nic Nudnego Studio Logo"} width={150} height={50} />
+              <Logo />
               <Text>Creative solutions for your digital needs</Text>
             </div>
             <div className={"flex flex-col gap-2"}>
