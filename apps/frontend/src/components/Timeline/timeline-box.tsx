@@ -1,24 +1,35 @@
-import { type ReactNode } from "react";
+import React from "react";
+
+import { cn } from "@/lib/utils";
 
 import { Title } from "../common/title";
 
-interface TimelineBoxProps {
+export interface TimelineBoxProps {
   title: string,
-  content: ReactNode;
+  content: React.ReactNode;
+  icon?: React.ReactElement;
 }
 
-export const TimelineBox = ({ title, content }: TimelineBoxProps) => {
+export const TimelineBox = ({ title, content, icon: Icon }: TimelineBoxProps) => {
   return (
     <div
-      className={"flex justify-start pt-10 md:gap-10 md:pt-40"}
+      className={"flex min-h-[400px] justify-start pt-10 md:gap-10 md:pt-32"}
     >
       <div className={"sticky top-40 z-20 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm"}>
-        <div className={"absolute left-3 z-10 flex size-10 items-center justify-center rounded-full bg-background dark:bg-black md:left-3"}>
-          <div className={"size-4 rounded-full border border-neutral-300 bg-neutral-200 p-2 dark:border-neutral-700 dark:bg-neutral-800"} />
+        <div className={cn("absolute z-10 flex size-14 items-center justify-center rounded-full bg-background dark:bg-black md:left-3", Icon ? "size-12 left-1.5" : "size-10 left-3")}>
+          {
+            React.isValidElement(Icon) ? (
+              React.cloneElement(Icon as React.ReactElement, {
+                className: cn("text-primary-600 flex size-12 items-center justify-center"),
+              })
+            ) : (
+              <div className={"flex size-4 items-center justify-center rounded-full border border-neutral-300 bg-neutral-200"}>
+              </div>
+            )}
         </div>
         <Title
           type={"h3"}
-          className={"hidden text-xl font-bold md:block md:pl-20"}
+          className={"hidden font-bold md:block md:pl-20"}
         >
           {title}
         </Title>
