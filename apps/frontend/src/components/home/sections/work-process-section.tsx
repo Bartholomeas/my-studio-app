@@ -2,8 +2,8 @@ import { BrainIcon, CheckIcon, CodeIcon, HandshakeIcon, PencilIcon, RocketIcon, 
 
 import { Text } from "@/components/common/text";
 import { Title } from "@/components/common/title";
-import { Timeline } from "@/components/Timeline/timeline";
-import { type TimelineBoxProps } from "@/components/Timeline/timeline-box";
+import { Timeline } from "@/components/timeline";
+import { type TimelineBoxProps } from "@/components/timeline/timeline-box";
 
 const data: TimelineBoxProps[] = [
   {
