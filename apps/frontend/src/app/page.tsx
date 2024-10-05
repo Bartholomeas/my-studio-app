@@ -22,7 +22,7 @@ const HomeSentenceSection = dynamic(() =>
 );
 const WorkProcessSection = dynamic(() => import("@/components/home/sections/work-process-section").then(res => res.WorkProcessSection));
 
-const Home = () => {
+const Home = async () => {
   return (
     <>
       <ScrollProgressContainer className={"relative h-[200vh]"}>

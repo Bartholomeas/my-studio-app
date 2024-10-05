@@ -3,6 +3,9 @@ import { type ReactNode } from "react";
 import dynamic from "next/dynamic";
 import { Poppins, Yrsa } from "next/font/google";
 
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
+
 import { Header } from "@/components/layout/header/header";
 import { LenisWrapper } from "@/lib/lenis/lenis";
 
@@ -33,21 +36,25 @@ export const metadata: Metadata = {
   description: "Nic Nudnego Studio",
 };
 
-const RootLayout = ({
+const RootLayout = async ({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) => {
+  const locale = await getLocale();
+  const messages = await getMessages();
   return (
-    <html lang={"pl"}>
+    <html lang={locale}>
       <LenisWrapper>
         <body className={`${poppins.className} ${yrsa.className} antialiased`}>
-          <Header />
-          <main>
-            {children}
-          </main>
-          <Footer />
-          <CursorHandler />
+          <NextIntlClientProvider messages={messages}>
+            <Header />
+            <main>
+              {children}
+            </main>
+            <Footer />
+            <CursorHandler />
+          </NextIntlClientProvider>
         </body>
       </LenisWrapper>
     </html>

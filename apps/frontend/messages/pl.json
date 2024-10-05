@@ -1,0 +1,66 @@
+{
+	"common": {
+		"nicNudnegoStudio": "Nic Nudnego Studio",
+		"creativeStudio": "Kreatywne rozwiązania dla Twoich potrzeb cyfrowych"
+	},
+	"nav": {
+		"home": "Strona główna",
+		"blog": "Blog",
+		"contact": "Kontakt"
+	},
+	"footer": {
+		"quickLinks": "Szybkie linki",
+		"aboutUs": "O nas",
+		"services": "Usługi",
+		"portfolio": "Portfolio",
+		"contact": "Kontakt",
+		"legal": "Prawne",
+		"privacyPolicy": "Polityka prywatności",
+		"termsOfService": "Warunki korzystania",
+		"cookiePolicy": "Polityka cookies",
+		"connect": "Połącz się",
+		"allRightsReserved": "Wszelkie prawa zastrzeżone"
+	},
+	"home": {
+		"scrollPerspective": "Przewiń perspektywę",
+		"sectionTransition": "Przejście sekcji",
+		"helpingBrands": "Pomagamy markom wyróżnić się w erze cyfrowej. Razem ustanowimy nowe status quo. Bez nonsensów, zawsze na krawędzi innowacji.",
+		"randomTitle": "Losowy tytuł",
+		"mountainousView": "Górzyste widoki v0.1"
+	},
+	"workProcess": {
+		"ourWorkProcess": "Nasz proces tworzenia",
+		"initialConditions": "Wstępne warunki i zakres pracy",
+		"initialConditionsDesc": "Na początku ustalamy satysfakcjonujące nas warunki współpracy, takie jak czas realizacji, budżet i oczekiwania. Podpisujemy umowy, które jasno określają zakres projektu, aby zapewnić przejrzystość na każdym etapie.",
+		"appearanceFunctionality": "Ustalenia dotyczące wyglądu i funkcjonalności",
+		"appearanceFunctionalityDesc1": "Omawiamy przeznaczenie projektu, jego główne cele oraz wygląd. Możesz przesłać przykłady innych projektów, które Ci się podobają, co pomoże lepiej zrozumieć Twoje oczekiwania. Im więcej szczegółów dostarczysz, tym lepiej!",
+		"appearanceFunctionalityDesc2": "To również moment, w którym ustalamy główne funkcjonalności i wymagania techniczne, aby wszystko działało tak, jak sobie życzysz.",
+		"inspirationResearch": "Szukanie inspiracji i badania",
+		"inspirationResearchDesc1": "Zbieramy kluczowe dane i pomysły, aby projekt był unikalny i dopasowany do Twojej marki. Analizujemy konkurencję, szukamy inspiracji w najnowszych trendach oraz technologiach, które można zaimplementować.",
+		"inspirationResearchDesc2": "Tworzę moodboardy, które pomogą zwizualizować kierunek estetyczny, zanim przejdziemy do projektowania mockupu.",
+		"mockupApproval": "Akceptacja mockupu",
+		"mockupApprovalDesc1": "Przesyłam Ci wstępny szkielet wizualny projektu (mockup), który przedstawia układ i wygląd strony/aplikacji. Na tym etapie możesz wprowadzić swoje uwagi, a ja wprowadzam potrzebne poprawki.",
+		"mockupApprovalDesc2": "Gdy mockup jest zatwierdzony, ruszamy z właściwym kodowaniem i implementacją!",
+		"projectConstruction": "Projekt w budowie",
+		"projectConstructionDesc1": "Rozpoczynamy prace nad budową strony lub aplikacji. Każdy etap jest starannie przemyślany, aby spełniał Twoje wymagania pod względem funkcjonalności, wydajności oraz estetyki.",
+		"projectConstructionDesc2": "Możesz śledzić postępy na bieżąco, a ja regularnie informuję o postępach, abyś miał pełną kontrolę nad projektem.",
+		"testingOptimization": "Testowanie i optymalizacja",
+		"testingOptimizationDesc1": "Przed finalnym oddaniem projektu przeprowadzamy testy funkcjonalności, responsywności i wydajności. Wprowadzamy niezbędne poprawki, aby upewnić się, że wszystko działa idealnie na różnych urządzeniach i przeglądarkach.",
+		"testingOptimizationDesc2": "Dodatkowo optymalizujemy stronę pod kątem SEO, aby była lepiej widoczna w wyszukiwarkach.",
+		"finalVersionImplementation": "Finalna wersja i wdrożenie",
+		"finalVersionImplementationDesc1": "Po zakończeniu testów i optymalizacji, przekazujemy gotowy produkt. Jeśli wszystko jest zgodne z oczekiwaniami, publikujemy stronę/aplikację i uruchamiamy ją w produkcyjnym środowisku.",
+		"finalVersionImplementationDesc2": "Oferujemy również wsparcie po wdrożeniu, abyś zawsze mógł liczyć na pomoc w przypadku jakichkolwiek pytań lub potrzebnych aktualizacji."
+	},
+	"notFound": {
+		"title": "Nie znaleziono strony - 404",
+		"description": "Ups! Nie mamy takiej strony.",
+		"returnHome": "Powróć na stronę główną"
+	},
+	"timeline": {
+		"title": "Oś czasu",
+		"description": "Przegląd naszych kluczowych momentów"
+	},
+	"revealingText": {
+		"helpingBrands": "Pomagamy markom wyróżnić się w erze cyfrowej. Razem ustanowimy nowe status quo. Bez nonsensów, zawsze na krawędzi innowacji."
+	}
+}
