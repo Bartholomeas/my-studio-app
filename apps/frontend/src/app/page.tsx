@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { ScrollProgressContainer } from "@/components/common/animations/wrappers/scroll-progress-container";
 import { DescrptionSection } from "@/components/home/sections/descrption-section";
 import { LandingSection } from "@/components/home/sections/landing-section";
+import { TimelineSection } from "@/components/Timeline/timeline-section";
 
 const AboutSection = dynamic(() =>
   import("@/components/home/sections/about-section").then((res) => res.AboutSection),
@@ -38,6 +39,20 @@ const Home = () => {
       >
         <ImageSentenceSection />
       </ScrollProgressContainer>
+      <TimelineSection data={[
+        {
+          title: "First",
+          content: <div className={"h-[500px]"}>First</div>
+        },
+        {
+          title: "Second",
+          content: <div className={"h-[500px]"}>Second</div>
+        },
+        {
+          title: "Third",
+          content: <div className={"h-[500px]"}>Third</div>
+        }
+      ]} />
     </>
   );
 };
