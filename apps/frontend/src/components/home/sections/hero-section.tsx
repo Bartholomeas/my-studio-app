@@ -6,6 +6,8 @@ import {motion} from "framer-motion";
 
 import {SectionScaleRotate} from "@/components/common/animations/section-scale-rotate";
 import {useMousePositionContext} from "@/components/common/special/cursor-handler/use-mouse-position-context";
+import {Text} from "@/components/common/text";
+import {CtaCircle} from "@/components/common/special/cta-circle";
 
 export const HeroSection = () => {
     const {smoothMouse, isHovering, setIsHovering} = useMousePositionContext();
@@ -21,30 +23,30 @@ export const HeroSection = () => {
 
     return (
         <SectionScaleRotate
-            className={"sticky top-0 flex h-screen flex-col items-center justify-center bg-[#f7f7f7] pb-[10vh] text-[3.5vw] text-white"}>
-            {/*<section className={"relative h-screen"}>*/}
+            className={"sticky top-0 flex h-screen flex-col items-center justify-center bg-background pb-[10vh] text-[3.5vw]"}>
             <motion.div
-                className={"hover-mask-circle flex size-full cursor-default items-center justify-center text-[64px] text-black"}
+                className={"hover-mask-circle flex size-full cursor-default items-center justify-center text-[64px] text-foreground"}
                 animate={{
                     WebkitMaskPosition: `${smoothMouse.x.get() - (size / 2)}px ${smoothMouse.y.get() - (size / 2)}px`,
                     WebkitMaskSize: `${size}px`
                 }}
                 transition={{type: 'tween', ease: 'backOut', duration: 0.5}}
             >
-                <p
+                <Text
                     className={"p-[40px]"}
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                 >We create
                     web apps, websites, and designs that stand out in the digital landscape.
-                </p>
+                </Text>
             </motion.div>
 
             <div
-                className={"flex size-full cursor-default items-center justify-center text-[64px] text-[#afa18f]"}>
-                <p className={"p-[40px]"}>Our studio focuses on delivering high-quality & impactful digital
-                    experiences. Our company shines out of others.</p>
+                className={"flex size-full cursor-default items-center justify-center text-[64px] text-foreground-muted"}>
+                <Text className={"p-[40px]"}>Our studio focuses on delivering high-quality & impactful digital
+                    experiences. Our company shines out of others.</Text>
             </div>
+            <CtaCircle/>
         </SectionScaleRotate>
     );
 };
