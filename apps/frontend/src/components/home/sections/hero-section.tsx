@@ -4,8 +4,8 @@ import {useCallback, useMemo} from "react";
 
 import {motion} from "framer-motion";
 
-import {useMousePositionContext} from "@/components/common/special/cursor-handler/use-mouse-position-context";
 import {SectionScaleRotate} from "@/components/common/animations/section-scale-rotate";
+import {useMousePositionContext} from "@/components/common/special/cursor-handler/use-mouse-position-context";
 
 export const HeroSection = () => {
     const {smoothMouse, isHovering, setIsHovering} = useMousePositionContext();
