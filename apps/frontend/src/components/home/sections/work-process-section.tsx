@@ -112,7 +112,7 @@ const data: TimelineBoxProps[] = [
 
 export const WorkProcessSection = () => {
   return (
-    <section className={"container min-h-screen bg-background py-20"}>
+    <section className={"container min-h-screen bg-background py-24"}>
       <Title type={"h2"}>Nasz proces tworzenia</Title>
       <Timeline data={data} />
     </section>

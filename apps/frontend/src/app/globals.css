@@ -91,7 +91,7 @@
 	}
 
 	body {
-		@apply overflow-hidden bg-[#D9D9D9] font-sans text-foreground;
+		@apply bg-[#D9D9D9] font-sans text-foreground;
 	}
 
 	a {

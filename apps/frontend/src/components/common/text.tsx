@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
 import { cva, type VariantProps } from "class-variance-authority";
 
@@ -72,7 +72,7 @@ export interface TextProps
   as?: "span" | "p";
 }
 
-export const Text = ({
+export const Text = forwardRef<HTMLSpanElement, TextProps>(({
   size,
   weight,
   color,
@@ -82,14 +82,17 @@ export const Text = ({
   className,
   children,
   ...props
-}: TextProps) => {
+}, ref) => {
   const Component = as;
   return (
     <Component
       {...props}
+      ref={ref as React.LegacyRef<HTMLParagraphElement>}
       className={textVariants({ size, weight, align, color, decorations, className })}
     >
       {children}
     </Component>
   );
-};
+});
+
+Text.displayName = "Text";

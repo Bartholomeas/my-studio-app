@@ -38,7 +38,7 @@ export const Timeline = ({ data }: TimelineSectionProps) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
   return <div
-    className={"size-full px-[2%] font-sans"}
+    className={"size-full font-sans"}
     ref={containerRef}>
     <div
       ref={itemsContainerRef}

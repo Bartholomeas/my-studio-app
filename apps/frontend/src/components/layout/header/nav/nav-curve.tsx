@@ -13,11 +13,11 @@ const curve: Variants = {
   },
   enter: {
     d: targetPath,
-    transition: { duration: 1, ease: EASE_TRANSITION }
+    transition: { duration: 0.8, ease: EASE_TRANSITION }
   },
   exit: {
     d: initialPath,
-    transition: { duration: 0.8, ease: EASE_TRANSITION }
+    transition: { duration: 0.6, ease: EASE_TRANSITION }
   }
 };
 

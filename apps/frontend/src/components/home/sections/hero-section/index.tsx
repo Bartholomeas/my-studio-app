@@ -1,19 +1,39 @@
 'use client';
 
-import { type ComponentProps, useCallback, useMemo } from "react";
+import { type ComponentProps, useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 import { motion } from "framer-motion";
 
 import { SectionScaleRotate } from "@/components/common/animations/section-scale-rotate";
-import { CtaCircle } from "@/components/common/special/cta-circle";
 import { useMousePositionContext } from "@/components/common/special/cursor-handler/use-mouse-position-context";
 import { Text } from "@/components/common/text";
 import { cn } from "@/lib/utils";
+
+import { HeroBottomBox } from "./hero-bottom-box";
 
 const textClassNames: ComponentProps<'div'>['className'] = 'text-3xl md:text-6xl';
 
 export const HeroSection = () => {
   const { smoothMouse, isHovering, setIsHovering } = useMousePositionContext();
+  const baseTextRef = useRef<HTMLDivElement | null>(null);
+
+  const [textHeight, setTextHeight] = useState<number | null>(null);
+
+  const calculateTextHeight = useCallback(() => {
+    if (baseTextRef?.current) {
+      setTextHeight(baseTextRef.current.getBoundingClientRect().height);
+    }
+  }, []);
+
+  useLayoutEffect(() => {
+    calculateTextHeight();
+    window.addEventListener('resize', calculateTextHeight);
+
+    return () => {
+      window.removeEventListener('resize', calculateTextHeight);
+    };
+  }, [calculateTextHeight]);
+
   const size = useMemo(() => isHovering ? 400 : 0, [isHovering]);
 
   const onMouseEnter = useCallback(() => {
@@ -26,9 +46,9 @@ export const HeroSection = () => {
 
   return (
     <SectionScaleRotate
-      className={cn("sticky top-0 flex h-screen flex-col items-center justify-center bg-background pb-[10vh]", textClassNames)}>
+      className={cn("sticky top-0 flex h-screen flex-col items-start justify-center bg-background pb-[10vh]", textClassNames)}>
       <motion.div
-        className={"hover-mask-circle flex size-full cursor-default items-center justify-center text-foreground"}
+        className={"hover-mask-circle flex size-full cursor-default items-center justify-center bg-primary-200 text-foreground"}
         animate={{
           WebkitMaskPosition: `${smoothMouse.x.get() - (size / 2)}px ${smoothMouse.y.get() - (size / 2)}px`,
           WebkitMaskSize: `${size}px`
@@ -37,21 +57,26 @@ export const HeroSection = () => {
       >
         <Text
           className={cn("p-[40px]", textClassNames)}
+          style={{ height: textHeight ?? 'auto' }}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
-          We create web apps, websites, and designs that stand out in the digital landscape.
+          Tworzymy kreatywne rozwiązania dla Twoich cyfrowych potrzeb.
         </Text>
       </motion.div>
 
       <div
         className={cn("flex size-full cursor-default items-center justify-center text-foreground-muted", textClassNames)}>
-        <Text className={cn("p-[40px]", textClassNames)}>
-          Our studio focuses on delivering high-quality & impactful digital experiences. Our company shines out of others.
+        <Text
+          ref={baseTextRef}
+          className={cn("p-[40px]", textClassNames)}
+        >
+          Tworzymy kreatywne rozwiązania dla Twoich cyfrowych potrzeb.
+          Tworzymy kreatywne rozwiązania dla Twoich cyfrowych potrzeb.
         </Text>
       </div>
-      <CtaCircle
-      />
+
+      <HeroBottomBox />
     </SectionScaleRotate>
   );
 };

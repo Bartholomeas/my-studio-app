@@ -1,22 +1,23 @@
 import { type ComponentProps } from "react";
 
 import { motion } from 'framer-motion';
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowLeftIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 interface CtaCircleProps extends Pick<ComponentProps<'button'>, 'onMouseEnter' | 'onMouseLeave'> {
   className?: string;
+  text?: string;
 }
 
-export const CtaCircle = ({ className, ...props }: CtaCircleProps) => {
+export const CtaCircle = ({ className, text = "Scrolluj w dół, aby dowiedzieć się więcej", ...props }: CtaCircleProps) => {
   return <motion.button
-    className={cn('group absolute right-0 bottom-0 grid aspect-square size-[140px] -translate-x-1/2 -translate-y-1/2 place-content-center rounded-full transition-colors duration-700 ease-out md:size-[220px]', className)}
+    className={cn('group grid aspect-square size-[140px] place-content-center rounded-full transition-colors duration-700 ease-out md:size-[220px]', className)}
     {...props}
   >
-    <ArrowRightIcon
+    <ArrowLeftIcon
       size={40}
-      className={'relative z-10 text-foreground transition-all duration-700 ease-out group-hover:rotate-90'} />
+      className={'relative z-10 text-foreground transition-all duration-700 ease-out group-hover:-rotate-90'} />
     <span
       className={'duration-600 pointer-events-none absolute inset-0 z-0 aspect-square scale-0 rounded-full bg-primary transition-transform ease-out group-hover:scale-100'} />
     <motion.svg
@@ -49,10 +50,12 @@ export const CtaCircle = ({ className, ...props }: CtaCircleProps) => {
           fill={"black"}
           className={'fill-black text-lg font-light uppercase transition-opacity duration-700 ease-out group-hover:opacity-100'}
           startOffset={"0%"}
-          textLength={"314%"}
+          textLength={"300%"}
+          spacing={"auto"}
+          method={"stretch"}
           lengthAdjust={"spacingAndGlyphs"}
         >
-          Scrolluj w dół, aby dowiedzieć się więcej • Scrolluj w dół, aby dowiedzieć się więcej •
+          {text}
         </textPath>
       </text>
     </motion.svg>
