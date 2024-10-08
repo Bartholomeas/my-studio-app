@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { SectionScaleRotate } from "@/components/common/animations/section-scale-rotate";
 import { useMousePositionContext } from "@/components/common/special/cursor-handler/use-mouse-position-context";
 import { Text } from "@/components/common/text";
+import { Button } from "@/components/common/ui/button";
 import { cn } from "@/lib/utils";
 
 import { HeroBottomBox } from "./hero-bottom-box";
@@ -56,7 +57,7 @@ export const HeroSection = () => {
         transition={{ type: 'tween', ease: 'backOut', duration: 0.5 }}
       >
         <Text
-          className={cn("p-[40px]", textClassNames)}
+          className={cn("px-[4%] py-[36px]", textClassNames)}
           style={{ height: textHeight ?? 'auto' }}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
@@ -66,14 +67,15 @@ export const HeroSection = () => {
       </motion.div>
 
       <div
-        className={cn("flex size-full cursor-default items-center justify-center text-foreground-muted", textClassNames)}>
+        className={cn("flex flex-col size-full cursor-default items-star justify-center text-foreground-muted", textClassNames)}>
         <Text
           ref={baseTextRef}
-          className={cn("p-[40px]", textClassNames)}
+          className={cn("px-[4%] py-[36px]", textClassNames)}
         >
           Dopasowane rozwiązania dla Twoich cyfrowych potrzeb.
           <span className={"text-foreground-light"}> Gotowy na coś wyjątkowego?</span>
         </Text>
+        <Button className={"mx-[4%] w-fit"}>Skontaktuj się już teraz</Button>
       </div>
 
       <HeroBottomBox />

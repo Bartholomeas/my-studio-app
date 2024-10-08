@@ -1,15 +1,47 @@
+'use client';
+
 import { type ComponentProps } from "react";
 
-import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { Text } from "../text";
-import { Title } from "../title";
+import { cn } from "@/lib/utils";
+import { COMPANY_NAME } from "@/misc/constants";
+
+import { textVariants } from "../text";
+
+const logoContent = (
+  <div className={"flex items-center gap-1"}>
+    {COMPANY_NAME}
+    <span className={"size-1.5 rounded-full bg-primary"} />
+  </div>
+);
 
 type LogoProps = {
   className?: ComponentProps<"div">["className"];
+  href?: string;
 };
-export const Logo = ({ className }: LogoProps) => {
+
+export const Logo = ({ className, href = "/" }: LogoProps) => {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
+  const logoClasses = textVariants({
+    className: cn("self-center leading-none", className),
+    weight: 'bold',
+    size: 'lg',
+  });
+
+  if (isHomePage)
+    return <div onClick={() => {
+      window?.scrollTo({
+        top: 0, behavior: 'smooth'
+      });
+    }} className={cn(logoClasses, 'cursor-pointer')}>{logoContent}</div>;
+
   return (
-    <Title className={cn("self-center text-xl p-0 leading-none font-bold", className)}>NN Studio<Text size={'h1'} as={"span"} color={'primary'}>.</Text></Title>
+    <Link href={href} className={logoClasses}>
+      {logoContent}
+    </Link>
   );
 };
