@@ -23,9 +23,11 @@ export const textVariants = cva("", {
     },
     color: {
       default: "text-foreground",
+      muted: "text-foreground-muted",
+      light: "text-foreground-light",
       background: "text-background",
-      primary: "text-textPrimary",
-      secondary: "text-textSecondary",
+      primary: "text-primary",
+      secondary: "text-secondary",
       white: "text-[#f4f4f4]",
       success: "text-success-600",
     },

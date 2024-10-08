@@ -61,7 +61,7 @@ export const HeroSection = () => {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
-          Tworzymy kreatywne rozwiązania dla Twoich cyfrowych potrzeb.
+          Kod, kawa i ołówek — z tego robimy cuda! Wyniesiemy Twoją wizję na nowy poziom. 😎
         </Text>
       </motion.div>
 
@@ -71,8 +71,8 @@ export const HeroSection = () => {
           ref={baseTextRef}
           className={cn("p-[40px]", textClassNames)}
         >
-          Tworzymy kreatywne rozwiązania dla Twoich cyfrowych potrzeb.
-          Tworzymy kreatywne rozwiązania dla Twoich cyfrowych potrzeb.
+          Dopasowane rozwiązania dla Twoich cyfrowych potrzeb.
+          <span className={"text-foreground-light"}> Gotowy na coś wyjątkowego?</span>
         </Text>
       </div>
 

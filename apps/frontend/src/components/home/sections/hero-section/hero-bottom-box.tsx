@@ -4,7 +4,7 @@ import { MagneticWrapper } from "@/components/common/special/magnetic-wrapper";
 
 export const HeroBottomBox = () => {
   return (
-    <MagneticWrapper className={"absolute bottom-8 right-8 flex items-center justify-center p-0"}>
+    <MagneticWrapper className={"absolute bottom-16 right-16 flex items-center justify-center p-0"}>
       <CtaCircle />
     </MagneticWrapper>
   );

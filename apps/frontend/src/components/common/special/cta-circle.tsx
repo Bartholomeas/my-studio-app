@@ -12,7 +12,7 @@ interface CtaCircleProps extends Pick<ComponentProps<'button'>, 'onMouseEnter' |
 
 export const CtaCircle = ({ className, text = "Scrolluj w dół, aby dowiedzieć się więcej", ...props }: CtaCircleProps) => {
   return <motion.button
-    className={cn('group grid aspect-square size-[140px] place-content-center rounded-full transition-colors duration-700 ease-out md:size-[220px]', className)}
+    className={cn('group grid aspect-square size-[120px] place-content-center rounded-full transition-colors duration-700 ease-out md:size-[200px]', className)}
     {...props}
   >
     <ArrowLeftIcon
