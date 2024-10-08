@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { SectionScaleRotate } from "@/components/common/animations/section-scale-rotate";
 import { useMousePositionContext } from "@/components/common/special/cursor-handler/use-mouse-position-context";
 import { Text } from "@/components/common/text";
-import { Button } from "@/components/common/ui/button";
 import { cn } from "@/lib/utils";
 
 import { HeroBottomBox } from "./hero-bottom-box";
@@ -47,7 +46,7 @@ export const HeroSection = () => {
 
   return (
     <SectionScaleRotate
-      className={cn("sticky top-0 flex h-screen flex-col items-start justify-center bg-background pb-[10vh]", textClassNames)}>
+      className={cn("sticky overflow-hidden top-0 flex h-screen flex-col items-start justify-center bg-background pb-[10vh]", textClassNames)}>
       <motion.div
         className={"hover-mask-circle flex size-full cursor-default items-center justify-center bg-primary-200 text-foreground"}
         animate={{
@@ -75,7 +74,6 @@ export const HeroSection = () => {
           Dopasowane rozwiązania dla Twoich cyfrowych potrzeb.
           <span className={"text-foreground-light"}> Gotowy na coś wyjątkowego?</span>
         </Text>
-        <Button className={"mx-[4%] w-fit"}>Skontaktuj się już teraz</Button>
       </div>
 
       <HeroBottomBox />
