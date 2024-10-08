@@ -7,6 +7,8 @@
 		--background: #f9f9f9;
 		--foreground: #212121;
 		--foreground-muted: #3b3b3b;
+		--foreground-light: #8e8e8e;
+
 		--card: 0 0% 100%;
 		--card-foreground: 240 10% 3.9%;
 		--popover: 0 0% 100%;
@@ -91,7 +93,7 @@
 	}
 
 	body {
-		@apply overflow-hidden bg-[#D9D9D9] font-sans text-foreground;
+		@apply bg-[#D9D9D9] font-sans text-foreground;
 	}
 
 	a {
