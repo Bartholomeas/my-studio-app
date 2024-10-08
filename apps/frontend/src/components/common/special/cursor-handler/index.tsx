@@ -8,7 +8,7 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { useMousePositionContext } from "./use-mouse-position-context";
 
 export const CursorHandler = () => {
-  const { smoothMouse, isHovering, cursorSize, hoverSize } = useMousePositionContext();
+  const { smoothMouse, isHovering, cursorSize } = useMousePositionContext();
 
   const isMobile = useMediaQuery(768, "max");
 
