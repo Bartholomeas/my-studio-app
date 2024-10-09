@@ -1,12 +1,17 @@
 import Link from "next/link";
 
+import { getTranslations } from "next-intl/server";
+
 import { COMPANY_NAME } from "@/misc/constants";
+import { SOCIALS_LINKS } from "@/misc/routes";
 
 import { Logo } from "../common/special/logo";
 import { Text } from "../common/text";
 import { Title } from "../common/title";
 
-export const Footer = () => {
+export const Footer = async () => {
+  const t = await getTranslations('footer');
+
   return (
     <footer
       className={"relative h-[650px]"}
@@ -21,53 +26,47 @@ export const Footer = () => {
           <div className={"flex flex-wrap gap-8 pt-8"}>
             <div className={"flex flex-col gap-4"}>
               <Logo />
-              <Text>Creative solutions for your digital needs</Text>
+              <Text>{t('slogan')}</Text>
             </div>
             <div className={"flex flex-col gap-2"}>
-              <Title>Quick Links</Title>
-              <Link href={"/about"}>
-                <Text>About Us</Text>
-              </Link>
+              <Title>{t('fastLinks.heading')}</Title>
               <Link href={"/services"}>
-                <Text>Services</Text>
+                <Text>{t('fastLinks.blog')}</Text>
               </Link>
-              <Link href={"/portfolio"}>
-                <Text>Portfolio</Text>
+              <Link href={"/about"}>
+                <Text>{t('fastLinks.caseStudies')}</Text>
               </Link>
               <Link href={"/contact"}>
-                <Text>Contact</Text>
+                <Text>{t('fastLinks.contact')}</Text>
               </Link>
             </div>
             <div className={"flex flex-col gap-2"}>
-              <Title>Legal</Title>
+              <Title>{t('restrictions.heading')}</Title>
+              <Link href={"/cookie-policy"}>
+                <Text>{t('restrictions.restriction')}</Text>
+              </Link>
               <Link href={"/privacy-policy"}>
-                <Text>Privacy Policy</Text>
+                <Text>{t('restrictions.privacyPolicy')}</Text>
               </Link>
               <Link href={"/terms-of-service"}>
-                <Text>Terms of Service</Text>
-              </Link>
-              <Link href={"/cookie-policy"}>
-                <Text>Cookie Policy</Text>
+                <Text>{t('restrictions.cookiePolicy')}</Text>
               </Link>
             </div>
             <div className={"flex flex-col gap-2"}>
-              <Title>Connect</Title>
-              <Link href={"https://facebook.com/nicnudnegostudio"}>
-                <Text>Facebook</Text>
+              <Title>{t('socials.heading')}</Title>
+              <Link href={SOCIALS_LINKS.facebook.href}>
+                <Text>{SOCIALS_LINKS.facebook.label}</Text>
               </Link>
-              <Link href={"https://instagram.com/nicnudnegostudio"}>
-                <Text>Instagram</Text>
+              <Link href={SOCIALS_LINKS.instagram.href}>
+                <Text>{SOCIALS_LINKS.instagram.label}</Text>
               </Link>
-              <Link href={"https://linkedin.com/company/nicnudnegostudio"}>
-                <Text>LinkedIn</Text>
-              </Link>
-              <Link href={"https://twitter.com/nicnudnegostudio"}>
-                <Text>Twitter</Text>
+              <Link href={SOCIALS_LINKS.linkedin.href}>
+                <Text>{SOCIALS_LINKS.linkedin.label}</Text>
               </Link>
             </div>
           </div>
           <div className={"border-t border-black pt-4"}>
-            <Text>&copy; {new Date().getFullYear()} {COMPANY_NAME} All rights reserved.</Text>
+            <Text>&copy; {new Date().getFullYear()} {COMPANY_NAME} {t('copyrightDisclaimer')}</Text>
           </div>
         </div>
       </div>

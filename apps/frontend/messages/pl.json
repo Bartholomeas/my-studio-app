@@ -1,7 +1,7 @@
 {
 	"common": {
 		"nicNudnegoStudio": "Nic Nudnego Studio",
-		"creativeStudio": "Kreatywne rozwiązania dla Twoich potrzeb cyfrowych"
+		"slogan": "Kreatywne rozwiązania dla Twoich potrzeb cyfrowych"
 	},
 	"nav": {
 		"home": "Strona główna",
@@ -15,12 +15,23 @@
 		"scrollCTA": "Przewiń w dół, aby dowiedzieć się więcej"
 	},
 	"footer": {
-		"socialsHeading": "Złap nas tutaj!",
+		"slogan": "Kreatywne rozwiązania dla Twoich potrzeb cyfrowych",
+		"fastLinks": {
+			"heading": "Odnośniki",
+			"caseStudies": "Case Studies",
+			"blog": "Blog",
+			"contact": "Kontakt"
+		},
+		"socials": {
+			"heading": "Złap nas tutaj!"
+		},
 		"restrictions": {
 			"heading": "Regulaminy",
-			"restricton": "Regulamin strony",
+			"restriction": "Regulamin strony",
 			"privacyPolicy": "Polityka prywatności",
 			"cookiePolicy": "Polityka cookie"
-		}
-	}
+		},
+		"copyrightDisclaimer": "Wszystkie prawa zastrzeżone."
+	},
+	"workProcess": {}
 }
