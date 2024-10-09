@@ -7,120 +7,106 @@ import {
   RocketIcon,
   SearchIcon,
 } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 import { Text } from "@/components/common/text";
 import { Title } from "@/components/common/title";
 import { Timeline } from "@/components/timeline";
 import { type TimelineBoxProps } from "@/components/timeline/timeline-box";
 
+const t = await getTranslations('workProcess');
+
 const data: TimelineBoxProps[] = [
   {
-    title: "Wstępne warunki i zakres pracy",
+    title: t('initWork.heading'),
     content: (
       <div className={"flex flex-col gap-4"}>
         <Text size={"h5"}>
-          Na początku ustalamy satysfakcjonujące nas warunki współpracy, takie jak czas realizacji,
-          budżet i oczekiwania. Podpisujemy umowy, które jasno określają zakres projektu, aby
-          zapewnić przejrzystość na każdym etapie.
+          {t('initWork.text')}
         </Text>
       </div>
     ),
     icon: <HandshakeIcon />,
   },
   {
-    title: "Ustalenia dotyczące wyglądu i funkcjonalności",
+    title: t('functionalities.heading'),
     content: (
       <div className={"flex flex-col gap-4"}>
         <Text size={"h5"}>
-          Omawiamy przeznaczenie projektu, jego główne cele oraz wygląd. Możesz przesłać przykłady
-          innych projektów, które Ci się podobają, co pomoże lepiej zrozumieć Twoje oczekiwania. Im
-          więcej szczegółów dostarczysz, tym lepiej!
+          {t('functionalities.text1')}
         </Text>
         <Text size={"h5"}>
-          To również moment, w którym ustalamy główne funkcjonalności i wymagania techniczne, aby
-          wszystko działało tak, jak sobie życzysz.
+          {t('functionalities.text2')}
         </Text>
       </div>
     ),
     icon: <BrainIcon />,
   },
   {
-    title: "Szukanie inspiracji i badania",
+    title: t('inspirations.heading'),
     content: (
       <div className={"flex flex-col gap-4"}>
         <Text size={"h5"}>
-          Zbieramy kluczowe dane i pomysły, aby projekt był unikalny i dopasowany do Twojej marki.
-          Analizujemy konkurencję, szukamy inspiracji w najnowszych trendach oraz technologiach,
-          które można zaimplementować.
+          {t('inspirations.text1')}
         </Text>
         <Text size={"h5"}>
-          Tworzę moodboardy, które pomogą zwizualizować kierunek estetyczny, zanim przejdziemy do
-          projektowania mockupu.
+          {t('inspirations.text2')}
         </Text>
       </div>
     ),
     icon: <SearchIcon />,
   },
   {
-    title: "Akceptacja mockupu",
+    title: t('acceptance.heading'),
     content: (
       <div className={"flex flex-col gap-4"}>
         <Text size={"h5"}>
-          Przesyłam Ci wstępny szkielet wizualny projektu (mockup), który przedstawia układ i wygląd
-          strony/aplikacji. Na tym etapie możesz wprowadzić swoje uwagi, a ja wprowadzam potrzebne
-          poprawki.
+          {t('acceptance.text1')}
         </Text>
         <Text size={"h5"}>
-          Gdy mockup jest zatwierdzony, ruszamy z właściwym kodowaniem i implementacją!
+          {t('acceptance.text2')}
         </Text>
       </div>
     ),
     icon: <PencilIcon />,
   },
   {
-    title: "Projekt w budowie",
+    title: t('buildingInProgress.heading'),
     content: (
       <div className={"flex flex-col gap-4"}>
         <Text size={"h5"}>
-          Rozpoczynamy prace nad budową strony lub aplikacji. Każdy etap jest starannie przemyślany,
-          aby spełniał Twoje wymagania pod względem funkcjonalności, wydajności oraz estetyki.
+          {t("buildingInProgress.text1")}
         </Text>
         <Text size={"h5"}>
-          Możesz śledzić postępy na bieżąco, a ja regularnie informuję o postępach, abyś miał pełną
-          kontrolę nad projektem.
+          {t("buildingInProgress.text2")}
         </Text>
       </div>
     ),
     icon: <CodeIcon />,
   },
   {
-    title: "Testowanie i optymalizacja",
+    title: t('testingProess.heading'),
     content: (
       <div className={"flex flex-col gap-4"}>
         <Text size={"h5"}>
-          Przed finalnym oddaniem projektu przeprowadzamy testy funkcjonalności, responsywności i
-          wydajności. Wprowadzamy niezbędne poprawki, aby upewnić się, że wszystko działa idealnie
-          na różnych urządzeniach i przeglądarkach.
+          {t('testingProess.text1')}
         </Text>
         <Text size={"h5"}>
-          Dodatkowo optymalizujemy stronę pod kątem SEO, aby była lepiej widoczna w wyszukiwarkach.
+          {t('testingProess.text2')}
         </Text>
       </div>
     ),
     icon: <CheckIcon />,
   },
   {
-    title: "Finalna wersja i wdrożenie",
+    title: t('finalVersion.heading'),
     content: (
       <div className={"flex flex-col gap-4"}>
         <Text size={"h5"}>
-          Po zakończeniu testów i optymalizacji, przekazujemy gotowy produkt. Jeśli wszystko jest
-          zgodne z oczekiwaniami, publikujemy stronę/aplikację i uruchamiamy ją w produkcyjnym
-          środowisku.
+          {t('finalVersion.text1')}
         </Text>
         <Text size={"h5"}>
-          Oferujemy również wsparcie po wdrożeniu, abyś zawsze mógł liczyć na pomoc w przypadku
-          jakichkolwiek pytań lub potrzebnych aktualizacji.
+          {t('finalVersion.text2')}
         </Text>
       </div>
     ),
@@ -133,7 +119,7 @@ export const WorkProcessSection = () => {
     <section className={"min-h-screen bg-background py-24"}>
       <div className={"container"}>
 
-        <Title type={"h2"}>Nasz proces tworzenia</Title>
+        <Title type={"h2"}>{t('heading')}</Title>
         <Timeline data={data} />
       </div>
     </section>

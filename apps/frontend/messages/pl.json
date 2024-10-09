@@ -33,5 +33,41 @@
 		},
 		"copyrightDisclaimer": "Wszystkie prawa zastrzeżone."
 	},
-	"workProcess": {}
+	"workProcess": {
+		"heading": "Nasz proces twórczy",
+		"initWork": {
+			"heading": "Wstępne warunki i zakres pracy",
+			"text": "Na początku ustalamy satysfakcjonujące nas warunki współpracy, takie jak czas realizacji, budżet i oczekiwania. Podpisujemy umowy, które jasno określają zakres projektu, aby zapewnić przejrzystość na każdym etapie."
+		},
+		"functionalities": {
+			"heading": "Ustalenia dotyczące wyglądu i funkcjonalności",
+			"text1": "Omawiamy przeznaczenie projektu, jego główne cele oraz wygląd. Możesz przesłać przykłady innych projektów, które Ci się podobają, co pomoże lepiej zrozumieć Twoje oczekiwania. Im więcej szczegółów dostarczysz, tym lepiej!",
+			"text2": "To również moment, w którym ustalamy główne funkcjonalności i wymagania techniczne, aby wszystko działało tak, jak sobie życzysz."
+		},
+		"inspirations": {
+			"heading": "Szukanie inspiracji i badania",
+			"text1": "Zbieramy kluczowe dane i pomysły, aby projekt był unikalny i dopasowany do Twojej marki. Analizujemy konkurencję, szukamy inspiracji w najnowszych trendach oraz technologiach, które można zaimplementować.",
+			"text2": "Tworzę moodboardy, które pomogą zwizualizować kierunek estetyczny, zanim przejdziemy do projektowania mockupu."
+		},
+		"acceptance": {
+			"heading": "Akceptacja mockupu",
+			"text1": "Przesyłam Ci wstępny szkielet wizualny projektu (mockup), który przedstawia układ i wygląd strony/aplikacji. Na tym etapie możesz wprowadzić swoje uwagi, a ja wprowadzam potrzebne poprawki.",
+			"text2": "Gdy mockup jest zatwierdzony, ruszamy z właściwym tworzeniem i implementacją!"
+		},
+		"buildingInProgress": {
+			"heading": "Projekt w budowie",
+			"text1": "Rozpoczynamy prace nad budową strony lub aplikacji. Każdy etap jest starannie przemyślany, aby spełniał Twoje wymagania pod względem funkcjonalności, wydajności oraz estetyki.",
+			"text2": "Możesz śledzić postępy na bieżąco, a ja regularnie informuję o postępach, abyś miał pełną kontrolę nad projektem."
+		},
+		"testingProess": {
+			"heading": "Testowanie i optymalizacja",
+			"text1": "Przed finalnym oddaniem projektu przeprowadzamy testy funkcjonalności, responsywności i wydajności. Wprowadzamy niezbędne poprawki, aby upewnić się, że wszystko działa idealnie na różnych urządzeniach i przeglądarkach.",
+			"text2": "Dodatkowo optymalizujemy stronę pod kątem SEO, aby była lepiej widoczna w wyszukiwarkach."
+		},
+		"finalVersion": {
+			"heading": "Finalna wersja i wdrożenie",
+			"text1": "Po zakończeniu testów i optymalizacji, przekazujemy gotowy produkt. Jeśli wszystko jest zgodne z oczekiwaniami, publikujemy stronę/aplikację i uruchamiamy ją w produkcyjnym środowisku.",
+			"text2": "Oferujemy również wsparcie po wdrożeniu, abyś zawsze mógł liczyć na pomoc w przypadku jakichkolwiek pytań lub potrzebnych aktualizacji."
+		}
+	}
 }
