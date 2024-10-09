@@ -1,14 +1,26 @@
-export const APP_ROUTES = {
+type TranslationKeys = typeof import("./../../messages/pl.json");
+export type AppLinkRoutes = keyof TranslationKeys["nav"];
+
+type AppRoutes<T extends string = AppLinkRoutes> = Record<
+	T,
+	{
+		label: AppLinkRoutes;
+		href: string;
+	}
+>;
+
+// Labels are keys of the translation file
+export const APP_ROUTES: AppRoutes = {
 	home: {
-		label: "Strona główna",
+		label: "home",
 		href: "/",
 	},
 	contact: {
-		label: "Kontakt",
+		label: "contact",
 		href: "/kontakt",
 	},
 	blog: {
-		label: "Blog",
+		label: "blog",
 		href: "/blog",
 	},
 } as const;
