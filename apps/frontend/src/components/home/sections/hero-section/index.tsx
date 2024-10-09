@@ -10,10 +10,12 @@ import {
 } from "react";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import { SectionScaleRotate } from "@/components/common/animations/section-scale-rotate";
 import { useMousePositionContext } from "@/components/common/special/cursor-handler/use-mouse-position-context";
 import { Text } from "@/components/common/text";
+import { Title, titleVariants } from "@/components/common/title";
 import { cn } from "@/lib/utils";
 
 import { HeroBottomBox } from "./hero-bottom-box";
@@ -25,6 +27,8 @@ export const HeroSection = () => {
   const baseTextRef = useRef<HTMLDivElement | null>(null);
 
   const [textHeight, setTextHeight] = useState<number | null>(null);
+
+  const t = useTranslations('hero-section');
 
   const calculateTextHeight = useCallback(() => {
     if (baseTextRef?.current) {
@@ -60,7 +64,7 @@ export const HeroSection = () => {
     >
       <motion.div
         className={
-          "hover-mask-circle flex size-full cursor-default items-center justify-center bg-primary-200 text-foreground"
+          "hover-mask-circle flex size-full items-center justify-start bg-primary-200 text-foreground"
         }
         animate={{
           WebkitMaskPosition: `${smoothMouse.x.get() - size / 2}px ${smoothMouse.y.get() - size / 2}px`,
@@ -69,25 +73,25 @@ export const HeroSection = () => {
         transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
       >
         <Text
-          className={cn("px-[4%] py-[36px]", textClassNames)}
+          className={cn("px-[2%] xl:text-[80px] max-w-[900px] py-[36px]", titleVariants({ type: 'h1' }), textClassNames)}
           style={{ height: textHeight ?? "auto" }}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
-          Kod, kawa i ołówek — z tego robimy cuda! Wyniesiemy Twoją wizję na nowy poziom. 😎
+          {t('headingTextMasked')}
         </Text>
       </motion.div>
 
       <div
         className={cn(
-          "items-star flex size-full cursor-default flex-col justify-center text-foreground-muted",
+          "items-center flex size-full justify-start text-foreground-muted",
           textClassNames,
         )}
       >
-        <Text ref={baseTextRef} className={cn("px-[4%] py-[36px]", textClassNames)}>
-          Dopasowane rozwiązania dla Twoich cyfrowych potrzeb.
-          <span className={"text-foreground-light"}> Gotowy na coś wyjątkowego?</span>
-        </Text>
+        <Title weight={'normal'} type={"h1"} ref={baseTextRef} className={cn("px-[2%] py-[36px] max-w-[900px] xl:text-[80px]", textClassNames)}>
+          {t('headingText')}
+          <span className={"text-foreground-light"}> {t('headingSubtext')}</span>
+        </Title>
       </div>
 
       <HeroBottomBox />

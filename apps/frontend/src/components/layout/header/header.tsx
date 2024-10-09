@@ -23,7 +23,7 @@ export const Header = () => {
 
   const toggleMenu = () => { setIsActive(prev => !prev); };
 
-  return (<nav className={"container sticky top-0 z-50 flex items-center justify-between py-2"}>
+  return (<nav className={"container fixed inset-x-0 top-0 z-50 mx-auto flex items-center justify-between py-2"}>
     <Logo />
 
     <HeaderButton isActive={isActive} toggleMenu={toggleMenu} />
