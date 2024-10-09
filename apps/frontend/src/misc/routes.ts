@@ -1,5 +1,5 @@
 type TranslationKeys = typeof import("./../../messages/pl.json");
-export type AppLinkRoutes = keyof TranslationKeys["nav"];
+export type AppLinkRoutes = keyof TranslationKeys["nav"]["links"];
 
 type AppRoutes<T extends string = AppLinkRoutes> = Record<
 	T,

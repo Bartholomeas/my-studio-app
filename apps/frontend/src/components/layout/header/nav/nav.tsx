@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import { Text } from "@/components/common/text";
 
@@ -18,6 +19,7 @@ const NavLink = dynamic(() => import("./nav-link").then((res) => res.NavLink));
 
 export const Nav = () => {
   const pathname = usePathname();
+  const t = useTranslations('nav');
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
   const selectIndicator = () => {
@@ -37,7 +39,7 @@ export const Nav = () => {
       <div className={"flex h-full flex-col justify-between p-[48px]"}>
         <div onMouseLeave={selectIndicator} className={"mt-24 flex flex-col gap-4 text-xl"}>
           <div className={"text-md mb-4 border-b-2 border-white"}>
-            <Text color={"background"}>Podstrony</Text>
+            <Text color={"background"}>{t('title')}</Text>
           </div>
           {NAV_LINKS.map((link, index) => (
             <NavLink

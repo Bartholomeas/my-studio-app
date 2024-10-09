@@ -1,12 +1,15 @@
 {
 	"common": {
 		"nicNudnegoStudio": "Nic Nudnego Studio",
-		"slogan": "Kreatywne rozwiązania dla Twoich potrzeb cyfrowych"
+		"slogan": "Kreatywne rozwiązania dla Twoich cyfrowych potrzeb."
 	},
 	"nav": {
-		"home": "Strona główna",
-		"blog": "Blog",
-		"contact": "Kontakt"
+		"title": "Nawigacja",
+		"links": {
+			"home": "Strona główna",
+			"blog": "Blog",
+			"contact": "Kontakt"
+		}
 	},
 	"hero-section": {
 		"headingText": "Idealne rozwiązania dla Twoich cyfrowych potrzeb.",
