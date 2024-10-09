@@ -12,7 +12,7 @@ import { scale, slide } from "../header.animations";
 
 type LinkData = {
   href: string;
-  label: AppLinkRoutes;
+  label?: AppLinkRoutes;
   index: number;
 };
 
@@ -26,7 +26,7 @@ export const NavLink = ({
   setSelectedIndicator,
   isActive = false,
 }: NavLinkProps) => {
-  const t = useTranslations('nav');
+  const t = useTranslations('nav.links');
 
   const setIndicator = () => {
     setSelectedIndicator(href);
