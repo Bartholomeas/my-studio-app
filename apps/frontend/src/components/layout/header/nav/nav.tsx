@@ -43,10 +43,10 @@ export const Nav = () => {
           </div>
           {NAV_LINKS.map((link, index) => (
             <NavLink
-              isActive={selectedIndicator === link.href}
+              isActive={selectedIndicator === link?.href}
               setSelectedIndicator={setSelectedIndicator}
-              key={`navigationLink-${link.label}-${link.href}`}
-              linkData={{ ...link, index }}
+              key={`navigationLink-${link?.label}-${link?.href}`}
+              linkData={{ ...link, href: link?.href || '/', index }}
             />
           ))}
         </div>
