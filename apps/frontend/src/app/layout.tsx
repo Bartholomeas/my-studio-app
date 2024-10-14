@@ -1,7 +1,7 @@
 import { type ReactNode } from "react";
 
 import dynamic from "next/dynamic";
-import { Poppins, Yrsa } from "next/font/google";
+import { Manrope, Sora } from "next/font/google";
 
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
@@ -19,14 +19,16 @@ const CursorHandler = dynamic(() =>
 );
 const Footer = dynamic(() => import("@/components/layout/footer").then((res) => res.Footer));
 
-const poppins = Poppins({
+const sans = Manrope({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const yrsa = Yrsa({
+// const yrsa = Yrsa({
+// const yrsa = Sora({
+const serif = Sora({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-serif",
@@ -48,11 +50,11 @@ const RootLayout = async ({
   return (
     <html lang={locale}>
       <LenisWrapper>
-        <body className={`${poppins.className} ${yrsa.className} antialiased`}>
+        <body className={`${sans.className} ${serif.className} antialiased`}>
           <MousePositionProvider>
             <NextIntlClientProvider messages={messages}>
               <Header />
-              <main>{children}</main>
+              <main className={"relative"}>{children}</main>
               <Footer />
               <CursorHandler />
             </NextIntlClientProvider>

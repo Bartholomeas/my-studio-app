@@ -58,7 +58,7 @@ export const HeroSection = () => {
   return (
     <SectionScaleRotate
       className={cn(
-        "sticky top-0 flex h-screen flex-col items-start justify-center overflow-hidden bg-background pb-[10vh]",
+        "sticky top-0 flex h-[100dvh] flex-col items-start justify-center overflow-hidden bg-background pb-[10dvh]",
         textClassNames,
       )}
     >

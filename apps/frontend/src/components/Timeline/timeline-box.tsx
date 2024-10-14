@@ -36,12 +36,12 @@ export const TimelineBox = ({ title, content, icon: Icon }: TimelineBoxProps) =>
             ></div>
           )}
         </div>
-        <Title type={"h3"} className={"hidden font-bold md:block md:pl-20"}>
+        <Title type={"h3"} weight={'bold'} className={"hidden md:block md:pl-20"}>
           {title}
         </Title>
       </div>
       <div className={"relative w-full pl-20 pr-4 md:pl-4"}>
-        <Title type={"h3"} className={"mb-4 block text-left text-2xl font-bold md:hidden"}>
+        <Title type={"h3"} weight={'bold'} className={"mb-4 block text-left text-2xl md:hidden"}>
           {title}
         </Title>
         {content}{" "}
