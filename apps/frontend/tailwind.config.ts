@@ -21,7 +21,10 @@ export default {
 				sm: "calc(var(--radius) - 4px)",
 			},
 			colors: {
-				background: "var(--background)",
+				background: {
+					DEFAULT: "var(--background)",
+					dark: "var(--background-dark)",
+				},
 				foreground: {
 					DEFAULT: "var(--foreground)",
 					muted: "var(--foreground-muted)",

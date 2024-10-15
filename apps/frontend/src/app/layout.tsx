@@ -27,7 +27,6 @@ const sans = Manrope({
 });
 
 // const yrsa = Yrsa({
-// const yrsa = Sora({
 const serif = Sora({
   subsets: ["latin"],
   display: "swap",
