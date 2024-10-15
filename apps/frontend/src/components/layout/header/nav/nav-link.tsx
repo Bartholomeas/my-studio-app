@@ -12,7 +12,7 @@ import { scale, slide } from "../header.animations";
 
 type LinkData = {
   href: string;
-  label?: AppLinkRoutes;
+  label: AppLinkRoutes;
   index: number;
 };
 

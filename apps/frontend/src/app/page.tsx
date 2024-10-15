@@ -1,27 +1,28 @@
 import dynamic from "next/dynamic";
 
+import { HeroSection } from "src/components/views/home/hero-section";
+
 import { ScrollProgressContainer } from "@/components/common/animations/wrappers/scroll-progress-container";
-import { DescrptionSection } from "@/components/home/sections/descrption-section";
-import { HeroSection } from "@/components/home/sections/hero-section";
+import { DescrptionSection } from "@/components/views/home/descrption-section";
 
 const AboutSection = dynamic(() =>
-	import("@/components/home/sections/about-section").then((res) => res.AboutSection),
+	import("src/components/views/home/about-section").then((res) => res.AboutSection),
 );
 const ProjectsTrailerSection = dynamic(() =>
-	import("@/components/home/sections/projects-trailer-section").then(
+	import("@/components/views/home/projects-trailer-section").then(
 		(res) => res.ProjectsTrailerSection,
 	),
 );
 const ImageSentenceSection = dynamic(() =>
-	import("@/components/home/sections/image-sentence-section").then(
+	import("@/components/views/home/image-sentence-section").then(
 		(res) => res.ImageSentenceSection,
 	),
 );
 const HomeSentenceSection = dynamic(() =>
-	import("@/components/home/sections/home-sentence-section").then((res) => res.HomeSentenceSection),
+	import("@/components/views/home/home-sentence-section").then((res) => res.HomeSentenceSection),
 );
 const WorkProcessSection = dynamic(() =>
-	import("@/components/home/sections/work-process-section").then((res) => res.WorkProcessSection),
+	import("@/components/views/home/work-process-section").then((res) => res.WorkProcessSection),
 );
 
 const Home = async () => {

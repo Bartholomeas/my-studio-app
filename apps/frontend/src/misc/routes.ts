@@ -1,14 +1,12 @@
 type TranslationKeys = typeof import("./../../messages/pl.json");
 export type AppLinkRoutes = keyof TranslationKeys["nav"]["links"];
 
-type AppRoutes<T extends string = AppLinkRoutes> = Partial<
-	Record<
-		T,
-		{
-			label: AppLinkRoutes;
-			href: string;
-		}
-	>
+type AppRoutes<T extends string = AppLinkRoutes> = Record<
+	T,
+	{
+		label: AppLinkRoutes;
+		href: string;
+	}
 >;
 
 // Labels are keys of the translation file
