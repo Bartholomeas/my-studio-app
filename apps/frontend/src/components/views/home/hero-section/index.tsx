@@ -73,7 +73,16 @@ export const HeroSection = () => {
         transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
       >
         <Text
-          className={cn("px-[2%] xl:text-[80px] max-w-[900px] py-[36px]", titleVariants({ type: 'h1' }), textClassNames)}
+          className={cn(
+            "px-[4%] py-[36px] max-w-[900px] xl:text-[80px]",
+            titleVariants({
+              type: 'h1',
+              size: 'h1',
+              weight: 'normal',
+              className: textClassNames
+            }),
+            textClassNames
+          )}
           style={{ height: textHeight ?? "auto" }}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
@@ -88,7 +97,11 @@ export const HeroSection = () => {
           textClassNames,
         )}
       >
-        <Title weight={'normal'} type={"h1"} ref={baseTextRef} className={cn("px-[2%] py-[36px] max-w-[900px] xl:text-[80px]", textClassNames)}>
+        <Title
+          ref={baseTextRef}
+          weight={'normal'}
+          type={"h1"}
+          className={cn("px-[4%] py-[36px] max-w-[900px] xl:text-[80px]", textClassNames)}>
           {t('headingText')}
           <span className={"text-foreground-light"}> {t('headingSubtext')}</span>
         </Title>

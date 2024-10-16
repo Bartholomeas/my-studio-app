@@ -1,4 +1,3 @@
-
 import dynamic from "next/dynamic";
 
 import { Text } from "@/components/common/text";
@@ -16,13 +15,12 @@ export const AboutSection = () => {
           <Title
             type={'h2'}
             color={'white'}
-            className={"text-center"}
+            weight={'semibold'}
           >
             Kim jesteśmy?
           </Title>
           <Text
             color={'white'}
-            className={"text-center"}
           >
             Na początku poznaj nas lepiej!
           </Text>

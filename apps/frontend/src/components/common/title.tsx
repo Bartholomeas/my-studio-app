@@ -49,7 +49,7 @@ export const titleVariants = cva("", {
 
   defaultVariants: {
     type: "h2",
-    weight: "normal",
+    weight: "semibold",
     color: "default",
     align: "left",
     typeface: "serif",
