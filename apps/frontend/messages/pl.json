@@ -1,7 +1,18 @@
 {
 	"common": {
-		"nicNudnegoStudio": "Nic Nudnego Studio",
-		"slogan": "Kreatywne rozwiązania dla Twoich cyfrowych potrzeb."
+		"slogan": "Kreatywne rozwiązania dla Twoich cyfrowych potrzeb.",
+		"windowMockup": {
+			"sidebar": {
+				"users": "Użytkownicy",
+				"goals": "Cel",
+				"tools": "Narzędzia",
+				"settings": "Ustawienia"
+			},
+			"content": {
+				"title": "Panel użytkowników",
+				"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+			}
+		}
 	},
 	"nav": {
 		"title": "Nawigacja",
@@ -26,7 +37,17 @@
 		},
 		"aboutSection": {
 			"title": "Kim jesteśmy?",
-			"subtitle": "Na początku poznaj nas lepiej!"
+			"subtitle": "Na początku poznaj nas lepiej!",
+			"cards": {
+				"title1": "Innowacyjne rozwiązania",
+				"text1": "Tworzymy aplikacje, które wyprzedzają potrzeby – nowoczesne technologie na wyciągnięcie ręki.",
+				"title2": "Innowacyjne rozwiązania",
+				"text2": "Tworzymy aplikacje, które wyprzedzają potrzeby – nowoczesne technologie na wyciągnięcie ręki.",
+				"title3": "Innowacyjne rozwiązania",
+				"text3": "Tworzymy aplikacje, które wyprzedzają potrzeby – nowoczesne technologie na wyciągnięcie ręki.",
+				"title4": "Innowacyjne rozwiązania",
+				"text4": "Tworzymy aplikacje, które wyprzedzają potrzeby – nowoczesne technologie na wyciągnięcie ręki."
+			}
 		},
 		"workProcess": {
 			"heading": "Nasz proces twórczy",

@@ -1,15 +1,30 @@
 import { Text } from "@/components/common/text";
+import { Title } from "@/components/common/title";
 import { Button } from "@/components/common/ui/button";
-import { Card } from "@/components/common/ui/card";
+import { Card, CardContent } from "@/components/common/ui/card";
 
-export const BentoLongItem = () => {
-  return <div className={"col-span-2 h-full sm:h-[220px]"}>
-    <Card variant={'dark'}>
-      <Text color={'background'} className={"mb-8"}>
-        These cards are a great place to give a high level break down of what
-        your website is about. Try to talk about benefits instead of features.
-      </Text>
-      <Button>Baton</Button>
+interface BentoLongItemProps {
+  title: string;
+  text: string;
+}
+
+export const BentoLongItem = ({ title, text }: BentoLongItemProps) => {
+  return <div className={"col-span-2 h-full"}>
+    <Card
+      variant={'darkGradient'}
+      padding={'lg'}>
+      <CardContent className={"p-0"}>
+        <Title
+          type={'h3'}
+          color={'white'}
+          className={"mb-2 text-2xl"}>
+          {title}
+        </Title>
+        <Text color={'background'}>
+          {text}
+        </Text>
+        <Button>Skontaktuj się z nami</Button>
+      </CardContent>
     </Card>
   </div>;
 };
