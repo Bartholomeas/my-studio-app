@@ -10,7 +10,7 @@ import { Button } from "@/components/common/ui/button";
 const CtaCircle = dynamic(() => import("@/components/common/special/cta-circle").then(res => res.CtaCircle));
 
 export const HeroBottomBox = () => {
-  const t = useTranslations('hero-section');
+  const t = useTranslations('/.heroSection');
 
   return (
     <>

@@ -1,10 +1,13 @@
+import { getTranslations } from "next-intl/server";
+
 import { SectionScaleRotate } from "@/components/common/animations/section-scale-rotate";
 import { Logo } from "@/components/common/special/logo";
 import { Text } from "@/components/common/text";
 import { Title } from "@/components/common/title";
 import { Card } from "@/components/common/ui/card";
 
-export const KnowUsMoreSection = () => {
+export const KnowUsMoreSection = async () => {
+  const t = await getTranslations('/.knowUsMoreSection');
 
   return (
     <SectionScaleRotate
@@ -19,7 +22,10 @@ export const KnowUsMoreSection = () => {
             color={'white'}
             weight={'semibold'}
             className={"mb-6 text-4xl md:text-[64px] md:leading-none"}>
-            Tworzymy aplikacje, które <span className={"text-primary"}>robią różnicę</span> – od kodu po design.
+
+            {t.rich('title', {
+              makesDifference: (chunks) => <span className={"text-primary"}>{chunks}</span>
+            })}
           </Title>
           <Text
             color={'light'}
@@ -27,7 +33,9 @@ export const KnowUsMoreSection = () => {
             weight={'medium'}
             className={"md:max-w-[80%]"}
           >
-            Jesteśmy zespołem, który przekłada <span className={"font-semibold text-foreground-white"}>Twoją wizję</span> na działające, innowacyjne rozwiązania, <span className={"font-semibold text-foreground-white"}>dostosowane do przyszłości.</span>
+            {t.rich('subtitle', {
+              highlight: (chunks) => <span className={"font-semibold text-foreground-white"}>{chunks}</span>
+            })}
           </Text>
         </div>
         <div
@@ -47,7 +55,7 @@ export const KnowUsMoreSection = () => {
               color={'white'}
               weight={'bold'}
               className={"text-md w-full text-center md:text-lg lg:text-xl xl:text-3xl"}>
-              Czyli pełen profesjonalizm
+              {t('boxSentence')}
             </Title>
           </Card>
         </div>

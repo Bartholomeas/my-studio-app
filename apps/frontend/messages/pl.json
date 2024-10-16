@@ -19,6 +19,11 @@
 			"headingTextMasked": "Kod, kawa i ołówek — z tego robimy cuda! Wyniesiemy Twoją wizję na nowy poziom. 😎",
 			"scrollCTA": "Przewiń w dół, aby dowiedzieć się więcej"
 		},
+		"knowUsMoreSection": {
+			"title": "Tworzymy aplikacje, które <makesDifference>robią różnicę</makesDifference> – od kodu po design.",
+			"subtitle": "Jesteśmy zespołem, który przekłada <highlight>Twoją wizję</highlight> na działające, innowacyjne rozwiązania, <highlight>dostosowane do przyszłości.</highlight>",
+			"boxSentence": "Czyli pełen profesjonalizm"
+		},
 		"aboutSection": {},
 		"workProcess": {
 			"heading": "Nasz proces twórczy",

@@ -18,7 +18,7 @@ export const CtaCircle = ({
   text,
   ...props
 }: CtaCircleProps) => {
-  const t = useTranslations('hero-section');
+  const t = useTranslations('/.heroSection');
 
   if (!text) text = t('scrollCTA');
 
