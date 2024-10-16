@@ -11,6 +11,7 @@ export const KnowUsMoreSection = async () => {
 
   return (
     <SectionScaleRotate
+      id={"know-us-more"}
       scaleOpts={{ inputRange: [0, 1], outputRange: [0.8, 1] }}
       rotateOpts={{ inputRange: [0, 1], outputRange: [5, 0] }}
       className={"relative flex min-h-screen items-center justify-center bg-background-dark"}
@@ -48,13 +49,13 @@ export const KnowUsMoreSection = async () => {
           <span className={"hidden aspect-square md:block"} />
           <span className={"hidden aspect-square md:block"} />
           <Card
-            variant={'dark'}
-            className={"flex flex-col items-center justify-center p-4 md:aspect-square"}>
+            variant={'darkGradient'}
+            className={"flex flex-col items-center justify-center bg-primary-400 p-4 md:aspect-square"}>
             <Title
               type={'h3'}
               color={'white'}
               weight={'bold'}
-              className={"text-md w-full text-center md:text-lg lg:text-xl xl:text-3xl"}>
+              className={"text-center md:text-md lg:text-xl xl:text-2xl"}>
               {t('boxSentence')}
             </Title>
           </Card>

@@ -1,5 +1,6 @@
 'use client';
 
+
 import dynamic from "next/dynamic";
 
 import { useTranslations } from "next-intl";
@@ -20,7 +21,8 @@ export const HeroBottomBox = () => {
       <MagneticWrapper
         className={"absolute bottom-16 right-16 flex items-center justify-center p-0"}
       >
-        <CtaCircle text={t('scrollCTA')} />
+        <CtaCircle
+          text={t('scrollCTA')} />
       </MagneticWrapper>
     </>
   );

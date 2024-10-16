@@ -13,8 +13,19 @@ export const AboutSection = () => {
     >
       <div className={"container flex h-full flex-col gap-3 py-24"}>
         <div className={"flex flex-col gap-2"}>
-          <Title color={'white'}>Kim jesteśmy?</Title>
-          <Text color={'white'}>Na początku poznaj nas lepiej!</Text>
+          <Title
+            type={'h2'}
+            color={'white'}
+            className={"text-center"}
+          >
+            Kim jesteśmy?
+          </Title>
+          <Text
+            color={'white'}
+            className={"text-center"}
+          >
+            Na początku poznaj nas lepiej!
+          </Text>
         </div>
         <BentoGrid />
       </div>

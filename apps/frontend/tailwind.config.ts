@@ -10,7 +10,7 @@ export default {
 		extend: {
 			container: {
 				center: true,
-				padding: "2%",
+				padding: "4%",
 				screens: {
 					"2xl": "1400px",
 				},
@@ -19,6 +19,17 @@ export default {
 				lg: "var(--radius)",
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
+			},
+			fontSize: {
+				// 1 rem = 16px
+				xxxs: "0.6875rem", //11px
+				xxs: "0.75rem", //12px
+				xs: "0.8125rem", // 13px
+				sm: "0.875rem", // 14px
+				base: "1rem", // 16px
+				md: "1rem", // 16px
+				lg: "1.125rem", // 18px
+				lgPlus: "1.25rem", // 20px
 			},
 			colors: {
 				background: {

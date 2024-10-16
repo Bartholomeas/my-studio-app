@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 
-interface CtaCircleProps extends Pick<ComponentProps<"button">, "onMouseEnter" | "onMouseLeave"> {
+interface CtaCircleProps extends Pick<ComponentProps<"button">, "onMouseEnter" | "onMouseLeave" | 'onClick'> {
   className?: string;
   text?: string;
 }
