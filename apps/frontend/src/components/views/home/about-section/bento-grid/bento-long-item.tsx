@@ -11,16 +11,17 @@ interface BentoLongItemProps {
 export const BentoLongItem = ({ title, text }: BentoLongItemProps) => {
   return <div className={"col-span-2 h-full"}>
     <Card
-      variant={'darkGradient'}
-      padding={'lg'}>
-      <CardContent className={"p-0"}>
+      variant={'dark'}
+      padding={'lg'}
+      className={"relative rounded-br-[100px] bg-primary  lg:rounded-br-full"}
+    >
+      <CardContent className={"flex flex-col gap-2 p-0 pr-8"}>
         <Title
           type={'h3'}
-          color={'white'}
-          className={"mb-2 text-2xl"}>
+          className={"text-2xl"}>
           {title}
         </Title>
-        <Text color={'background'}>
+        <Text size={'lg'}>
           {text}
         </Text>
         <Button>Skontaktuj się z nami</Button>

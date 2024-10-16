@@ -1,5 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
+import { BarChartMock } from "@/components/common/bar-chart-mock";
+
 import { BentoDefaultItem } from "./bento-default-item";
 import { BentoHighItem } from "./bento-high-item";
 import { BentoLongItem } from "./bento-long-item";
@@ -17,9 +19,13 @@ export const BentoGrid = async () => {
         <BentoDefaultItem
           title={t('cards.title2')}
           text={t('cards.text2')} />
+
         <BentoDefaultItem
           title={t('cards.title3')}
-          text={t('cards.text3')} />
+          text={t('cards.text3')}
+          addiitonalContent={<BarChartMock />}
+        />
+
         <BentoLongItem
           title={t('cards.title4')}
           text={t('cards.text4')} />
