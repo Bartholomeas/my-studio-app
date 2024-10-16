@@ -1,6 +1,7 @@
 {
 	"common": {
 		"slogan": "Kreatywne rozwiązania dla Twoich cyfrowych potrzeb.",
+		"contactUs": "Skontaktuj się z nami",
 		"windowMockup": {
 			"sidebar": {
 				"users": "Użytkownicy",
@@ -36,8 +37,8 @@
 			"boxSentence": "Czyli pełen profesjonalizm"
 		},
 		"aboutSection": {
-			"title": "Kim jesteśmy?",
-			"subtitle": "Na początku poznaj nas lepiej!",
+			"title": "Co robimy?",
+			"subtitle": "Robimy wiele rzeczy i dobrze, sprawdź sam!",
 			"cards": {
 				"title1": "Aplikacje internetowe, które działają i zachwycają",
 				"text1": "Tworzymy szybkie, skalowalne i dopasowane do Twojego biznesu aplikacje, które robią różnicę.",

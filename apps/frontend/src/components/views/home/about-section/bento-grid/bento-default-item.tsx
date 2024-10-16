@@ -14,7 +14,9 @@ export const BentoDefaultItem = ({ title, text, addiitonalContent }: BentoDefaul
     <Card variant={'darkGradient'} padding={'lg'}>
       <CardContent className={"flex h-full flex-col gap-2 p-0"}>
         <Title color={'white'} type={'h3'} className={"mb-2 text-2xl"}>{title}</Title>
-        <Text color={'background'} className={"mb-8"}>
+        <Text
+          color={'light'}
+          className={"mb-8"}>
           {text}
         </Text>
         {addiitonalContent}

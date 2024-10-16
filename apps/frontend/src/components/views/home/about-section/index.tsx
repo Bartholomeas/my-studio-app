@@ -14,17 +14,19 @@ export const AboutSection = async () => {
     <section
       className={"relative min-h-screen bg-background-dark"}
     >
-      <div className={"container flex h-full flex-col gap-3 py-24"}>
-        <div className={"flex flex-col gap-2"}>
+      <div className={"container flex h-full flex-col gap-6 py-24"}>
+        <div className={"mb-6 flex flex-col gap-0"}>
           <Title
             type={'h2'}
+            size={'h1'}
             color={'white'}
             weight={'semibold'}
           >
             {t('title')}
           </Title>
           <Text
-            color={'white'}
+            color={'light'}
+            size={'lg'}
           >
             {t('subtitle')}
           </Text>

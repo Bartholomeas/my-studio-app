@@ -16,7 +16,7 @@ export const DrawingPath = () => {
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
           transition={{
-            duration: 12,
+            duration: 8,
             ease: 'easeInOut',
             repeat: Infinity,
             repeatType: 'mirror',

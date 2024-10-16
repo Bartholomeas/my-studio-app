@@ -16,7 +16,9 @@ export const BentoHighItem = ({ title, text }: BentoHighItemProps) => {
     <Card variant={'darkGradient'} padding={'lg'}>
       <CardContent className={"p-0"}>
         <Title color={'white'} type={'h3'} className={"mb-2 text-2xl"}>{title}</Title>
-        <Text color={'background'} className={"mb-8"}>
+        <Text
+          color={'light'}
+          className={"mb-8"}>
           {text}
         </Text>
         <WindowMockup />
