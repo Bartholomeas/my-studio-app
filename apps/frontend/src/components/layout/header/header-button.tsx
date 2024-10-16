@@ -19,7 +19,7 @@ export const HeaderButton = ({ isActive = false, toggleMenu }: HeaderButtonProps
 		<Button
 			onClick={toggleMenu}
 			variant={"ghost"}
-			className={"z-[51] size-10 rounded-full bg-primary p-0"}
+			className={"z-[51] size-10 rounded-br-lg rounded-tl-lg bg-primary p-0"}
 			aria-label={isActive ? "Close menu" : "Open menu"}
 			aria-expanded={isActive}
 			aria-controls={"navigation-menu"}

@@ -3,7 +3,11 @@ import dynamic from "next/dynamic";
 import { HeroSection } from "src/components/views/home/hero-section";
 
 import { ScrollProgressContainer } from "@/components/common/animations/wrappers/scroll-progress-container";
-import { DescrptionSection } from "@/components/views/home/descrption-section";
+import { DescriptionSection } from "@/components/views/home/description-section";
+
+const KnowUsMoreSection = dynamic(() =>
+	import("@/components/views/home/know-us-more-section").then((res) => res.KnowUsMoreSection),
+);
 
 const AboutSection = dynamic(() =>
 	import("src/components/views/home/about-section").then((res) => res.AboutSection),
@@ -14,9 +18,7 @@ const ProjectsTrailerSection = dynamic(() =>
 	),
 );
 const ImageSentenceSection = dynamic(() =>
-	import("@/components/views/home/image-sentence-section").then(
-		(res) => res.ImageSentenceSection,
-	),
+	import("@/components/views/home/image-sentence-section").then((res) => res.ImageSentenceSection),
 );
 const HomeSentenceSection = dynamic(() =>
 	import("@/components/views/home/home-sentence-section").then((res) => res.HomeSentenceSection),
@@ -28,13 +30,14 @@ const WorkProcessSection = dynamic(() =>
 const Home = async () => {
 	return (
 		<>
-			<ScrollProgressContainer className={"relative h-[200vh]"}>
+			<ScrollProgressContainer className={"relative min-h-[200vh]"}>
 				<HeroSection />
-				<AboutSection />
+				<KnowUsMoreSection />
 			</ScrollProgressContainer>
+			<AboutSection />
 			<HomeSentenceSection />
 			<ProjectsTrailerSection />
-			<DescrptionSection />
+			<DescriptionSection />
 			<ScrollProgressContainer
 				scrollOpts={{ offset: ["start start", "end start"] }}
 				className={"h-screen overflow-hidden"}

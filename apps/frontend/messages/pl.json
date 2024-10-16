@@ -1,7 +1,19 @@
 {
 	"common": {
-		"nicNudnegoStudio": "Nic Nudnego Studio",
-		"slogan": "Kreatywne rozwiązania dla Twoich cyfrowych potrzeb."
+		"slogan": "Kreatywne rozwiązania dla Twoich cyfrowych potrzeb.",
+		"contactUs": "Skontaktuj się z nami",
+		"windowMockup": {
+			"sidebar": {
+				"users": "Użytkownicy",
+				"goals": "Cel",
+				"tools": "Narzędzia",
+				"settings": "Ustawienia"
+			},
+			"content": {
+				"title": "Panel użytkowników",
+				"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+			}
+		}
 	},
 	"nav": {
 		"title": "Nawigacja",
@@ -11,12 +23,72 @@
 			"contact": "Kontakt"
 		}
 	},
-	"hero-section": {
-		"headingText": "Idealne rozwiązania dla Twoich cyfrowych potrzeb.",
-		"headingSubtext": "Gotowy na coś wyjątkowego?",
-		"headingTextMasked": "Kod, kawa i ołówek — z tego robimy cuda! Wyniesiemy Twoją wizję na nowy poziom. 😎",
-		"scrollCTA": "Przewiń w dół, aby dowiedzieć się więcej"
+
+	"/": {
+		"heroSection": {
+			"headingText": "Idealne rozwiązania dla Twoich cyfrowych potrzeb.",
+			"headingSubtext": "Gotowi na coś wyjątkowego?",
+			"headingTextMasked": "Kod, kawa i ołówek — z tego robimy cuda! Wyniesiemy Twoją wizję na nowy poziom. 😎",
+			"scrollCTA": "Przewiń w dół, aby dowiedzieć się więcej"
+		},
+		"knowUsMoreSection": {
+			"title": "Tworzymy aplikacje, które <makesDifference>robią różnicę</makesDifference> – od kodu po design.",
+			"subtitle": "Jesteśmy zespołem, który przekłada <highlight>Twoją wizję</highlight> na działające, innowacyjne rozwiązania, <highlight>dostosowane do przyszłości.</highlight>",
+			"boxSentence": "Czyli pełen profesjonalizm"
+		},
+		"aboutSection": {
+			"title": "Co robimy?",
+			"subtitle": "Robimy wiele rzeczy i dobrze, sprawdź sam!",
+			"cards": {
+				"title1": "Aplikacje internetowe, które działają i zachwycają",
+				"text1": "Tworzymy szybkie, skalowalne i dopasowane do Twojego biznesu aplikacje, które robią różnicę.",
+				"title2": "UI/UX Design, który przyciąga i angażuje",
+				"text2": "Projektujemy niepowtarzalne i intuicyjne interfejsy, które sprawią, że Twoja marka zacznie *błyszczeć*.",
+				"title3": "SEO, które wynosi Twoją stronę na szczyt",
+				"text3": "Zadbaj o widoczność – optymalizujemy Twoją stronę, aby klienci mogli Cię znaleźć w tłumie.",
+				"title4": "Gotowy, by zrobić krok naprzód?",
+				"text4": "Porozmawiajmy i wspólnie przekształćmy Twoje pomysły w rzeczywistość!"
+			}
+		},
+		"workProcess": {
+			"heading": "Nasz proces twórczy",
+			"initWork": {
+				"heading": "Wstępne warunki i zakres pracy",
+				"text": "Na początku ustalamy satysfakcjonujące nas warunki współpracy, takie jak czas realizacji, budżet i oczekiwania. Podpisujemy umowy, które jasno określają zakres projektu, aby zapewnić przejrzystość na każdym etapie."
+			},
+			"functionalities": {
+				"heading": "Ustalenia dotyczące wyglądu i funkcjonalności",
+				"text1": "Omawiamy przeznaczenie projektu, jego główne cele oraz wygląd. Możesz przesłać przykłady innych projektów, które Ci się podobają, co pomoże lepiej zrozumieć Twoje oczekiwania. Im więcej szczegółów dostarczysz, tym lepiej!",
+				"text2": "To również moment, w którym ustalamy główne funkcjonalności i wymagania techniczne, aby wszystko działało tak, jak sobie życzysz."
+			},
+			"inspirations": {
+				"heading": "Szukanie inspiracji i badania",
+				"text1": "Zbieramy kluczowe dane i pomysły, aby projekt był unikalny i dopasowany do Twojej marki. Analizujemy konkurencję, szukamy inspiracji w najnowszych trendach oraz technologiach, które można zaimplementować.",
+				"text2": "Tworzę moodboardy, które pomogą zwizualizować kierunek estetyczny, zanim przejdziemy do projektowania mockupu."
+			},
+			"acceptance": {
+				"heading": "Akceptacja mockupu",
+				"text1": "Przesyłam Ci wstępny szkielet wizualny projektu (mockup), który przedstawia układ i wygląd strony/aplikacji. Na tym etapie możesz wprowadzić swoje uwagi, a ja wprowadzam potrzebne poprawki.",
+				"text2": "Gdy mockup jest zatwierdzony, ruszamy z właściwym tworzeniem i implementacją!"
+			},
+			"buildingInProgress": {
+				"heading": "Projekt w budowie",
+				"text1": "Rozpoczynamy prace nad budową strony lub aplikacji. Każdy etap jest starannie przemyślany, aby spełniał Twoje wymagania pod względem funkcjonalności, wydajności oraz estetyki.",
+				"text2": "Możesz śledzić postępy na bieżąco, a ja regularnie informuję o postępach, abyś miał pełną kontrolę nad projektem."
+			},
+			"testingProcess": {
+				"heading": "Testowanie i optymalizacja",
+				"text1": "Przed finalnym oddaniem projektu przeprowadzamy testy funkcjonalności, responsywności i wydajności. Wprowadzamy niezbędne poprawki, aby upewnić się, że wszystko działa idealnie na różnych urządzeniach i przeglądarkach.",
+				"text2": "Dodatkowo optymalizujemy stronę pod kątem SEO, aby była lepiej widoczna w wyszukiwarkach."
+			},
+			"finalVersion": {
+				"heading": "Finalna wersja i wdrożenie",
+				"text1": "Po zakończeniu testów i optymalizacji, przekazujemy gotowy produkt. Jeśli wszystko jest zgodne z oczekiwaniami, publikujemy stronę/aplikację i uruchamiamy ją w produkcyjnym środowisku.",
+				"text2": "Oferujemy również wsparcie po wdrożeniu, abyś zawsze mógł liczyć na pomoc w przypadku jakichkolwiek pytań lub potrzebnych aktualizacji."
+			}
+		}
 	},
+
 	"footer": {
 		"slogan": "Kreatywne rozwiązania dla Twoich potrzeb cyfrowych",
 		"fastLinks": {
@@ -35,42 +107,5 @@
 			"cookiePolicy": "Polityka cookie"
 		},
 		"copyrightDisclaimer": "Wszystkie prawa zastrzeżone."
-	},
-	"workProcess": {
-		"heading": "Nasz proces twórczy",
-		"initWork": {
-			"heading": "Wstępne warunki i zakres pracy",
-			"text": "Na początku ustalamy satysfakcjonujące nas warunki współpracy, takie jak czas realizacji, budżet i oczekiwania. Podpisujemy umowy, które jasno określają zakres projektu, aby zapewnić przejrzystość na każdym etapie."
-		},
-		"functionalities": {
-			"heading": "Ustalenia dotyczące wyglądu i funkcjonalności",
-			"text1": "Omawiamy przeznaczenie projektu, jego główne cele oraz wygląd. Możesz przesłać przykłady innych projektów, które Ci się podobają, co pomoże lepiej zrozumieć Twoje oczekiwania. Im więcej szczegółów dostarczysz, tym lepiej!",
-			"text2": "To również moment, w którym ustalamy główne funkcjonalności i wymagania techniczne, aby wszystko działało tak, jak sobie życzysz."
-		},
-		"inspirations": {
-			"heading": "Szukanie inspiracji i badania",
-			"text1": "Zbieramy kluczowe dane i pomysły, aby projekt był unikalny i dopasowany do Twojej marki. Analizujemy konkurencję, szukamy inspiracji w najnowszych trendach oraz technologiach, które można zaimplementować.",
-			"text2": "Tworzę moodboardy, które pomogą zwizualizować kierunek estetyczny, zanim przejdziemy do projektowania mockupu."
-		},
-		"acceptance": {
-			"heading": "Akceptacja mockupu",
-			"text1": "Przesyłam Ci wstępny szkielet wizualny projektu (mockup), który przedstawia układ i wygląd strony/aplikacji. Na tym etapie możesz wprowadzić swoje uwagi, a ja wprowadzam potrzebne poprawki.",
-			"text2": "Gdy mockup jest zatwierdzony, ruszamy z właściwym tworzeniem i implementacją!"
-		},
-		"buildingInProgress": {
-			"heading": "Projekt w budowie",
-			"text1": "Rozpoczynamy prace nad budową strony lub aplikacji. Każdy etap jest starannie przemyślany, aby spełniał Twoje wymagania pod względem funkcjonalności, wydajności oraz estetyki.",
-			"text2": "Możesz śledzić postępy na bieżąco, a ja regularnie informuję o postępach, abyś miał pełną kontrolę nad projektem."
-		},
-		"testingProess": {
-			"heading": "Testowanie i optymalizacja",
-			"text1": "Przed finalnym oddaniem projektu przeprowadzamy testy funkcjonalności, responsywności i wydajności. Wprowadzamy niezbędne poprawki, aby upewnić się, że wszystko działa idealnie na różnych urządzeniach i przeglądarkach.",
-			"text2": "Dodatkowo optymalizujemy stronę pod kątem SEO, aby była lepiej widoczna w wyszukiwarkach."
-		},
-		"finalVersion": {
-			"heading": "Finalna wersja i wdrożenie",
-			"text1": "Po zakończeniu testów i optymalizacji, przekazujemy gotowy produkt. Jeśli wszystko jest zgodne z oczekiwaniami, publikujemy stronę/aplikację i uruchamiamy ją w produkcyjnym środowisku.",
-			"text2": "Oferujemy również wsparcie po wdrożeniu, abyś zawsze mógł liczyć na pomoc w przypadku jakichkolwiek pytań lub potrzebnych aktualizacji."
-		}
 	}
 }

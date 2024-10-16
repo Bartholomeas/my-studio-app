@@ -1,34 +1,28 @@
+import dynamic from "next/dynamic";
 
-import { SectionScaleRotate } from "@/components/common/animations/section-scale-rotate";
+import { getTranslations } from "next-intl/server";
+
 import { Text } from "@/components/common/text";
 import { Title } from "@/components/common/title";
 
+const BentoGrid = dynamic(() => import("./bento-grid").then((res) => res.BentoGrid));
 
-export const AboutSection = () => {
-  return (
-    <SectionScaleRotate
-      scaleOpts={{ inputRange: [0, 1], outputRange: [0.8, 1] }}
-      rotateOpts={{ inputRange: [0, 1], outputRange: [5, 0] }}
-      className={"relative h-screen bg-foreground "}
-    >
-      {/* <div className={"container relative flex h-full flex-col gap-2  py-24 md:flex-row"}> */}
-      <div className={"cols-4 container relative grid gap-3 py-24"}>
-        <div className={"col-span-1"}>
+export const AboutSection = async () => {
+	const t = await getTranslations("/.aboutSection");
 
-          <Title color={'background'} className={"sticky top-4"}>O nas</Title>
-        </div>
-        <div className={"col-span-3"}>
-          <Text color={'background'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores omnis eveniet voluptatem amet reprehenderit nemo. Nulla expedita nobis ipsam libero quia fugit. Officiis fugit voluptate porro enim non, magnam facilis.</Text>
-        </div>
-
-      </div>
-      {/* <Image
-				src={Pic2}
-				alt={"BackgroundImage"}
-				className={"object-cover"}
-				fill
-				placeholder={"blur"}
-			/> */}
-    </SectionScaleRotate>
-  );
+	return (
+		<section className={"relative min-h-screen bg-background-dark"}>
+			<div className={"container flex h-full flex-col gap-6 py-24"}>
+				<div className={"mb-6 flex flex-col gap-0"}>
+					<Title type={"h2"} size={"h1"} color={"white"} weight={"semibold"}>
+						{t("title")}
+					</Title>
+					<Text color={"light"} size={"lg"}>
+						{t("subtitle")}
+					</Text>
+				</div>
+				<BentoGrid />
+			</div>
+		</section>
+	);
 };

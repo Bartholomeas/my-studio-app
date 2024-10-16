@@ -6,7 +6,7 @@ import { useInView } from "framer-motion";
 
 import { RevealingText } from "@/components/common/special/revealing-text";
 
-export const DescrptionSection = () => {
+export const DescriptionSection = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const isInView = useInView(containerRef, {
 		margin: "-200px",

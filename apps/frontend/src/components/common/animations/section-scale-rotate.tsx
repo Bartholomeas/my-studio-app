@@ -6,7 +6,7 @@ import { motion, useTransform } from "framer-motion";
 
 import { useScrollProgressContext } from "./context/scroll-progress-context";
 
-type SectionScaleRotateProps = {
+type SectionScaleRotateProps = ComponentProps<"section"> & {
 	children: ReactNode;
 	className?: ComponentProps<"section">["className"];
 	scaleOpts?: { inputRange: number[]; outputRange: number[] };
