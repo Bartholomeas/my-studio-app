@@ -24,7 +24,10 @@
 			"subtitle": "Jesteśmy zespołem, który przekłada <highlight>Twoją wizję</highlight> na działające, innowacyjne rozwiązania, <highlight>dostosowane do przyszłości.</highlight>",
 			"boxSentence": "Czyli pełen profesjonalizm"
 		},
-		"aboutSection": {},
+		"aboutSection": {
+			"title": "Kim jesteśmy?",
+			"subtitle": "Na początku poznaj nas lepiej!"
+		},
 		"workProcess": {
 			"heading": "Nasz proces twórczy",
 			"initWork": {

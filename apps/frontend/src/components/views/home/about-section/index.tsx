@@ -1,11 +1,15 @@
 import dynamic from "next/dynamic";
 
+import { getTranslations } from "next-intl/server";
+
 import { Text } from "@/components/common/text";
 import { Title } from "@/components/common/title";
 
 const BentoGrid = dynamic(() => import("./bento-grid").then((res) => res.BentoGrid));
 
-export const AboutSection = () => {
+export const AboutSection = async () => {
+  const t = await getTranslations('/.aboutSection');
+
   return (
     <section
       className={"relative min-h-screen bg-background-dark"}
@@ -17,12 +21,12 @@ export const AboutSection = () => {
             color={'white'}
             weight={'semibold'}
           >
-            Kim jesteśmy?
+            {t('title')}
           </Title>
           <Text
             color={'white'}
           >
-            Na początku poznaj nas lepiej!
+            {t('subtitle')}
           </Text>
         </div>
         <BentoGrid />

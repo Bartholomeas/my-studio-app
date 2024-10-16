@@ -46,16 +46,16 @@ export const KnowUsMoreSection = async () => {
             className={"flex flex-col items-center justify-center bg-primary md:aspect-square"}>
             <Logo className={"text-lg md:text-xl xl:text-3xl"} />
           </Card>
-          <span className={"hidden aspect-square md:block"} />
+          <span className={"mb-2 ml-2 hidden aspect-square rounded-bl-full bg-primary-400 md:block"} />
           <span className={"hidden aspect-square md:block"} />
           <Card
             variant={'darkGradient'}
-            className={"flex flex-col items-center justify-center bg-primary-400 p-4 md:aspect-square"}>
+            className={"flex flex-col items-center justify-center p-4 md:aspect-square"}>
             <Title
               type={'h3'}
               color={'white'}
               weight={'bold'}
-              className={"text-center md:text-md lg:text-xl xl:text-2xl"}>
+              className={"md:text-md text-center lg:text-xl xl:text-2xl"}>
               {t('boxSentence')}
             </Title>
           </Card>
