@@ -1,5 +1,7 @@
+'use client';
+
 import { AwardIcon, HammerIcon, SettingsIcon, TargetIcon, UserIcon } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
 import { Text } from "../text";
 import { Skeleton } from "../ui/skeleton";
@@ -14,8 +16,8 @@ export const WindowMockup = () => (
   </div>
 );
 
-const MockupSideBar = async () => {
-  const t = await getTranslations('common.windowMockup');
+const MockupSideBar = () => {
+  const t = useTranslations('common.windowMockup');
 
   return <div className={"h-full w-32 border-r border-zinc-700 bg-zinc-900 p-2"} >
     <div className={"mb-4 flex items-center justify-between "}>
@@ -65,8 +67,8 @@ const MockupTopBar = () => (
   </div>
 );
 
-const MockupMain = async () => {
-  const t = await getTranslations('common.windowMockup');
+const MockupMain = () => {
+  const t = useTranslations('common.windowMockup');
 
   return (
     <div className={"relative w-full"}>

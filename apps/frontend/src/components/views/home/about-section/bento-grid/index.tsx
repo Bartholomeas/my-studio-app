@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
+import { DrawingPath } from "@/components/common/animations/drawing-path";
 import { BarChartMock } from "@/components/common/bar-chart-mock";
 
 import { BentoDefaultItem } from "./bento-default-item";
@@ -18,8 +19,9 @@ export const BentoGrid = async () => {
         className={"col-span-1 grid grid-cols-2 lg:col-span-8 lg:grid-cols-2"}>
         <BentoDefaultItem
           title={t('cards.title2')}
-          text={t('cards.text2')} />
-
+          text={t('cards.text2')}
+          addiitonalContent={<DrawingPath />}
+        />
         <BentoDefaultItem
           title={t('cards.title3')}
           text={t('cards.text3')}

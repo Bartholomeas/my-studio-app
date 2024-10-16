@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, useEffect, useRef } from "react";
+import { forwardRef, useEffect, useMemo, useRef } from "react";
 
 import { useScroll } from "framer-motion";
 
@@ -22,11 +22,13 @@ export const RollingTextPath = forwardRef<HTMLDivElement, RollingTextPathProps>(
         path.setAttribute("startOffset", -pathOffsetValue + (i * pathOffsetValue) + (e * pathOffsetValue) + '%');
       });
     });
-  }, []);
+  }, [pathOffsetValue, scrollYProgress]);
+
+  const pathArr = useMemo(() => Array.from({ length: 3 }, () => null), []);
 
   return (
     <svg
-      className={"mb-OFFS w-full"}
+      className={"w-full"}
       viewBox={"0 0 250 90"}
     >
       <path
@@ -35,9 +37,8 @@ export const RollingTextPath = forwardRef<HTMLDivElement, RollingTextPathProps>(
         d={"m0,88.5c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68"} />
       <text
         className={"fill-primary text-lg uppercase"}
-      // style={{ fill: 'red' }}
       >
-        {[...Array(3)].map((_, i) => (
+        {pathArr.map((_, i) => (
           <textPath
             key={`rollingTextPathItem-${i}`}
             ref={(ref: SVGTextPathElement | null) => {

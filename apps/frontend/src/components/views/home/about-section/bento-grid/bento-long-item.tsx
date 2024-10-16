@@ -13,9 +13,9 @@ export const BentoLongItem = ({ title, text }: BentoLongItemProps) => {
     <Card
       variant={'dark'}
       padding={'lg'}
-      className={"relative rounded-br-[100px] bg-primary  lg:rounded-br-full"}
+      className={"relative rounded-br-[100px] bg-primary-400 lg:rounded-br-full"}
     >
-      <CardContent className={"flex flex-col gap-2 p-0 pr-8"}>
+      <CardContent className={"flex flex-col gap-2 p-0 py-6 pr-8"}>
         <Title
           type={'h3'}
           className={"text-2xl"}>
