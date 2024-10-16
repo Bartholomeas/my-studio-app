@@ -11,7 +11,7 @@ import { COMPANY_NAME } from "@/misc/constants";
 import { textVariants } from "../text";
 
 const logoContent = (
-  <div className={"flex items-center gap-1"}>
+  <div className={"flex items-center gap-1 text-nowrap"}>
     {COMPANY_NAME}
     <span className={"size-1.5 rounded-full bg-primary-700"} />
   </div>

@@ -29,6 +29,7 @@ export default {
 					DEFAULT: "var(--foreground)",
 					muted: "var(--foreground-muted)",
 					light: "var(--foreground-light)",
+					white: "var(--foreground-white)",
 				},
 				card: {
 					DEFAULT: "hsl(var(--card))",

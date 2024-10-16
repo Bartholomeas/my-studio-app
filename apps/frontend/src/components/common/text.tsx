@@ -28,7 +28,7 @@ export const textVariants = cva("", {
       background: "text-background",
       primary: "text-primary",
       secondary: "text-secondary",
-      white: "text-[#f4f4f4]",
+      white: "text-foreground-white",
       success: "text-success-600",
     },
     weight: {

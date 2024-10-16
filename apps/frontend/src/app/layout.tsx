@@ -23,14 +23,14 @@ const sans = Manrope({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const serif = Sora({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-serif",
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {

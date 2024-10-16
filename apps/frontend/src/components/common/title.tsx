@@ -26,7 +26,7 @@ export const titleVariants = cva("", {
       background: "text-background",
       primary: "text-primary",
       secondary: "text-secondary",
-      white: "text-[#f4f4f4]",
+      white: "text-foreground-white",
     },
     weight: {
       normal: "font-normal",
