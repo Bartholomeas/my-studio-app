@@ -28,7 +28,7 @@ export const HeroSection = () => {
 
   const [textHeight, setTextHeight] = useState<number | null>(null);
 
-  const t = useTranslations('hero-section');
+  const t = useTranslations('/.heroSection');
 
   const calculateTextHeight = useCallback(() => {
     if (baseTextRef?.current) {

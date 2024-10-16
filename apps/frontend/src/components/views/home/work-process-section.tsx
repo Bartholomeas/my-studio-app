@@ -14,7 +14,7 @@ import { Title } from "@/components/common/title";
 import { Timeline } from "@/components/timeline";
 import { type TimelineBoxProps } from "@/components/timeline/timeline-box";
 
-const t = await getTranslations('workProcess');
+const t = await getTranslations('/.workProcess');
 
 const data: TimelineBoxProps[] = [
   {
@@ -85,14 +85,14 @@ const data: TimelineBoxProps[] = [
     icon: <CodeIcon />,
   },
   {
-    title: t('testingProess.heading'),
+    title: t('testingProcess.heading'),
     content: (
       <div className={"flex flex-col gap-4"}>
         <Text size={"h5"}>
-          {t('testingProess.text1')}
+          {t('testingProcess.text1')}
         </Text>
         <Text size={"h5"}>
-          {t('testingProess.text2')}
+          {t('testingProcess.text2')}
         </Text>
       </div>
     ),
