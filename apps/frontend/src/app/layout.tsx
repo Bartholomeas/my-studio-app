@@ -26,12 +26,11 @@ const sans = Manrope({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-// const yrsa = Yrsa({
 const serif = Sora({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-serif",
-  weight: ["400"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {

@@ -10,7 +10,8 @@ const cardVariants = cva(
     variants: {
       variant: {
         default: "bg-background text-foreground",
-        dark: "border-foreground-muted bg-gradient-to-br from-background-dark to-black/50 text-background"
+        dark: "border-foreground-muted bg-background-dark text-background",
+        darkGradient: "border-foreground-muted bg-gradient-to-br from-background-dark to-black/50 text-background"
       },
       padding: {
         none: "",
