@@ -5,6 +5,7 @@ import { HeroSection } from "src/components/views/home/hero-section";
 import { ScrollProgressContainer } from "@/components/common/animations/wrappers/scroll-progress-container";
 import { DescriptionSection } from "@/components/views/home/description-section";
 
+
 const KnowUsMoreSection = dynamic(() =>
   import("@/components/views/home/know-us-more-section").then((res) => res.KnowUsMoreSection),
 );
@@ -12,17 +13,25 @@ const KnowUsMoreSection = dynamic(() =>
 const AboutSection = dynamic(() =>
   import("src/components/views/home/about-section").then((res) => res.AboutSection),
 );
+
+const TeamSection = dynamic(() =>
+  import("@/components/views/home/team-section").then((res) => res.TeamSection),
+);
+
 const ProjectsTrailerSection = dynamic(() =>
   import("@/components/views/home/projects-trailer-section").then(
     (res) => res.ProjectsTrailerSection,
   ),
 );
+
 const ImageSentenceSection = dynamic(() =>
   import("@/components/views/home/image-sentence-section").then((res) => res.ImageSentenceSection),
 );
+
 const HomeSentenceSection = dynamic(() =>
   import("@/components/views/home/home-sentence-section").then((res) => res.HomeSentenceSection),
 );
+
 const WorkProcessSection = dynamic(() =>
   import("@/components/views/home/work-process-section").then((res) => res.WorkProcessSection),
 );
@@ -35,6 +44,7 @@ const Home = async () => {
         <KnowUsMoreSection />
       </ScrollProgressContainer>
       <AboutSection />
+      <TeamSection />
       <HomeSentenceSection />
       <ProjectsTrailerSection />
       <DescriptionSection />

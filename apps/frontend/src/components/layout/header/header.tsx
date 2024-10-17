@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 import dynamic from "next/dynamic";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
@@ -12,6 +12,7 @@ import { Button } from "@/components/common/ui/button";
 
 import { Logo } from "@/components/common/special/logo";
 import { MagneticWrapper } from "@/components/common/special/magnetic-wrapper";
+import { APP_ROUTES } from "@/misc/routes";
 
 import { HeaderButton } from "./header-button";
 
@@ -31,6 +32,12 @@ export const Header = () => {
     setIsActive((prev) => !prev);
   };
 
+  const router = useRouter();
+
+  const handleContactClick = () => {
+    router.push(APP_ROUTES.contact.href);
+  };
+
   return (
     <nav
       className={
@@ -44,7 +51,11 @@ export const Header = () => {
           <Button
             variant={'link'}
             withIcon
-          >{t('contactCta')}</Button>
+            onClick={handleContactClick}
+            aria-label={t('contactCta')}
+          >
+            {t('contactCta')}
+          </Button>
         </MagneticWrapper>
         <HeaderButton isActive={isActive} toggleMenu={toggleMenu} />
       </div>
