@@ -3,9 +3,10 @@ const WindowMockup = dynamic(() =>
 );
 import dynamic from "next/dynamic";
 
+import { Card, CardContent } from "@/components/common/ui/card";
+
 import { Text } from "@/components/common/text";
 import { Title } from "@/components/common/title";
-import { Card, CardContent } from "@/components/common/ui/card";
 
 interface BentoHighItemProps {
 	title: string;

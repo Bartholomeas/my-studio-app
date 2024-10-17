@@ -5,6 +5,7 @@ import { type ComponentProps } from "react";
 import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+
 import { slideUp } from "@/misc/animations";
 
 import { Text } from "../text";

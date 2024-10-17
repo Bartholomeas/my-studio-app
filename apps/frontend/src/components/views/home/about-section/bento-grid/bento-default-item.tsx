@@ -1,8 +1,9 @@
 import { type ReactNode } from "react";
 
+import { Card, CardContent } from "@/components/common/ui/card";
+
 import { Text } from "@/components/common/text";
 import { Title } from "@/components/common/title";
-import { Card, CardContent } from "@/components/common/ui/card";
 
 interface BentoDefaultItemProps {
 	title: string;
