@@ -6,9 +6,10 @@ import { Manrope, Sora } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 
+import { LenisWrapper } from "@/lib/lenis/lenis";
+
 import { MousePositionProvider } from "@/components/common/special/cursor-handler/use-mouse-position-context";
 import { Header } from "@/components/layout/header/header";
-import { LenisWrapper } from "@/lib/lenis/lenis";
 
 import type { Metadata } from "next";
 

@@ -17,6 +17,7 @@
 	},
 	"nav": {
 		"title": "Nawigacja",
+		"contactCta": "Kontakt",
 		"links": {
 			"home": "Strona główna",
 			"blog": "Blog",

@@ -6,6 +6,9 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 
 import { AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
+
+import { Button } from "@/components/common/ui/button";
 
 import { Logo } from "@/components/common/special/logo";
 
@@ -14,27 +17,35 @@ import { HeaderButton } from "./header-button";
 const Nav = dynamic(() => import("./nav/nav").then((res) => res.Nav));
 
 export const Header = () => {
-	const [isActive, setIsActive] = useState(false);
-	const pathname = usePathname();
+  const t = useTranslations("nav");
 
-	useEffect(() => {
-		if (isActive) setIsActive(false);
-	}, [pathname]);
+  const [isActive, setIsActive] = useState(false);
+  const pathname = usePathname();
 
-	const toggleMenu = () => {
-		setIsActive((prev) => !prev);
-	};
+  useEffect(() => {
+    if (isActive) setIsActive(false);
+  }, [pathname]);
 
-	return (
-		<nav
-			className={
-				"container fixed inset-x-0 top-0 z-50 mx-auto flex items-center justify-between py-2"
-			}
-		>
-			<Logo />
+  const toggleMenu = () => {
+    setIsActive((prev) => !prev);
+  };
 
-			<HeaderButton isActive={isActive} toggleMenu={toggleMenu} />
-			<AnimatePresence mode={"wait"}>{isActive && <Nav />}</AnimatePresence>
-		</nav>
-	);
+  return (
+    <nav
+      className={
+        "container fixed inset-x-0 top-0 z-50 mx-auto flex items-center justify-between py-2"
+      }
+    >
+      <Logo />
+
+      <div className={"flex items-center gap-2"}>
+        <Button
+          variant={'link'}
+          withIcon
+        >{t('contactCta')}</Button>
+        <HeaderButton isActive={isActive} toggleMenu={toggleMenu} />
+      </div>
+      <AnimatePresence mode={"wait"}>{isActive && <Nav />}</AnimatePresence>
+    </nav>
+  );
 };

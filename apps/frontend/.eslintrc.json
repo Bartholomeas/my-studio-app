@@ -59,6 +59,21 @@
 						"position": "before"
 					},
 					{
+						"pattern": "@/lib/**",
+						"group": "internal",
+						"position": "after"
+					},
+					{
+						"pattern": "@/components/common/ui/**",
+						"group": "internal",
+						"position": "after"
+					},
+					{
+						"pattern": "@/components**",
+						"group": "internal",
+						"position": "after"
+					},
+					{
 						"pattern": "@/**",
 						"group": "internal",
 						"position": "after"

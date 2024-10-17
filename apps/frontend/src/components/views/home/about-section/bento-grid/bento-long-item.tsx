@@ -2,11 +2,12 @@ import Link from "next/link";
 
 import { getTranslations } from "next-intl/server";
 
+import { buttonVariants } from "@/components/common/ui/button";
+import { Card, CardContent } from "@/components/common/ui/card";
+
 import { MagneticWrapper } from "@/components/common/special/magnetic-wrapper";
 import { Text } from "@/components/common/text";
 import { Title } from "@/components/common/title";
-import { buttonVariants } from "@/components/common/ui/button";
-import { Card, CardContent } from "@/components/common/ui/card";
 import { APP_ROUTES } from "@/misc/routes";
 
 interface BentoLongItemProps {
