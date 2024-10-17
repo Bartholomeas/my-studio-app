@@ -14,8 +14,8 @@ const cardVariants = cva("relative size-full overflow-hidden border shadow", {
     },
     shape: {
       default: "",
-      skewedLeft: "rounded-bl-lg rounded-br-[25%] rounded-tl-[25%] rounded-tr-lg",
-      skewedRight: "rounded-bl-[25%] rounded-br-lg rounded-tl-lg rounded-tr-[25%]",
+      skewedLeft: "rounded-bl-none rounded-br-[25%] rounded-tl-[25%] rounded-tr-none",
+      skewedRight: "rounded-bl-[25%] rounded-br-none rounded-tl-none rounded-tr-[25%]",
     },
     padding: {
       none: "",

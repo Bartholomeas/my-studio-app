@@ -15,7 +15,7 @@ export const TeamSection = async () => {
   return (
     <section className={"relative flex min-h-screen items-center justify-center overflow-hidden"}>
       <div className={"container mx-auto px-4"}>
-        <div className={"flex flex-col"}>
+        <div className={"mb-6 flex flex-col"}>
           <Title
             type={'h2'}
             size={'h1'}
@@ -26,7 +26,7 @@ export const TeamSection = async () => {
             weight={'semibold'}
           >{t('subtitle')}</Text>
         </div>
-        <div className={"grid min-h-[400px] w-full grid-cols-4 place-content-center items-center gap-2"}>
+        <div className={"flex size-full min-h-[400px] flex-col items-center justify-center gap-2 md:grid md:grid-cols-4 md:place-content-center md:items-center"}>
           <CtaCircle
             arrowDirection={"right"}
             arrowClassName={"group-hover:-rotate-45 col-span-1"}
