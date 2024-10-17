@@ -11,6 +11,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/common/ui/button";
 
 import { Logo } from "@/components/common/special/logo";
+import { MagneticWrapper } from "@/components/common/special/magnetic-wrapper";
 
 import { HeaderButton } from "./header-button";
 
@@ -39,10 +40,12 @@ export const Header = () => {
       <Logo />
 
       <div className={"flex items-center gap-2"}>
-        <Button
-          variant={'link'}
-          withIcon
-        >{t('contactCta')}</Button>
+        <MagneticWrapper noPadding>
+          <Button
+            variant={'link'}
+            withIcon
+          >{t('contactCta')}</Button>
+        </MagneticWrapper>
         <HeaderButton isActive={isActive} toggleMenu={toggleMenu} />
       </div>
       <AnimatePresence mode={"wait"}>{isActive && <Nav />}</AnimatePresence>
