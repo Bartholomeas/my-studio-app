@@ -12,29 +12,34 @@ interface TeamCardProps extends TeamMember {
   isLeft: boolean;
   className?: ComponentProps<"div">["className"];
 }
+
 export const TeamMemberCarouselCard = ({ isLeft = false, image, className, ...props }: TeamCardProps) => {
   console.log(props);
 
-  return <Card
-    padding={'none'}
-    shape={!isLeft ? 'skewedLeft' : 'skewedRight'}
-    className={cn("relative aspect-square h-full border-background-light", className)}>
-    <Image
-      src={image}
-      loading={"lazy"}
-      placeholder={"blur"}
-      alt={"Me"}
-      fill
-      className={"object-cover"}
-    />
-  </Card>;
+  return (
+    <Card
+      padding={'none'}
+      shape={!isLeft ? 'skewedLeft' : 'skewedRight'}
+      className={cn("relative aspect-square w-full border-background-light", className)}
+    >
+      <Image
+        src={image}
+        loading={"lazy"}
+        placeholder={"blur"}
+        alt={"Team member"}
+        fill
+        className={"object-cover"}
+      />
+    </Card>
+  );
 };
 
 export const TeamMemberPlaceholder = ({ className, isLeft }: Pick<TeamCardProps, 'isLeft' | 'className'>) => {
-  return <Card
-    padding={'none'}
-    shape={!isLeft ? 'skewedLeft' : 'skewedRight'}
-    className={cn("relative aspect-square h-full border-background-light", className)}>
-
-  </Card>;
+  return (
+    <Card
+      padding={'none'}
+      shape={!isLeft ? 'skewedLeft' : 'skewedRight'}
+      className={cn("relative aspect-square w-full border-background-light", className)}
+    />
+  );
 };
