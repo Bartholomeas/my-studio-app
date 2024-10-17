@@ -3,19 +3,35 @@
 import { type ComponentProps } from "react";
 
 import { motion } from "framer-motion";
-import { ArrowLeftIcon } from "lucide-react";
+import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowUpIcon, type LucideIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
+
+type ArrowDirection = "left" | "right" | "up" | "down";
+const ARROWS: Record<ArrowDirection, LucideIcon> = {
+  left: ArrowLeftIcon,
+  right: ArrowRightIcon,
+  up: ArrowUpIcon,
+  down: ArrowDownIcon,
+};
 
 interface CtaCircleProps
   extends Pick<ComponentProps<"button">, "onMouseEnter" | "onMouseLeave" | "onClick"> {
   className?: string;
   text?: string;
+  arrowDirection?: ArrowDirection;
+  arrowClassName?: ComponentProps<"div">["className"];
 }
 
-export const CtaCircle = ({ className, text, ...props }: CtaCircleProps) => {
+export const CtaCircle = ({
+  className,
+  text,
+  arrowDirection = 'left',
+  arrowClassName,
+  ...props }: CtaCircleProps) => {
   const t = useTranslations("/.heroSection");
+  const ArrowIcon = ARROWS[arrowDirection];
 
   if (!text) text = t("scrollCTA");
 
@@ -27,11 +43,9 @@ export const CtaCircle = ({ className, text, ...props }: CtaCircleProps) => {
       )}
       {...props}
     >
-      <ArrowLeftIcon
+      <ArrowIcon
         size={40}
-        className={
-          "relative z-10 text-foreground transition-all duration-700 ease-out group-hover:-rotate-90"
-        }
+        className={cn("relative z-10 text-foreground transition-all duration-700 ease-out group-hover:-rotate-90", arrowClassName)}
       />
       <span
         className={
@@ -72,8 +86,8 @@ export const CtaCircle = ({ className, text, ...props }: CtaCircleProps) => {
             startOffset={"0%"}
             textLength={"300%"}
             spacing={"auto"}
-            method={"stretch"}
-            lengthAdjust={"spacingAndGlyphs"}
+            method={"align"}
+            lengthAdjust={"spacing"}
           >
             {text}
           </textPath>

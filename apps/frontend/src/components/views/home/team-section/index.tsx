@@ -1,35 +1,42 @@
-import Image from "next/image";
+import dynamic from "next/dynamic";
+
+
+import { getTranslations } from "next-intl/server";
 
 import { CtaCircle } from "@/components/common/special/cta-circle";
 import { Text } from "@/components/common/text";
 import { Title } from "@/components/common/title";
 
-import MePicture from './../../../../../public/team/me.jpg';
+const TeamMembersCarousel = dynamic(() => import("./team-members-carousel").then(res => res.TeamMembersCarousel));
 
-export const TeamSection = () => {
+export const TeamSection = async () => {
+  const t = await getTranslations('/.teamSection');
+
   return (
-    <section className={"relative min-h-screen bg-background-light py-24"}>
-      <div className={"container flex flex-col gap-2"}>
-
+    <section className={"relative flex min-h-screen items-center justify-center overflow-hidden"}>
+      <div className={"container mx-auto px-4"}>
         <div className={"flex flex-col"}>
           <Title
             type={'h2'}
-            weight={'bold'}>To nasza załoga</Title>
+            size={'h1'}
+            weight={'bold'}>{t('title')}</Title>
           <Text
             size={'sm'}
             color={'primary'}
             weight={'semibold'}
-          >To znaczy narazie tylko ja XD</Text>
+          >{t('subtitle')}</Text>
         </div>
-        <Image
-          src={MePicture}
-          loading={"lazy"}
-          placeholder={"blur"}
-          alt={"Me"}
-          height={200}
-          width={200}
-        />
-        <CtaCircle />
+        <div className={"grid min-h-[400px] w-full grid-cols-4 place-content-center items-center gap-2"}>
+          <CtaCircle
+            arrowDirection={"right"}
+            arrowClassName={"group-hover:-rotate-45 col-span-1"}
+            text={t('ctaCircle')}
+          />
+          <div className={"relative col-span-3 min-h-[400px]"}>
+            <TeamMembersCarousel />
+          </div>
+        </div>
       </div>
-    </section>);
+    </section>
+  );
 };

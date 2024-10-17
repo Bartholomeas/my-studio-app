@@ -4,8 +4,6 @@ import dynamic from "next/dynamic";
 
 import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/common/ui/button";
-
 import { MagneticWrapper } from "@/components/common/special/magnetic-wrapper";
 
 const CtaCircle = dynamic(() =>
@@ -17,11 +15,11 @@ export const HeroBottomBox = () => {
 
   return (
     <>
-      <Button
+      {/* <Button
         withIcon
       >
         Skontaktuj się już teraz
-      </Button>
+      </Button> */}
       <MagneticWrapper
         className={"absolute bottom-16 right-16 flex items-center justify-center p-0"}
       >
