@@ -1,4 +1,4 @@
-import { type ComponentProps } from "react";
+import { type ComponentProps, type ReactNode } from "react";
 
 import Image from "next/image";
 
@@ -34,12 +34,19 @@ export const TeamMemberCarouselCard = ({ isLeft = false, image, className, ...pr
   );
 };
 
-export const TeamMemberPlaceholder = ({ className, isLeft }: Pick<TeamCardProps, 'isLeft' | 'className'>) => {
+
+interface TeamMemberPlaceholderProps extends Pick<TeamCardProps, 'isLeft' | 'className'> {
+  children?: ReactNode;
+}
+
+export const TeamMemberPlaceholder = ({ className, isLeft, children }: TeamMemberPlaceholderProps) => {
   return (
     <Card
       padding={'none'}
       shape={!isLeft ? 'skewedLeft' : 'skewedRight'}
       className={cn("relative aspect-square w-full border-background-light", className)}
-    />
+    >
+      {children}
+    </Card>
   );
 };

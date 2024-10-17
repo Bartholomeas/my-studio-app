@@ -12,7 +12,7 @@ export const TeamSection = async () => {
   const t = await getTranslations('/.teamSection');
 
   return (
-    <section className={"relative min-h-screen overflow-hidden bg-gradient-to-b from-background-light to-white py-24"}>
+    <section className={"relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-background-light to-white py-24"}>
       <div className={"container mx-auto flex h-full flex-1 flex-col justify-center"}>
         <div className={"mb-10 flex flex-col"}>
           <Title
