@@ -32,6 +32,9 @@ export const TeamMembersCarousel = () => {
                 image={MePicture}
               />,
               <TeamMemberPlaceholder key={"placeholder-primary-500"} isLeft={false} className={"bg-primary-500"} >
+                <Logo className={"w-2/3"} />
+              </TeamMemberPlaceholder>,
+              <TeamMemberPlaceholder key={"placeholder-primary-400"} isLeft={true} className={"bg-primary-400"} >
                 <Text
                   weight={'bold'}
                   size={'h3'}
@@ -40,9 +43,6 @@ export const TeamMembersCarousel = () => {
                 >
                   Załoga specjalistów, która tworzy nasze studio.
                 </Text>
-              </TeamMemberPlaceholder>,
-              <TeamMemberPlaceholder key={"placeholder-primary-400"} isLeft={true} className={"bg-primary-400"} >
-                <Logo className={"w-full"} />
               </TeamMemberPlaceholder>,
               <TeamMemberPlaceholder key={"placeholder-primary-300"} isLeft={false} className={"bg-primary-300"} >
                 <Text

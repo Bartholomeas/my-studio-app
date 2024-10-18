@@ -48,7 +48,7 @@ export const KnowUsMoreSection = async () => {
             variant={"dark"}
             className={"flex flex-col items-center justify-center bg-primary md:aspect-square"}
           >
-            <Logo className={"text-lg md:text-xl xl:text-3xl"} />
+            <Logo className={"w-2/3"} />
           </Card>
           <span
             className={"mb-2 ml-2 hidden aspect-square rounded-bl-full bg-primary-400 md:block"}
