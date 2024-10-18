@@ -1,5 +1,8 @@
 import { Carousel, CarouselContent, CarouselItem } from "@/components/common/ui/carousel";
 
+import { Logo } from "@/components/common/special/logo";
+import { Text } from "@/components/common/text";
+
 import MePicture from './../../../../../public/team/pic2.jpg';
 import { TeamMemberCarouselCard, TeamMemberPlaceholder } from "./team-member-carousel-card";
 
@@ -28,9 +31,26 @@ export const TeamMembersCarousel = () => {
                 description={"Bartek is a good guy :)"}
                 image={MePicture}
               />,
-              <TeamMemberPlaceholder key={"placeholder-primary-500"} isLeft={false} className={"bg-primary-500"} />,
-              <TeamMemberPlaceholder key={"placeholder-primary-400"} isLeft={true} className={"bg-primary-400"} />,
-              <TeamMemberPlaceholder key={"placeholder-primary-300"} isLeft={false} className={"bg-primary-300"} />
+              <TeamMemberPlaceholder key={"placeholder-primary-500"} isLeft={false} className={"bg-primary-500"} >
+                <Text
+                  weight={'bold'}
+                  size={'h3'}
+                  color={'background'}
+                  align={'center'}
+                >
+                  Załoga specjalistów, która tworzy nasze studio.
+                </Text>
+              </TeamMemberPlaceholder>,
+              <TeamMemberPlaceholder key={"placeholder-primary-400"} isLeft={true} className={"bg-primary-400"} >
+                <Logo className={"w-full"} />
+              </TeamMemberPlaceholder>,
+              <TeamMemberPlaceholder key={"placeholder-primary-300"} isLeft={false} className={"bg-primary-300"} >
+                <Text
+                  className={"text-[90px]"}
+                >
+                  🖖
+                </Text>
+              </TeamMemberPlaceholder>
             ].map((item) => (
               <CarouselItem key={item.key} className={"basis-full pl-0 sm:basis-1/2 md:basis-1/3 xl:basis-1/4"}>
                 {item}

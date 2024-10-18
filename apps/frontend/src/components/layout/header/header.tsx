@@ -44,7 +44,7 @@ export const Header = () => {
         "container fixed inset-x-0 top-0 z-50 mx-auto flex items-center justify-between py-2"
       }
     >
-      <Logo />
+      <Logo className={"w-20"} />
 
       <div className={"flex items-center gap-2"}>
         <MagneticWrapper noPadding>

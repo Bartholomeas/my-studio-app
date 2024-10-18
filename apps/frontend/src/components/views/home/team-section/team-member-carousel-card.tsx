@@ -42,9 +42,9 @@ interface TeamMemberPlaceholderProps extends Pick<TeamCardProps, 'isLeft' | 'cla
 export const TeamMemberPlaceholder = ({ className, isLeft, children }: TeamMemberPlaceholderProps) => {
   return (
     <Card
-      padding={'none'}
+      // padding={'none'}
       shape={!isLeft ? 'skewedLeft' : 'skewedRight'}
-      className={cn("relative aspect-square w-full border-background-light", className)}
+      className={cn("relative flex items-center justify-center aspect-square w-full border-background-light", className)}
     >
       {children}
     </Card>
