@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 
 import { getTranslations } from "next-intl/server";
 
-import { RefSectionWrapper } from "@/components/common/animations/wrappers/ref-section-wrapper";
 import { CtaCircle } from "@/components/common/special/cta-circle";
 import { Text } from "@/components/common/text";
 import { Title } from "@/components/common/title";
@@ -10,13 +9,11 @@ import { Title } from "@/components/common/title";
 
 const TeamMembersCarousel = dynamic(() => import("./team-members-carousel").then(res => res.TeamMembersCarousel));
 
-const TeamSectionRollingText = dynamic(() => import("./team-section-rolling-text").then(res => res.TeamSectionRollingText));
-
 export const TeamSection = async () => {
   const t = await getTranslations('/.teamSection');
 
   return (
-    <RefSectionWrapper className={"relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-background-light to-white py-24"}>
+    <section className={"relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-background-light to-white py-24"}>
       <div className={"container mx-auto flex h-full flex-1 flex-col justify-center"}>
         <div className={"mb-10 flex flex-col"}>
           <Title
@@ -42,9 +39,6 @@ export const TeamSection = async () => {
           </div>
         </div>
       </div>
-      <div className={"mt-24 w-full justify-end"}>
-        <TeamSectionRollingText />
-      </div>
-    </RefSectionWrapper>
+    </section>
   );
 };

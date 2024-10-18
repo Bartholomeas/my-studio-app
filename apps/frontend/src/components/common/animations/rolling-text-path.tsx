@@ -1,17 +1,20 @@
 "use client";
 
-import { forwardRef, useEffect, useRef } from "react";
+import { forwardRef, useEffect, useMemo, useRef } from "react";
 
 import { useScroll } from "framer-motion";
+
+import { cn } from "@/lib/utils";
 
 type RollingTextPathProps = {
   text: string;
   pathOffsetValue?: number;
   textsMultiply?: number;
+  textClassName?: string;
 };
 
 export const RollingTextPath = forwardRef<HTMLDivElement, RollingTextPathProps>(
-  ({ text, pathOffsetValue = 50, textsMultiply = 2 }, ref) => {
+  ({ text, pathOffsetValue = 50, textsMultiply = 2, textClassName }, ref) => {
     const pathsRef = useRef<SVGTextPathElement[]>([]);
     const { scrollYProgress } = useScroll({
       target: ref as React.RefObject<HTMLElement>,
@@ -29,8 +32,7 @@ export const RollingTextPath = forwardRef<HTMLDivElement, RollingTextPathProps>(
       });
     }, []);
 
-    // const pathArr = useMemo(() => Array.from({ length: textsMultiply }, () => null), [textsMultiply]);
-    const pathArr = Array.from({ length: textsMultiply }, () => null);
+    const pathArr = useMemo(() => Array.from({ length: textsMultiply }, () => null), [textsMultiply]);
 
     return (
       <svg viewBox={"0 0 250 90"} >
@@ -39,7 +41,7 @@ export const RollingTextPath = forwardRef<HTMLDivElement, RollingTextPathProps>(
           fill={"none"}
           d={"m0,88.5c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68"}
         />
-        <text className={"fill-primary text-[0.6rem] uppercase"}>
+        <text className={cn("fill-primary text-[0.6rem] uppercase", textClassName)}>
           {pathArr.map((_, i) => (
             <textPath
               key={`rollingTextPathItem-${i}`}
@@ -47,8 +49,8 @@ export const RollingTextPath = forwardRef<HTMLDivElement, RollingTextPathProps>(
                 if (ref) pathsRef.current[i] = ref;
               }}
               href={"#path-curve"}
-              startOffset={`${i * pathOffsetValue}%`}
-              textLength={"55%"}
+              startOffset={`${(i * pathOffsetValue)}%`}
+              textLength={"50%"}
               lengthAdjust={"spacingAndGlyphs"}
             >
               <tspan xlinkHref={`#rollingTextPathItem-${i}`}>{text}</tspan>
