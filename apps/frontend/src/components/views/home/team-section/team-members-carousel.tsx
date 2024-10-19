@@ -52,7 +52,7 @@ export const TeamMembersCarousel = () => {
                 </Text>
               </TeamMemberPlaceholder>
             ].map((item) => (
-              <CarouselItem key={item.key} className={"basis-full pl-0 sm:basis-1/2 md:basis-1/3 xl:basis-1/4"}>
+              <CarouselItem key={item.key} className={"basis-full pl-0 sm:basis-1/2 md:basis-1/3"}>
                 {item}
               </CarouselItem>
             ))}

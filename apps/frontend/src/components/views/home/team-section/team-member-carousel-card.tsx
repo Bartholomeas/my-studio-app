@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 
 import { Card } from "@/components/common/ui/card";
 
+import { CursorActionType } from "@/components/common/special/cursor-handler/cursor-handler.types";
+
 import { type TeamMember } from "./team-section.types";
 
 interface TeamCardProps extends TeamMember {
@@ -18,6 +20,7 @@ export const TeamMemberCarouselCard = ({ isLeft = false, image, className, ...pr
 
   return (
     <Card
+      data-hover={CursorActionType.CLICK}
       padding={'none'}
       shape={!isLeft ? 'skewedLeft' : 'skewedRight'}
       className={cn("relative aspect-square w-full border-background-light", className)}

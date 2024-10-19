@@ -8,6 +8,8 @@ import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 
+import { CursorActionType } from "./cursor-handler/cursor-handler.types";
+
 type ArrowDirection = "left" | "right" | "up" | "down";
 const ARROWS: Record<ArrowDirection, LucideIcon> = {
   left: ArrowLeftIcon,
@@ -37,6 +39,7 @@ export const CtaCircle = ({
 
   return (
     <motion.button
+      data-hover={CursorActionType.HIDE}
       className={cn(
         "group grid relative aspect-square size-[120px] place-content-center rounded-full transition-colors duration-700 ease-out md:size-[200px]",
         className,
@@ -79,9 +82,9 @@ export const CtaCircle = ({
         <text>
           <textPath
             href={"#circlePath"}
-            fill={"black"}
+            fill={"foreground"}
             className={
-              "fill-black text-lg font-light uppercase transition-opacity duration-700 ease-out group-hover:opacity-100"
+              "fill-foreground text-lg font-light uppercase transition-opacity duration-700 ease-out group-hover:opacity-100"
             }
             startOffset={"0%"}
             textLength={"300%"}

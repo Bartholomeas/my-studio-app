@@ -15,6 +15,7 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 import { SectionScaleRotate } from "@/components/common/animations/section-scale-rotate";
+import { CursorActionType } from "@/components/common/special/cursor-handler/cursor-handler.types";
 import { useMousePositionContext } from "@/components/common/special/cursor-handler/use-mouse-position-context";
 import { Text } from "@/components/common/text";
 import { Title, titleVariants } from "@/components/common/title";
@@ -25,7 +26,7 @@ import { HeroBottomBox } from "./hero-bottom-box";
 const textClassNames: ComponentProps<"div">["className"] = "text-3xl md:text-6xl";
 
 export const HeroSection = () => {
-  const { smoothMouse, isHovering, setIsHovering } = useMousePositionContext();
+  const { smoothMouse, isHovering } = useMousePositionContext();
   const baseTextRef = useRef<HTMLDivElement | null>(null);
 
   const [textHeight, setTextHeight] = useState<number | null>(null);
@@ -49,14 +50,6 @@ export const HeroSection = () => {
 
   const size = useMemo(() => (isHovering ? 400 : 0), [isHovering]);
 
-  const onMouseEnter = useCallback(() => {
-    setIsHovering(true);
-  }, [setIsHovering]);
-
-  const onMouseLeave = useCallback(() => {
-    setIsHovering(false);
-  }, [setIsHovering]);
-
   return (
     <SectionScaleRotate
       className={cn(
@@ -75,6 +68,7 @@ export const HeroSection = () => {
         transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
       >
         <Text
+          data-hover={CursorActionType.HIDE}
           className={cn(
             "max-w-[900px] px-[4%] py-[36px] xl:text-[80px]",
             titleVariants({
@@ -86,8 +80,8 @@ export const HeroSection = () => {
             textClassNames,
           )}
           style={{ height: textHeight ?? "auto" }}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
+        // onMouseEnter={onMouseEnter}
+        // onMouseLeave={onMouseLeave}
         >
           {t("headingTextMasked")}
         </Text>
