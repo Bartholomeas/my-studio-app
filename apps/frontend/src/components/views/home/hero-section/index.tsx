@@ -80,8 +80,6 @@ export const HeroSection = () => {
             textClassNames,
           )}
           style={{ height: textHeight ?? "auto" }}
-        // onMouseEnter={onMouseEnter}
-        // onMouseLeave={onMouseLeave}
         >
           {t("headingTextMasked")}
         </Text>
@@ -94,6 +92,7 @@ export const HeroSection = () => {
         )}
       >
         <Title
+          data-hover={CursorActionType.HIDE}
           ref={baseTextRef}
           weight={"normal"}
           type={"h1"}
@@ -105,6 +104,6 @@ export const HeroSection = () => {
       </div>
 
       <HeroBottomBox />
-    </SectionScaleRotate>
+    </SectionScaleRotate >
   );
 };
