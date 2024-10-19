@@ -4,7 +4,11 @@
 
 @layer base {
 	.cursor-hover {
-		cursor: none;
+		cursor: none !important;
+
+		button {
+			cursor: none;
+		}
 	}
 
 	:root {

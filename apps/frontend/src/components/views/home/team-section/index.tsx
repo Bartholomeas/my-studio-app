@@ -27,7 +27,7 @@ export const TeamSection = async () => {
           >{t('subtitle')}</Text>
         </div>
         <div className={"grid grid-cols-1 place-content-center items-center gap-8 md:grid-cols-4"}>
-          <div className={"mb-8 flex items-center justify-center md:col-span-1 md:mb-0"}>
+          <div className={"mb-8 flex items-center justify-center md:col-span-1 md:mb-0"} >
             <CtaCircle
               arrowDirection={"right"}
               arrowClassName={"group-hover:-rotate-45"}

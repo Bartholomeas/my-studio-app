@@ -1,70 +1,76 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { type SpringOptions, useMotionValue, useSpring } from "framer-motion";
 import { type LucideIcon } from "lucide-react";
 
+import { debounce } from "@/lib/debounce";
+
 import { type CursorActionType } from "./cursor-handler.types";
 import { getCursorContent } from "./cursor-handler.utils";
 
-
-const smoothMouseConfig: SpringOptions = {
+const SMOOTH_MOUSE_CONFIG: SpringOptions = {
   damping: 20,
   stiffness: 300,
   mass: 0.5,
 };
 
-const cursorSize = 15;
-const hoverSize = 200;
+const CURSOR_SIZE = 15;
+const HOVER_SIZE = 200;
 
 export const useMousePosition = () => {
   const [isHovering, setIsHovering] = useState(false);
-
-
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorContent, setCursorContent] = useState<[string | null, LucideIcon | null]>([null, null]);
-
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouse = {
-    x,
-    y,
-  };
-
+  const mouse = { x, y };
   const smoothMouse = {
-    x: useSpring(mouse.x, smoothMouseConfig),
-    y: useSpring(mouse.y, smoothMouseConfig),
+    x: useSpring(mouse.x, SMOOTH_MOUSE_CONFIG),
+    y: useSpring(mouse.y, SMOOTH_MOUSE_CONFIG),
   };
 
-  const checkForDataHoverElement = (e: globalThis.MouseEvent) => {
-    const target = e.target as HTMLElement;
-    const closestHoverEl = target.closest('[data-hover]');
+  const updateCursorContent = useCallback((e: MouseEvent) => {
+    const closestHoverEl = (e.target as HTMLElement).closest('[data-hover]');
     const cursorActionType = closestHoverEl?.getAttribute('data-hover') as CursorActionType;
 
-    setCursorContent(getCursorContent(cursorActionType));
-    setIsHovering(!!closestHoverEl);
-  };
+    const isAlreadyHovering = Boolean(closestHoverEl);
 
-  const manageMouseMove = (e: globalThis.MouseEvent) => {
-    checkForDataHoverElement(e);
+    setCursorContent(getCursorContent(cursorActionType));
+
+    if (isAlreadyHovering) {
+      setIsHovering(isAlreadyHovering);
+      window?.document?.body?.classList.add('cursor-hover');
+    } else {
+      setIsHovering(isAlreadyHovering);
+      window?.document?.body?.classList.remove('cursor-hover');
+    }
+
+  }, []);
+
+  const debouncedUpdateCursorContent = useMemo(
+    () => debounce(updateCursorContent, 10),
+    [updateCursorContent]
+  );
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    debouncedUpdateCursorContent(e);
 
     const { clientX, clientY } = e;
     setMousePosition({ x: clientX, y: clientY });
 
-    mouse.x.set(clientX - (isHovering ? hoverSize / 2 : cursorSize / 2));
-    mouse.y.set(clientY - (isHovering ? hoverSize / 2 : cursorSize / 2));
-  };
+    const currentSize = isHovering ? HOVER_SIZE : CURSOR_SIZE;
+    mouse.x.set(clientX - currentSize / 2);
+    mouse.y.set(clientY - currentSize / 2);
+  }, [debouncedUpdateCursorContent, isHovering, mouse.x, mouse.y]);
 
   useEffect(() => {
-    window.addEventListener("mousemove", manageMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", manageMouseMove);
-    };
-  }, []);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [handleMouseMove]);
 
   return {
     mouse,
@@ -73,8 +79,8 @@ export const useMousePosition = () => {
     x: x.get(),
     y: y.get(),
     isHovering,
-    cursorSize,
-    hoverSize,
+    cursorSize: CURSOR_SIZE,
+    hoverSize: HOVER_SIZE,
     cursorContent,
     setCursorContent,
   };
