@@ -33,7 +33,9 @@ export const CursorHandler = () => {
       />
       <motion.svg
         initial={{ rotate: 0 }}
-        animate={{ rotate: 360 }}
+        animate={{
+          rotate: 360,
+        }}
         transition={{
           duration: 25,
           repeat: Infinity,

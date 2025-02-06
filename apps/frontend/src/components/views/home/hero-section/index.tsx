@@ -20,13 +20,13 @@ import { useMousePositionContext } from "@/components/common/special/cursor-hand
 import { Text } from "@/components/common/text";
 import { Title, titleVariants } from "@/components/common/title";
 
-
 import { HeroBottomBox } from "./hero-bottom-box";
 
 const textClassNames: ComponentProps<"div">["className"] = "text-3xl md:text-6xl";
 
 export const HeroSection = () => {
   const { smoothMouse, isHovering } = useMousePositionContext();
+
   const baseTextRef = useRef<HTMLDivElement | null>(null);
 
   const [textHeight, setTextHeight] = useState<number | null>(null);
@@ -49,6 +49,7 @@ export const HeroSection = () => {
   }, [calculateTextHeight]);
 
   const size = useMemo(() => (isHovering ? 400 : 0), [isHovering]);
+
 
   return (
     <SectionScaleRotate

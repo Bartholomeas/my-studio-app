@@ -51,10 +51,13 @@
 				"text4": "Porozmawiajmy i wspólnie przekształćmy Twoje pomysły w rzeczywistość!"
 			}
 		},
+		"opinionsSection": {
+			"title": "Opinie",
+			"ctaCircle": "Sprawdź co o nas mówią Sprawdź co o nas mówią"
+		},
 		"teamSection": {
 			"title": "To nasza załoga",
-			"subtitle": "(To znaczy narazie tylko ja)",
-			"ctaCircle": "Poznaj nas lepiej Poznaj nas lepiej"
+			"subtitle": "(To znaczy narazie tylko ja)"
 		},
 		"workProcess": {
 			"heading": "Nasz proces twórczy",

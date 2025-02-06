@@ -4,7 +4,8 @@ const ParagraphReveal = dynamic(() =>
   import("@/components/common/animations/paragraph-reveal").then((res) => res.ParagraphReveal),
 );
 
-export const HomeSentenceSection = () => {
+export const HomeSentenceSection = async () => {
+  // const t = await getTranslations('/.');
 
   return (
     <section
