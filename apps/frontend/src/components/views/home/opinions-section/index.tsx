@@ -5,6 +5,8 @@ import dynamic from "next/dynamic";
 import { getTranslations } from "next-intl/server";
 
 
+import { Button } from "@/components/common/ui/button";
+
 import { CtaCircle } from "@/components/common/special/cta-circle";
 import { Title } from "@/components/common/title";
 
@@ -39,9 +41,9 @@ export const OpinionsSection = async () => {
           </div>
         </div>
       </div>
-      {/* <Button >
+      <Button variant={'primary'} >
         Podziel się opinią!
-      </Button> */}
+      </Button>
     </section>
   );
 };
