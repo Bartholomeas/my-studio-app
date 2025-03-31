@@ -30,7 +30,7 @@
 			"headingText": "Idealne rozwiązania dla Twoich cyfrowych potrzeb.",
 			"headingSubtext": "Gotowi na coś wyjątkowego?",
 			"headingTextMasked": "Kod, kawa i ołówek — z tego robimy cuda! Wyniesiemy Twoją wizję na nowy poziom. 😎",
-			"scrollCTA": "Przewiń w dół, aby dowiedzieć się więcej"
+			"scrollCTA": "Przewiń w dół Przewiń w dół Przewiń w dół"
 		},
 		"knowUsMoreSection": {
 			"title": "Tworzymy aplikacje, które <makesDifference>robią różnicę</makesDifference> – od kodu po design.",
@@ -50,6 +50,14 @@
 				"title4": "Gotowy, by zrobić krok naprzód?",
 				"text4": "Porozmawiajmy i wspólnie przekształćmy Twoje pomysły w rzeczywistość!"
 			}
+		},
+		"opinionsSection": {
+			"title": "Opinie",
+			"ctaCircle": "Sprawdź co o nas mówią Sprawdź co o nas mówią"
+		},
+		"teamSection": {
+			"title": "Ludzie",
+			"subtitle": "którzy za tym wszystkim stoją"
 		},
 		"workProcess": {
 			"heading": "Nasz proces twórczy",

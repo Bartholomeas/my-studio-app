@@ -1,71 +1,87 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { type SpringOptions, useMotionValue, useSpring } from "framer-motion";
+import { type LucideIcon } from "lucide-react";
 
-const smoothMouseConfig: SpringOptions = {
-	damping: 20,
-	stiffness: 300,
-	mass: 0.5,
+import { debounce } from "@/lib/debounce";
+
+import { type CursorActionType } from "./cursor-handler.types";
+import { getCursorContent } from "./cursor-handler.utils";
+
+const SMOOTH_MOUSE_CONFIG: SpringOptions = {
+  damping: 20,
+  stiffness: 300,
+  mass: 0.5,
 };
 
+const CURSOR_SIZE = 15;
+const HOVER_SIZE = 200;
+
 export const useMousePosition = () => {
-	const [isHovering, setIsHovering] = useState(false);
-	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cursorContent, setCursorContent] = useState<[string | null, LucideIcon | null]>([null, null]);
 
-	const cursorSize = 15;
-	const hoverSize = 80;
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
-	const x = useMotionValue(0);
-	const y = useMotionValue(0);
+  const mouse = { x, y };
+  const smoothMouse = {
+    x: useSpring(mouse.x, SMOOTH_MOUSE_CONFIG),
+    y: useSpring(mouse.y, SMOOTH_MOUSE_CONFIG),
+  };
 
-	const mouse = {
-		x,
-		y,
-	};
+  const updateCursorContent = useCallback((e: MouseEvent) => {
+    const closestHoverEl = (e.target as HTMLElement).closest('[data-hover]');
+    const cursorActionType = closestHoverEl?.getAttribute('data-hover') as CursorActionType;
 
-	const smoothMouse = {
-		x: useSpring(mouse.x, smoothMouseConfig),
-		y: useSpring(mouse.y, smoothMouseConfig),
-	};
+    const isAlreadyHovering = Boolean(closestHoverEl);
 
-	const manageMouseMove = (e: globalThis.MouseEvent) => {
-		// const targetAttribute = (e.target as HTMLElement).getAttribute('data-cursor-type');
-		//
-		// if (targetAttribute === 'menu') {
-		//     setIsHovering(true);
-		// } else if (targetAttribute === 'mask-circle') {
-		//     console.log("Circkle")
-		//     setIsHovering(false);
-		// } else {
-		//     setIsHovering(false);
-		// }
+    setCursorContent(getCursorContent(cursorActionType));
 
-		const { clientX, clientY } = e;
-		setMousePosition({ x: clientX, y: clientY });
+    if (isAlreadyHovering) {
+      setIsHovering(isAlreadyHovering);
+      window?.document?.body?.classList.add('cursor-hover');
+    } else {
+      setIsHovering(isAlreadyHovering);
+      window?.document?.body?.classList.remove('cursor-hover');
+    }
 
-		mouse.x.set(clientX - (isHovering ? cursorSize / 2 : cursorSize / 2));
-		mouse.y.set(clientY - (isHovering ? cursorSize / 2 : cursorSize / 2));
-	};
+  }, []);
 
-	useEffect(() => {
-		window.addEventListener("mousemove", manageMouseMove);
+  const debouncedUpdateCursorContent = useMemo(
+    () => debounce(updateCursorContent, 10),
+    [updateCursorContent]
+  );
 
-		return () => {
-			window.removeEventListener("mousemove", manageMouseMove);
-		};
-	}, []);
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    debouncedUpdateCursorContent(e);
 
-	return {
-		mouse,
-		smoothMouse,
-		mousePosition,
-		x: x.get(),
-		y: y.get(),
-		isHovering,
-		cursorSize,
-		hoverSize,
-		setIsHovering,
-	};
+    const { clientX, clientY } = e;
+    setMousePosition({ x: clientX, y: clientY });
+
+    const currentSize = isHovering ? HOVER_SIZE : CURSOR_SIZE;
+    mouse.x.set(clientX - currentSize / 2);
+    mouse.y.set(clientY - currentSize / 2);
+  }, [debouncedUpdateCursorContent, isHovering, mouse.x, mouse.y]);
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [handleMouseMove]);
+
+  return {
+    mouse,
+    smoothMouse,
+    mousePosition,
+    x: x.get(),
+    y: y.get(),
+    isHovering,
+    cursorSize: CURSOR_SIZE,
+    hoverSize: HOVER_SIZE,
+    cursorContent,
+    setCursorContent,
+  };
 };
