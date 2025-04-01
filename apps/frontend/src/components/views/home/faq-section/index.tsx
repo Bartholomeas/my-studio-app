@@ -31,9 +31,9 @@ const FAQ_QUESTION = [
 export const FaqSection = async () => {
   const t = await getTranslations('/.faqSection');
 
-  return <section className={"relative flex flex-col items-center justify-center py-24"}>
+  return <section className={"md:mx-16 rounded-b-3xl relative flex flex-col items-center justify-center py-16 after:absolute after:content-[''] after:w-full after:h-16 after:bg-background bg-background after:-top-16 after:rounded-t-3xl mb-4"}>
     <div className={"container mx-auto grid h-full grid-cols-5 gap-8 md:grid-cols-5"}>
-      <div className={"flex flex-col gap-2 md:col-span-2"}>
+      <div className={"flex flex-col gap-2 md:col-span-2 col-span-5"}>
         <Title
           type={"h2"}
           size={"h1"}
@@ -45,7 +45,7 @@ export const FaqSection = async () => {
         >{t('subtitle')}</Text>
       </div>
 
-      <Accordion type="single" collapsible className={"col-span-3"}>
+      <Accordion type="single" collapsible className={"col-span-5 md:col-span-3"}>
         {FAQ_QUESTION.map((item, index) => (
           <FaqItem key={item.id} {...item} index={index} />
         ))}
