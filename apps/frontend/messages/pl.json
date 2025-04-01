@@ -56,8 +56,12 @@
 			"ctaCircle": "Sprawdź co o nas mówią Sprawdź co o nas mówią"
 		},
 		"teamSection": {
-			"title": "Ludzie",
+			"title": "Nasi ludzie",
 			"subtitle": "którzy za tym wszystkim stoją"
+		},
+		"faqSection": {
+			"title": "Najczęstsze pytania",
+			"subtitle": "Jak, gdzie, kiedy i za ile?"
 		},
 		"workProcess": {
 			"heading": "Nasz proces twórczy",

@@ -24,7 +24,7 @@ export const TeamSection = async () => {
           weight={"semibold"}
         >{t('subtitle')}</Text>
       </div>
-      <Card className={"col-span-3 flex items-center justify-center rounded-lg bg-gradient-to-b from-white from-0% via-white via-30% to-transparent to-50%"} >
+      <Card className={"col-span-3 flex items-center justify-center rounded-lg bg-background-dark"} >
         <TeamMember />
       </Card>
     </div>
@@ -39,10 +39,10 @@ const TeamMember = () => {
     <div className={"relative aspect-square size-48 overflow-hidden rounded-full"}>
       <Image src={"/team/me.jpg"} alt={"Zdjęcie przedstawiające jakiegoś kartofla"} width={250} height={250} className={"object-cover"} />
     </div>
-    <Text size={"lg"} weight={"semibold"}>
-      Jan Kowalski
+    <Text size={"lg"} weight={"semibold"} color={'primary'}>
+      Bartosz Stefaniak
     </Text>
-    <Text size={"sm"} weight={"normal"}>
+    <Text size={"sm"} weight={"normal"} color={'light'}>
       CEO
     </Text>
   </div>;
