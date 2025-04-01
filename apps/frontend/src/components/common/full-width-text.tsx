@@ -54,7 +54,7 @@ export const FullWidthText = ({ children, className }: { children: React.ReactNo
       <Text
         weight={'bold'}
         className={cn(
-          "absolute bottom-0 left-0 mx-auto whitespace-nowrap text-center font-bold uppercase text-slate-700",
+          "absolute bottom-0 left-0 mx-auto whitespace-nowrap text-center font-bold uppercase",
           className,
         )}
         ref={textRef}

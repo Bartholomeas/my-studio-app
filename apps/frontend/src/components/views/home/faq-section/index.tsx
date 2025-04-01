@@ -31,7 +31,7 @@ const FAQ_QUESTION = [
 export const FaqSection = async () => {
   const t = await getTranslations('/.faqSection');
 
-  return <section className={"md:mx-16 rounded-b-3xl relative flex flex-col items-center justify-center py-16 after:absolute after:content-[''] after:w-full after:h-16 after:bg-background bg-background after:-top-16 after:rounded-t-3xl mb-4"}>
+  return <section className={"md:mx-8 rounded-b-3xl relative flex flex-col items-center justify-center py-16 after:absolute after:content-[''] after:w-full after:h-16 after:bg-background bg-background after:-top-16 after:rounded-t-3xl mb-4"}>
     <div className={"container mx-auto grid h-full grid-cols-5 gap-8 md:grid-cols-5"}>
       <div className={"flex flex-col gap-2 md:col-span-2 col-span-5"}>
         <Title

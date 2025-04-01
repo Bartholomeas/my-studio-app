@@ -24,7 +24,7 @@ export const AboutSection = async () => {
         </div>
         <BentoGrid />
       </div>
-      <FullWidthText className={"leading-[0.65] text-background-light"}>Wstaw tu jakiś tekst</FullWidthText>
+      <FullWidthText className={"!leading-[0.65] !text-background-light"}>Wstaw tu jakiś tekst</FullWidthText>
     </section>
   );
 };
