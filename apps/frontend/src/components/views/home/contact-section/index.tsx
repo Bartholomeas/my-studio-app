@@ -49,8 +49,8 @@ export const ContactSection = () => {
               <Mail className={"size-6 text-foreground"} />
               <div className={"flex flex-col"}>
                 <Text size={'lg'} weight={'bold'}>{t("boxes.box1.title")}</Text>
-                <Text >{t("boxes.box1.text")}</Text>
-                <a href={"mailto:kontakt@kurderstudio.pl"} className={"text-foreground"}>kontakt@kurderstudio.pl</a>
+                <Text size={'lg'} >{t("boxes.box1.text")}</Text>
+                <a href={"mailto:kontakt@kurderstudio.pl"} className={"font-bold text-foreground"}>kontakt@kurderstudio.pl</a>
               </div>
             </motion.div>
 
@@ -69,8 +69,8 @@ export const ContactSection = () => {
               <PhoneCall className={"size-6 text-foreground"} />
               <div className={"flex flex-col"}>
                 <Text size={'lg'} weight={'bold'}>{t("boxes.box2.title")}</Text>
-                <Text >{t("boxes.box2.text")}</Text>
-                <a href={"tel:+48123456789"} className={"text-foreground"}>+48 123 456 789</a>
+                <Text size={'lg'} >{t("boxes.box2.text")}</Text>
+                <a href={"tel:+48123456789"} className={"font-bold text-foreground"}>+48 123 456 789</a>
               </div>
             </motion.div>
 
@@ -89,7 +89,7 @@ export const ContactSection = () => {
               <UserRoundSearch className={"size-6 text-foreground"} />
               <div className={"flex flex-col"}>
                 <Text size={'lg'} weight={'bold'}>{t("boxes.box3.title")}</Text>
-                <Text >{t("boxes.box3.text")}</Text>
+                <Text size={'lg'} >{t("boxes.box3.text")}</Text>
                 <div className={"mt-2 flex flex-row gap-2"}>
                   <motion.a
                     initial={{ opacity: 0, y: 10 }}
