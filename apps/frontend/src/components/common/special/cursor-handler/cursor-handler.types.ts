@@ -3,4 +3,5 @@ export enum CursorActionType {
 	HIDE = "hide",
 	DRAG = "drag",
 	CLICK = "click",
+	SEND = "send",
 }

@@ -13,18 +13,17 @@ export const AboutSection = async () => {
 
   return (
     <section className={"relative min-h-screen overflow-hidden bg-background-dark"}>
-      <div className={"container flex h-full flex-col gap-6 py-24"}>
-        <div className={"mb-6 flex flex-col gap-0"}>
-          <Title type={"h2"} size={"h1"} color={"white"} weight={"semibold"}>
-            {t("title")}
+      <div className={"container flex h-full flex-col gap-6 md:py-24 lg:pb-48"}>
+        <div className={"mb-6 flex flex-col gap-0 xl:max-w-[40%]"}>
+          <Title type={"h2"} size={"h1"} weight={"bold"} color={'light'}>
+            {t("title")} <Text as={"span"} size={"h1"} weight={"bold"} color={"white"}>{t("subtitle")}</Text>
           </Title>
-          <Text color={"light"} size={"lg"}>
-            {t("subtitle")}
-          </Text>
         </div>
         <BentoGrid />
       </div>
-      <FullWidthText className={"!leading-[0.65] !text-background-light"}>Wstaw tu jakiś tekst</FullWidthText>
+      <FullWidthText className={"!leading-[0.65] !text-background-light"}>
+        {t("exitSentence")}
+      </FullWidthText>
     </section>
   );
 };

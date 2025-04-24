@@ -38,8 +38,8 @@
 			"boxSentence": "Czyli pełen profesjonalizm"
 		},
 		"aboutSection": {
-			"title": "Co konkretnie robimy?",
-			"subtitle": "Robimy wiele i dobrze, przekonaj się",
+			"title": "Kompleksowe rozwiązania skrojone na ",
+			"subtitle": "Twoje potrzeby",
 			"cards": {
 				"title1": "Aplikacje internetowe, które działają i zachwycają",
 				"text1": "Tworzymy szybkie, skalowalne i dopasowane do Twojego biznesu aplikacje, które robią różnicę.",
@@ -49,15 +49,19 @@
 				"text3": "Zadbaj o widoczność – optymalizujemy Twoją stronę, aby klienci mogli Cię znaleźć w tłumie.",
 				"title4": "Gotowy, by zrobić krok naprzód?",
 				"text4": "Porozmawiajmy i wspólnie przekształćmy Twoje pomysły w rzeczywistość!"
-			}
+			},
+			"exitSentence": "Innowacje w każdym pikselu"
 		},
 		"opinionsSection": {
-			"title": "Opinie",
+			"title": {
+				"first": "Brzmi zbyt dobrze, aby było prawdą?",
+				"second": "Zapytaj naszych klientów!"
+			},
 			"ctaCircle": "Sprawdź co o nas mówią Sprawdź co o nas mówią"
 		},
 		"teamSection": {
-			"title": "Nasi ludzie",
-			"subtitle": "którzy za tym wszystkim stoją"
+			"title": "Twarze zespołu,",
+			"subtitle": "który zmienia pomysły w rzeczywistość"
 		},
 		"faqSection": {
 			"title": "Najczęstsze pytania",
@@ -99,6 +103,24 @@
 				"text1": "Po zakończeniu testów i optymalizacji, przekazujemy gotowy produkt. Jeśli wszystko jest zgodne z oczekiwaniami, publikujemy stronę/aplikację i uruchamiamy ją w produkcyjnym środowisku.",
 				"text2": "Oferujemy również wsparcie po wdrożeniu, abyś zawsze mógł liczyć na pomoc w przypadku jakichkolwiek pytań lub potrzebnych aktualizacji."
 			}
+		},
+		"contactSection": {
+			"title": { "base": "Masz wizję?", "highlighted": "Porozmawiajmy." },
+			"boxes": {
+				"box1": {
+					"title": "Napisz do nas",
+					"text": "Nasza załoga chętnie Ci pomoże"
+				},
+				"box2": {
+					"title": "Lub do nas zadzwoń",
+					"text": "Ale czasami ciężko się do nas dodzwonić"
+				},
+				"box3": {
+					"title": "Albo odezwij się gdzieś indziej",
+					"text": "Na przykład na naszych mediach społecznościowych!"
+				}
+			},
+			"form": {}
 		}
 	},
 

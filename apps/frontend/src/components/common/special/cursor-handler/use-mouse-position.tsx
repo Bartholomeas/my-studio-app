@@ -22,7 +22,10 @@ const HOVER_SIZE = 200;
 export const useMousePosition = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [cursorContent, setCursorContent] = useState<[string | null, LucideIcon | null]>([null, null]);
+  const [cursorContent, setCursorContent] = useState<[string | null, LucideIcon | null]>([
+    null,
+    null,
+  ]);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -34,8 +37,8 @@ export const useMousePosition = () => {
   };
 
   const updateCursorContent = useCallback((e: MouseEvent) => {
-    const closestHoverEl = (e.target as HTMLElement).closest('[data-hover]');
-    const cursorActionType = closestHoverEl?.getAttribute('data-hover') as CursorActionType;
+    const closestHoverEl = (e.target as HTMLElement).closest("[data-hover]");
+    const cursorActionType = closestHoverEl?.getAttribute("data-hover") as CursorActionType;
 
     const isAlreadyHovering = Boolean(closestHoverEl);
 
@@ -43,29 +46,31 @@ export const useMousePosition = () => {
 
     if (isAlreadyHovering) {
       setIsHovering(isAlreadyHovering);
-      window?.document?.body?.classList.add('cursor-hover');
+      window?.document?.body?.classList.add("cursor-hover");
     } else {
       setIsHovering(isAlreadyHovering);
-      window?.document?.body?.classList.remove('cursor-hover');
+      window?.document?.body?.classList.remove("cursor-hover");
     }
-
   }, []);
 
   const debouncedUpdateCursorContent = useMemo(
     () => debounce(updateCursorContent, 10),
-    [updateCursorContent]
+    [updateCursorContent],
   );
 
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    debouncedUpdateCursorContent(e);
+  const handleMouseMove = useCallback(
+    (e: MouseEvent) => {
+      debouncedUpdateCursorContent(e);
 
-    const { clientX, clientY } = e;
-    setMousePosition({ x: clientX, y: clientY });
+      const { clientX, clientY } = e;
+      setMousePosition({ x: clientX, y: clientY });
 
-    const currentSize = isHovering ? HOVER_SIZE : CURSOR_SIZE;
-    mouse.x.set(clientX - currentSize / 2);
-    mouse.y.set(clientY - currentSize / 2);
-  }, [debouncedUpdateCursorContent, isHovering, mouse.x, mouse.y]);
+      const currentSize = isHovering ? HOVER_SIZE : CURSOR_SIZE;
+      mouse.x.set(clientX - currentSize / 2);
+      mouse.y.set(clientY - currentSize / 2);
+    },
+    [debouncedUpdateCursorContent, isHovering, mouse.x, mouse.y],
+  );
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);

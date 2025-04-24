@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useMemo } from "react";
 
 import { motion } from "framer-motion";
@@ -10,10 +9,19 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { useMousePositionContext } from "./use-mouse-position-context";
 
 export const CursorHandler = () => {
-  const { cursorContent: [cursorText, CursorIcon], smoothMouse, hoverSize, cursorSize, isHovering } = useMousePositionContext();
+  const {
+    cursorContent: [cursorText, CursorIcon],
+    smoothMouse,
+    hoverSize,
+    cursorSize,
+    isHovering,
+  } = useMousePositionContext();
 
   const isMobile = useMediaQuery(768, "max");
-  const shouldHide = useMemo(() => !cursorText && !CursorIcon && isHovering, [cursorText, CursorIcon, isHovering]);
+  const shouldHide = useMemo(
+    () => !cursorText && !CursorIcon && isHovering,
+    [cursorText, CursorIcon, isHovering],
+  );
 
   if (isMobile || shouldHide) return null;
 
@@ -24,7 +32,9 @@ export const CursorHandler = () => {
         height: isHovering ? hoverSize : cursorSize,
       }}
       style={{ left: smoothMouse.x, top: smoothMouse.y }}
-      className={"pointer-events-none fixed flex size-[15px] items-center justify-center rounded-full bg-primary"}
+      className={
+        "pointer-events-none fixed flex size-[15px] items-center justify-center rounded-full bg-primary"
+      }
     >
       <span
         className={

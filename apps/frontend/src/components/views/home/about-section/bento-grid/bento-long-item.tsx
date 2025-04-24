@@ -1,6 +1,10 @@
+'use client';
+import { useRef } from "react";
+
 import Link from "next/link";
 
-import { getTranslations } from "next-intl/server";
+import { motion, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import { buttonVariants } from "@/components/common/ui/button";
 import { Card, CardContent } from "@/components/common/ui/card";
@@ -11,37 +15,45 @@ import { Title } from "@/components/common/title";
 import { APP_ROUTES } from "@/misc/routes";
 
 interface BentoLongItemProps {
-	title: string;
-	text: string;
+  title: string;
+  text: string;
 }
 
-export const BentoLongItem = async ({ title, text }: BentoLongItemProps) => {
-	const t = await getTranslations("common");
+export const BentoLongItem = ({ title, text }: BentoLongItemProps) => {
+  const t = useTranslations("common");
 
-	return (
-		<div className={"col-span-2 h-full"}>
-			<Card
-				variant={"dark"}
-				padding={"lg"}
-				className={"relative rounded-br-[100px] bg-primary lg:rounded-br-full"}
-			>
-				<CardContent className={"flex flex-col gap-2 p-0 py-6 pr-8"}>
-					<Title type={"h3"} weight={"semibold"} className={"text-2xl"}>
-						{title}
-					</Title>
-					<Text size={"lg"} weight={"semibold"}>
-						{text}
-					</Text>
-					<MagneticWrapper className={"p-0"}>
-						<Link
-							href={APP_ROUTES.contact}
-							className={buttonVariants({ size: "lg", className: "w-fit" })}
-						>
-							{t("contactUs")}
-						</Link>
-					</MagneticWrapper>
-				</CardContent>
-			</Card>
-		</div>
-	);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ x: -200, opacity: 0 }}
+      animate={isInView ? { x: 0, opacity: 1 } : { x: -200, opacity: 0 }}
+      transition={{ duration: 0.3, ease: "easeIn", bounce: 0.1, type: "spring", stiffness: 100 }}
+      className={"col-span-2 h-full"}>
+      <Card
+        variant={"dark"}
+        padding={"lg"}
+        className={"relative rounded-3xl rounded-br-[100px] bg-primary "}
+      >
+        <CardContent className={"flex flex-col gap-4 p-0 py-6 pr-8"}>
+          <Title type={"h3"} weight={"bold"} className={"text-2xl"}>
+            {title}
+          </Title>
+          <Text size={"lg"} weight={"semibold"} color={"secondary"}>
+            {text}
+          </Text>
+          <MagneticWrapper className={"p-0"}>
+            <Link
+              href={APP_ROUTES.contact}
+              className={buttonVariants({ size: "lg", className: "w-fit" })}
+            >
+              {t("contactUs")}
+            </Link>
+          </MagneticWrapper>
+        </CardContent>
+      </Card>
+    </motion.div>
+  );
 };

@@ -42,8 +42,11 @@ const WorkProcessSection = dynamic(() =>
   import("@/components/views/home/work-process-section").then((res) => res.WorkProcessSection),
 );
 
-const FaqSection = dynamic(() => import("@/components/views/home/faq-section").then((res) => res.FaqSection));
+const FaqSection = dynamic(() =>
+  import("@/components/views/home/faq-section").then((res) => res.FaqSection),
+);
 
+const ContactSection = dynamic(() => import("@/components/views/home/contact-section").then((res) => res.ContactSection));
 
 const Home = async () => {
   return (
@@ -52,7 +55,12 @@ const Home = async () => {
         <HeroSection />
         <KnowUsMoreSection />
       </ScrollProgressContainer>
-      <AboutSection />
+      <ScrollProgressContainer
+        scrollOpts={{ offset: ["start start", "end start"] }}
+        className={"min-h-screen overflow-hidden"}
+      >
+        <AboutSection />
+      </ScrollProgressContainer>
       <Suspense fallback={<div>Loading...</div>}>
         <TeamSection />
       </Suspense>
@@ -74,10 +82,9 @@ const Home = async () => {
         className={"h-screen overflow-hidden"}
       >
         <ImageSentenceSection />
-
       </ScrollProgressContainer>
       <WorkProcessSection />
-
+      <ContactSection />
     </>
   );
 };
