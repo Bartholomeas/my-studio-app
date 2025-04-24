@@ -120,7 +120,16 @@
 					"text": "Na przykład na naszych mediach społecznościowych!"
 				}
 			},
-			"form": {}
+			"form": {
+				"messageLabel": "Wiadomość",
+				"titleLabel": "Tytuł",
+				"nameLabel": "Imię",
+				"emailLabel": "Email",
+				"phoneLabel": "Telefon",
+				"companyLabel": "Firma",
+				"description": "Powiedz nam coś więcej o sobie i swoim pomyśle oraz co Ci siedzi w głowie!",
+				"sendMessageButton": "Wyślij wiadomość"
+			}
 		}
 	},
 
