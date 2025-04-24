@@ -50,7 +50,6 @@ export const HeroSection = () => {
 
   const size = useMemo(() => (isHovering ? 400 : 0), [isHovering]);
 
-
   return (
     <SectionScaleRotate
       className={cn(
@@ -105,6 +104,6 @@ export const HeroSection = () => {
       </div>
 
       <HeroBottomBox />
-    </SectionScaleRotate >
+    </SectionScaleRotate>
   );
 };

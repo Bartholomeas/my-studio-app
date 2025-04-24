@@ -4,13 +4,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const cardVariants = cva("relative size-full overflow-hidden border", {
+export const cardVariants = cva("relative size-full overflow-hidden rounded-lg", {
   variants: {
     variant: {
       default: "bg-background text-foreground",
       dark: "border-foreground-muted bg-background-dark text-background",
       darkGradient:
         "border-foreground-muted bg-gradient-to-br from-background-dark to-black/50 text-background",
+      primary: "bg-primary",
+      white: "bg-background",
+      "light": "bg-background-light",
+      "light-2": "bg-background-light-2",
+      "light-3": "bg-background-light-3",
     },
     shape: {
       default: "",

@@ -1,4 +1,4 @@
-import { BringToFront, GrabIcon, MousePointerClick, type LucideIcon } from "lucide-react";
+import { BringToFront, GrabIcon, MousePointerClick, SendIcon, type LucideIcon } from "lucide-react";
 
 import { CursorActionType } from "./cursor-handler.types";
 
@@ -6,6 +6,7 @@ const CURSOR_CONTENT: Record<CursorActionType, [string | null, LucideIcon | null
 	[CursorActionType.CLICK]: ["Przyciśnij po więcej!", MousePointerClick],
 	[CursorActionType.DRAG]: ["Przeciągnij w prawo", GrabIcon],
 	[CursorActionType.HOVER]: ["👉", BringToFront],
+	[CursorActionType.SEND]: ["Wyślij 👉 Wyślij 👉 ", SendIcon],
 	[CursorActionType.HIDE]: [null, null],
 };
 

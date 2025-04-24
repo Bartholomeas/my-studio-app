@@ -51,7 +51,7 @@ export const KnowUsMoreSection = async () => {
             <Logo className={"w-2/3"} />
           </Card>
           <span
-            className={"mb-2 ml-2 hidden aspect-square rounded-bl-full bg-primary-400 md:block"}
+            className={"mb-2 ml-2 hidden aspect-square rounded-lg rounded-bl-full bg-primary-400 md:block"}
           />
           <span className={"hidden aspect-square md:block"} />
           <Card

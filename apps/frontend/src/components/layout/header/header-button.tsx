@@ -24,7 +24,12 @@ export const HeaderButton = ({ isActive = false, toggleMenu }: HeaderButtonProps
         onClick={toggleMenu}
         variant={"ghost"}
         size={"icon"}
-        className={"z-[51] size-10 rounded-bl-sm rounded-br-xl rounded-tl-xl rounded-tr-sm bg-primary p-0"}
+        className={cn("z-[51] size-10 rounded-full p-0", {
+          "bg-primary": isActive,
+        })}
+        // className={
+        // 	"z-[51] size-10 rounded-bl-sm rounded-br-xl rounded-tl-xl rounded-tr-sm bg-primary p-0"
+        // }
         aria-label={isActive ? "Close menu" : "Open menu"}
         aria-expanded={isActive}
         aria-controls={"navigation-menu"}
@@ -45,7 +50,6 @@ export const HeaderButton = ({ isActive = false, toggleMenu }: HeaderButtonProps
           ></span>
         </motion.div>
       </Button>
-    </MagneticWrapper >
-
+    </MagneticWrapper>
   );
 };
