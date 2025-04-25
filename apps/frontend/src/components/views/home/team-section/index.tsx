@@ -2,8 +2,9 @@ import Image from "next/image";
 
 import { getTranslations } from "next-intl/server";
 
-import { Card } from "@/components/common/ui/card";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/common/ui/carousel";
 
+import { CursorActionType } from "@/components/common/special/cursor-handler/cursor-handler.types";
 import { Text } from "@/components/common/text";
 import { Title } from "@/components/common/title";
 
@@ -13,25 +14,27 @@ export const TeamSection = async () => {
   return (
     <section
       className={
-        "relative flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-background-light to-white py-24 xl:py-[20%]"
+        "relative flex min-h-screen flex-col items-center overflow-hidden bg-gradient-to-b from-background-light to-white py-24 xl:py-[20%]"
       }
     >
       <div
         className={
-          "container mx-auto grid h-full grid-cols-1 place-content-center items-center gap-8 md:grid-cols-5"
+          "container mx-auto flex h-full flex-col place-content-center items-center gap-8"
         }
       >
-        <div className={"flex flex-col gap-2 md:col-span-2"}>
-          <Title type={"h2"} size={"h1"} weight={"bold"}  >
-            {t("title")} <Text as={"span"} size={"h1"} weight={"bold"} color={'light'}>{t("subtitle")}</Text>
-          </Title>
-
-        </div>
-        <Card
-          className={"col-span-3 flex items-center justify-center rounded-lg bg-background-dark"}
-        >
-          <TeamMember />
-        </Card>
+        <Title type={"h2"} size={"h1"} weight={"bold"} className={"mb-4"}>
+          {t("title")} <Text as={"span"} size={"h1"} weight={"bold"} color={'light'}>{t("subtitle")}</Text>
+        </Title>
+        <Carousel data-hover={CursorActionType.DRAG} className={"w-full"}
+          opts={{ align: 'start', containScroll: false }}>
+          <CarouselContent className={"ml-0"}>
+            <TeamMember />
+            <TeamMember />
+            <TeamMember />
+            <TeamMember />
+            <TeamMember />
+          </CarouselContent>
+        </Carousel>
       </div>
     </section>
   );
@@ -39,13 +42,13 @@ export const TeamSection = async () => {
 
 const TeamMember = () => {
   return (
-    <div className={"flex flex-col items-center"}>
-      <div className={"relative aspect-square size-48 overflow-hidden rounded-full"}>
+    <CarouselItem className={"flex size-full basis-full flex-col items-center gap-2 sm:basis-1/2 lg:basis-1/3"}>
+      <div className={"relative size-full overflow-hidden"}>
         <Image
           src={"/team/me.jpg"}
           alt={"Zdjęcie przedstawiające jakiegoś kartofla"}
-          width={250}
-          height={250}
+          width={350}
+          height={350}
           className={"object-cover"}
         />
       </div>
@@ -55,6 +58,6 @@ const TeamMember = () => {
       <Text size={"sm"} weight={"normal"} color={"light"}>
         CEO
       </Text>
-    </div>
+    </CarouselItem>
   );
 };
