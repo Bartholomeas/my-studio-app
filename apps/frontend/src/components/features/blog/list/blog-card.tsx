@@ -44,8 +44,11 @@ export const BlogCard = ({
   const ref = useRef<HTMLDivElement>(null);
 
   return (
-    <Link href={href}
+    <Link
+      href={href}
       data-hover={CursorActionType.CLICK}
+      data-hover-size={100}
+      className={"flex size-full flex-row overflow-hidden rounded-lg md:h-48"}
     >
       <motion.div
         ref={ref}
@@ -53,8 +56,8 @@ export const BlogCard = ({
         initial={"hidden"}
         animate={"visible"}
         custom={index}
-        whileHover={{ scale: 1.02 }}
-        className={"flex size-full flex-row overflow-hidden md:h-48"}
+        whileHover={{ translateX: 10 }}
+        className={"flex size-full flex-row overflow-hidden rounded-lg bg-background md:h-48"}
       >
         <div className={"relative aspect-video h-full min-w-32 overflow-hidden"}>
           <Image

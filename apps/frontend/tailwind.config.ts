@@ -36,6 +36,7 @@ export default {
 					light: "var(--background-light)",
 					"light-2": "var(--background-light-2)",
 					"light-3": "var(--background-light-3)",
+					"light-4": "var(--background-light-4)",
 				},
 				foreground: {
 					DEFAULT: "var(--foreground)",

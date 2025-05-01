@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
 
-import { Text } from "../../text";
 import { useMousePositionContext } from "./use-mouse-position-context";
+import { Text } from "../../text";
 
 export const CursorHandler = () => {
   const {
@@ -41,7 +41,7 @@ export const CursorHandler = () => {
         initial={{ rotate: 0 }}
         animate={{ rotate: 360 }}
         transition={{
-          duration: 3,
+          duration: 6,
           repeat: Infinity,
           repeatType: "loop",
           ease: "linear",

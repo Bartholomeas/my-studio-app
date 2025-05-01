@@ -1,17 +1,16 @@
 import dynamic from "next/dynamic";
 
-const BlogMaskedHeader = dynamic(() => import("@/components/features/blog/list/blog-masked-header").then(mod => mod.BlogMaskedHeader));
-const BlogCardsContainer = dynamic(() => import("@/components/features/blog/list/blog-cards-container").then(mod => mod.BlogCardsContainer));
+import { ScrollProgressContainer } from "@/components/common/animations/wrappers/scroll-progress-container";
+
+const BlogLandingSection = dynamic(() => import("@/components/features/blog/list/blog-landing-section").then(mod => mod.BlogLandingSection));
+const BlogCardsSection = dynamic(() => import("@/components/features/blog/list/blog-cards-section").then(mod => mod.BlogCardsSection));
 
 const BlogPage = async () => {
   return (
-    <main className={"flex min-h-screen flex-col bg-background"}>
-      <BlogMaskedHeader />
-
-      <div className={"container"}>
-        <BlogCardsContainer />
-      </div>
-    </main>
+    <ScrollProgressContainer className={"relative flex min-h-[200vh] flex-col bg-background"}>
+      <BlogLandingSection />
+      <BlogCardsSection />
+    </ScrollProgressContainer>
   );
 };
 
