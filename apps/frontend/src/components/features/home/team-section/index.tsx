@@ -32,7 +32,6 @@ export const TeamSection = async () => {
             <TeamMember />
             <TeamMember />
             <TeamMember />
-            <TeamMember />
           </CarouselContent>
         </Carousel>
       </div>
@@ -42,7 +41,7 @@ export const TeamSection = async () => {
 
 const TeamMember = () => {
   return (
-    <CarouselItem className={"flex size-full basis-full flex-col items-center gap-2 sm:basis-1/2 lg:basis-1/3"}>
+    <CarouselItem className={"flex size-full basis-full flex-col items-center gap-2 sm:basis-1/3 lg:basis-1/4"}>
       <div className={"relative size-full overflow-hidden"}>
         <Image
           src={"/team/me.jpg"}

@@ -132,6 +132,11 @@
 			}
 		}
 	},
+	"/blog": {
+		"title": "Artykuły, które koniecznie musisz przeczytać",
+		"headingText": "Artykuły, które koniecznie musisz przeczytać",
+		"headingTextMasked": "Do kawy, śniadania lub obiadu ☕️"
+	},
 
 	"footer": {
 		"slogan": "Kreatywne rozwiązania dla Twoich potrzeb cyfrowych",

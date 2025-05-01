@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
 
+import { Text } from "../../text";
 import { useMousePositionContext } from "./use-mouse-position-context";
 
 export const CursorHandler = () => {
@@ -33,60 +34,31 @@ export const CursorHandler = () => {
       }}
       style={{ left: smoothMouse.x, top: smoothMouse.y }}
       className={
-        "pointer-events-none fixed flex size-[15px] items-center justify-center rounded-full bg-primary"
+        "pointer-events-none fixed flex size-[15px] items-center justify-center overflow-hidden rounded-full bg-primary"
       }
     >
-      <span
-        className={
-          "duration-600 pointer-events-none absolute inset-0 z-0 aspect-square scale-0 rounded-full bg-primary-200 transition-transform ease-out"
-        }
-      />
-      <motion.svg
+      <motion.div
         initial={{ rotate: 0 }}
-        animate={{
-          rotate: 360,
-        }}
+        animate={{ rotate: 360 }}
         transition={{
-          duration: 25,
+          duration: 3,
           repeat: Infinity,
           repeatType: "loop",
           ease: "linear",
         }}
-        style={{
-          top: "50%",
-          left: "50%",
-          x: "-50%",
-          y: "-50%",
-        }}
-        width={200}
-        height={200}
-        className={"pointer-events-none absolute inset-4 z-10"}
-      >
-        <path
-          id={"circlePath"}
-          d={"M50,50 m-50,0 a50,50 0 1,0 100,0 a50,50 0 1,0 -100,0"}
-          fill={"none"}
-        />
-        <text>
-          <textPath
-            href={"#circlePath"}
-            fill={"black"}
-            startOffset={"0%"}
-            textLength={"300%"}
-            // method={"align"}
-            lengthAdjust={"spacing"}
-            className={
-              "fill-foreground text-lg font-semibold uppercase transition-opacity duration-700 ease-out group-hover:opacity-100"
-            }
-          >
-            {cursorText}
-            {cursorText}
-          </textPath>
-        </text>
-      </motion.svg>
+        className={"absolute inset-0 z-0 bg-gradient-to-tr from-primary-600 via-primary-400 to-primary-200"}
+      />
 
-      {/* {cursorText && <span>{cursorText}</span>} */}
-      {CursorIcon && <CursorIcon size={48} />}
+      <span
+        className={
+          "duration-600 z-1 pointer-events-none absolute inset-0 flex aspect-square scale-0 items-center justify-center gap-2 rounded-full bg-primary-200 transition-transform ease-out"
+        }
+      />
+
+      <div className={"z-20 flex items-center justify-center gap-2 p-2"}>
+        <Text weight={'bold'} size={'h4'} align={'center'} className={"text-pretty leading-none tracking-tighter"}>{cursorText}</Text>
+        {/* {CursorIcon && <CursorIcon size={36} />} */}
+      </div>
     </motion.span>
   );
 };

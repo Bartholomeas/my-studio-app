@@ -2,51 +2,47 @@ import { Suspense } from "react";
 
 import dynamic from "next/dynamic";
 
-import { HeroSection } from "src/components/views/home/hero-section";
+import { HeroSection } from "src/components/features/home/hero-section";
 
 import { ScrollProgressContainer } from "@/components/common/animations/wrappers/scroll-progress-container";
-import { DescriptionSection } from "@/components/views/home/description-section";
+import { DescriptionSection } from "@/components/features/home/description-section";
 
 
 const KnowUsMoreSection = dynamic(() =>
-  import("@/components/views/home/know-us-more-section").then((res) => res.KnowUsMoreSection),
+  import("@/components/features/home/know-us-more-section").then((res) => res.KnowUsMoreSection),
 );
 
 const AboutSection = dynamic(() =>
-  import("src/components/views/home/about-section").then((res) => res.AboutSection),
+  import("src/components/features/home/about-section").then((res) => res.AboutSection),
 );
 
 const TeamSection = dynamic(() =>
-  import("@/components/views/home/team-section").then((res) => res.TeamSection),
+  import("@/components/features/home/team-section").then((res) => res.TeamSection),
 );
 
 const OpinionsSection = dynamic(() =>
-  import("@/components/views/home/opinions-section").then((res) => res.OpinionsSection),
+  import("@/components/features/home/opinions-section").then((res) => res.OpinionsSection),
 );
 
 const ProjectsTrailerSection = dynamic(() =>
-  import("@/components/views/home/projects-trailer-section").then(
+  import("@/components/features/home/projects-trailer-section").then(
     (res) => res.ProjectsTrailerSection,
   ),
 );
 
 const ImageSentenceSection = dynamic(() =>
-  import("@/components/views/home/image-sentence-section").then((res) => res.ImageSentenceSection),
-);
-
-const HomeSentenceSection = dynamic(() =>
-  import("@/components/views/home/home-sentence-section").then((res) => res.HomeSentenceSection),
+  import("@/components/features/home/image-sentence-section").then((res) => res.ImageSentenceSection),
 );
 
 const WorkProcessSection = dynamic(() =>
-  import("@/components/views/home/work-process-section").then((res) => res.WorkProcessSection),
+  import("@/components/features/home/work-process-section").then((res) => res.WorkProcessSection),
 );
 
 const FaqSection = dynamic(() =>
-  import("@/components/views/home/faq-section").then((res) => res.FaqSection),
+  import("@/components/features/home/faq-section").then((res) => res.FaqSection),
 );
 
-const ContactSection = dynamic(() => import("@/components/views/home/contact-section").then((res) => res.ContactSection));
+const ContactSection = dynamic(() => import("@/components/features/home/contact-section").then((res) => res.ContactSection));
 
 const Home = async () => {
   return (
@@ -66,9 +62,6 @@ const Home = async () => {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <OpinionsSection />
-      </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
-        <HomeSentenceSection />
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <ProjectsTrailerSection />

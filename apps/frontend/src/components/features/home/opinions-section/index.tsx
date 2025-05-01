@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { getTranslations } from "next-intl/server";
 
 
+import { ParagraphReveal } from "@/components/common/animations/paragraph-reveal";
 import { CtaCircle } from "@/components/common/special/cta-circle";
 import { Text } from "@/components/common/text";
 import { Title } from "@/components/common/title";
@@ -45,6 +46,14 @@ export const OpinionsSection = async () => {
                 <OpinionsCarousel />
               </Suspense>
             </div>
+          </div>
+          <div className={"flex flex-col items-center justify-center pt-48"}>
+            <ParagraphReveal
+              className={"container"}
+              text={
+                "In time, or so I'm told I'm just another soul for sale, oh well The page is out of print We are not permanent, we're temporary, temporary Same old story"
+              }
+            />
           </div>
           {/* <div className={"mt-8 grid w-full grid-cols-12 gap-2"}>
             <div className={"col-span-4"}>
