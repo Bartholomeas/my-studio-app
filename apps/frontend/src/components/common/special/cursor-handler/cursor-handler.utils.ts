@@ -3,7 +3,7 @@ import { BringToFront, GrabIcon, MousePointerClick, SendIcon, type LucideIcon } 
 import { CursorActionType } from "./cursor-handler.types";
 
 const CURSOR_CONTENT: Record<CursorActionType, [string | null, LucideIcon | null]> = {
-	[CursorActionType.CLICK]: ["Przyciśnij po więcej!", MousePointerClick],
+	[CursorActionType.CLICK]: ["Klik", MousePointerClick],
 	[CursorActionType.DRAG]: ["Przeciągnij w prawo", GrabIcon],
 	[CursorActionType.HOVER]: ["👉", BringToFront],
 	[CursorActionType.SEND]: ["Wyślij 👉 Wyślij 👉 ", SendIcon],

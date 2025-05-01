@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const titleVariants = cva("", {
+export const titleVariants = cva("tracking-tighter", {
   variants: {
     type: {
       // Heading sizes

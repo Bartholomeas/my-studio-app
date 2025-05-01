@@ -48,7 +48,7 @@ export const HeroSection = () => {
     };
   }, [calculateTextHeight]);
 
-  const size = useMemo(() => (isHovering ? 400 : 0), [isHovering]);
+  const size = useMemo(() => (isHovering ? 600 : 0), [isHovering]);
 
   return (
     <SectionScaleRotate
@@ -96,6 +96,7 @@ export const HeroSection = () => {
           ref={baseTextRef}
           weight={"normal"}
           type={"h1"}
+          size={"h1"}
           className={cn("max-w-[900px] px-[4%] py-[36px] xl:text-[80px]", textClassNames)}
         >
           {t("headingText")}

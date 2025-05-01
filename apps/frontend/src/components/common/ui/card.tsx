@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-export const cardVariants = cva("relative size-full overflow-hidden rounded-lg", {
+export const cardVariants = cva("relative size-full overflow-hidden ", {
   variants: {
     variant: {
       default: "bg-background text-foreground",

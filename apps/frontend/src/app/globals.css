@@ -16,6 +16,7 @@
 		--background-light: #dbcac0;
 		--background-light-2: #e8e8e8;
 		--background-light-3: #dedede;
+		--background-light-4: #f0f0f0;
 
 		--background-dark: #161616;
 
@@ -114,7 +115,7 @@
 	}
 
 	.h1 {
-		@apply text-[2.25rem] leading-[1.2] tracking-[-0.02em] lg:text-[3rem];
+		@apply text-[2.25rem] leading-[1.2] tracking-[-0.02em] lg:text-[4rem];
 	}
 
 	h1 {
