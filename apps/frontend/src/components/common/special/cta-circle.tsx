@@ -48,7 +48,7 @@ export const CtaCircle = ({
   return (
     <motion.button
       className={cn(
-        "group relative grid aspect-square size-[120px] place-content-center rounded-full transition-colors duration-700 ease-out md:size-[200px]",
+        "group relative grid aspect-square size-[120px] place-content-center rounded-full transition-colors duration-700 ease-out md:size-[200px] hover:cursor-none",
         className,
       )}
       {...props}

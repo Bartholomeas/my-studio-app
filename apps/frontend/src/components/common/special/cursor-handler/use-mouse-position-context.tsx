@@ -9,18 +9,19 @@ type MousePositionContextProps = ReturnType<typeof useMousePosition>;
 const MousePositionContext = createContext<MousePositionContextProps | undefined>(undefined);
 
 export const MousePositionProvider = ({ children }: PropsWithChildren) => {
-	const mousePosition = useMousePosition();
-	return (
-		<MousePositionContext.Provider value={mousePosition}>{children}</MousePositionContext.Provider>
-	);
+  const mousePosition = useMousePosition();
+
+  return (
+    <MousePositionContext.Provider value={mousePosition}>{children}</MousePositionContext.Provider>
+  );
 };
 
 export const useMousePositionContext = () => {
-	const context = useContext(MousePositionContext);
+  const context = useContext(MousePositionContext);
 
-	if (!context) {
-		throw new Error("useMousePositionContext must be used within a MousePositionProvider");
-	}
+  if (!context) {
+    throw new Error("useMousePositionContext must be used within a MousePositionProvider");
+  }
 
-	return context;
+  return context;
 };

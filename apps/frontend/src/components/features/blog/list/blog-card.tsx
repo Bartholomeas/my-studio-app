@@ -47,8 +47,7 @@ export const BlogCard = ({
     <Link
       href={href}
       data-hover={CursorActionType.CLICK}
-      data-hover-size={100}
-      className={"flex size-full flex-row overflow-hidden rounded-lg md:h-48"}
+      className={"flex size-full flex-row overflow-hidden rounded-lg hover:cursor-none md:h-48"}
     >
       <motion.div
         ref={ref}

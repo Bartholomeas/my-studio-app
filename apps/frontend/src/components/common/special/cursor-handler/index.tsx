@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
 
-import { useMousePositionContext } from "./use-mouse-position-context";
 import { Text } from "../../text";
+import { useMousePositionContext } from "./use-mouse-position-context";
 
 export const CursorHandler = () => {
   const {

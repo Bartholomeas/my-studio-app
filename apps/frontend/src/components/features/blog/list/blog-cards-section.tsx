@@ -39,7 +39,7 @@ export const BlogCardsSection = () => {
       id={"blog-cards"}
       scaleOpts={{ inputRange: [0, 1], outputRange: [0.9, 1] }}
       rotateOpts={{ inputRange: [0, 1], outputRange: [3, 0] }}
-      className={"relative flex min-h-screen w-full flex-col justify-center gap-4 bg-background-light-4 py-24"}
+      className={"relative flex min-h-screen w-full flex-col justify-center gap-4 border-t-4 border-background-light-4 bg-background py-24 shadow-lg"}
     >
       <div className={"container grid grid-cols-12 gap-4"}>
 

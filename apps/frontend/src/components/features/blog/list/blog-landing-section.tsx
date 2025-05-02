@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 
+import { SectionScaleRotate } from "@/components/common/animations/section-scale-rotate";
 import { CtaCircle } from "@/components/common/special/cta-circle";
 import { CursorActionType } from "@/components/common/special/cursor-handler/cursor-handler.types";
 import { useMousePositionContext } from "@/components/common/special/cursor-handler/use-mouse-position-context";
@@ -44,10 +45,17 @@ export const BlogLandingSection = () => {
   const size = useMemo(() => (isHovering ? 600 : 0), [isHovering]);
 
   return (
-    <div className={"relative flex size-full min-h-screen py-24"}>
+    // <div className={"relative flex size-full min-h-screen py-24"}>
+    <SectionScaleRotate
+      className={cn(
+        "sticky top-0 flex h-[100dvh] flex-col items-start justify-center overflow-hidden bg-background pb-[10dvh]",
+        // 'relative size-full min-h-screen py-24 flex'
+      )}
+    >
+
       <motion.div
         className={
-          "hover-mask-circle flex size-full justify-start bg-primary-200 py-48 text-foreground"
+          "hover-mask-circle flex size-full items-center justify-start bg-primary-200 py-48 text-foreground"
         }
         animate={{
           WebkitMaskPosition: `${smoothMouse.x.get() - size / 2}px ${smoothMouse.y.get() - size / 2}px`,
@@ -90,6 +98,7 @@ export const BlogLandingSection = () => {
           {t("headingText")}
         </Title>
       </div>
+
       <MagneticWrapper
         className={"absolute bottom-16 right-16 flex items-center justify-center p-0"}
       >
@@ -104,7 +113,8 @@ export const BlogLandingSection = () => {
           />
         </CtaCircle>
       </MagneticWrapper>
-    </div>
+      {/* </div> */}
+    </SectionScaleRotate >
 
   );
 };

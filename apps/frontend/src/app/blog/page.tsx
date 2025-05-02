@@ -7,7 +7,7 @@ const BlogCardsSection = dynamic(() => import("@/components/features/blog/list/b
 
 const BlogPage = async () => {
   return (
-    <ScrollProgressContainer className={"relative flex min-h-[200vh] flex-col bg-background"}>
+    <ScrollProgressContainer className={"relative flex min-h-[200vh] flex-col bg-background-light-2"}>
       <BlogLandingSection />
       <BlogCardsSection />
     </ScrollProgressContainer>
