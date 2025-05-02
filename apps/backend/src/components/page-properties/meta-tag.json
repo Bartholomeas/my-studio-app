@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_page_properties_meta_tags",
+  "info": {
+    "displayName": "MetaTag",
+    "icon": "code",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  }
+}
