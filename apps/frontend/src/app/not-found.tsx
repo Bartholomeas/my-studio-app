@@ -4,11 +4,11 @@ import { useRouter } from "next/navigation";
 
 import { type Metadata } from "next";
 
-import { Button } from "@/components/common/ui/button";
+import { Button } from "@/features/common/components/ui/button";
 
-import { MagneticWrapper } from "@/components/common/special/magnetic-wrapper";
-import { Text } from "@/components/common/text";
-import { Title } from "@/components/common/title";
+import { MagneticWrapper } from "@/features/common/components/special/magnetic-wrapper";
+import { Text } from "@/features/common/components/text";
+import { Title } from "@/features/common/components/title";
 
 export const metadata: Metadata = {
 	title: "Nie znaleziono strony - 404 ",

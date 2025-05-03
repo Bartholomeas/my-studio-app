@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
 
-import { ScrollProgressContainer } from "@/components/common/animations/wrappers/scroll-progress-container";
+import { ScrollProgressContainer } from "@/features/common/components/animations/wrappers/scroll-progress-container";
 
-const BlogLandingSection = dynamic(() => import("@/components/features/blog/list/blog-landing-section").then(mod => mod.BlogLandingSection));
-const BlogCardsSection = dynamic(() => import("@/components/features/blog/list/blog-cards-section").then(mod => mod.BlogCardsSection));
+const BlogLandingSection = dynamic(() => import("@/features/blog/components/list/blog-landing-section").then(mod => mod.BlogLandingSection));
+const BlogCardsSection = dynamic(() => import("@/features/blog/components/list/blog-cards-section").then(mod => mod.BlogCardsSection));
 
 const BlogPage = async () => {
   return (
