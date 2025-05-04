@@ -122,5 +122,5 @@ export default {
 			serif: "var(--font-serif)",
 		},
 	},
-	plugins: [FormsPlugin, Animate],
+	plugins: [FormsPlugin, Animate, require("@tailwindcss/typography")],
 } satisfies Config;

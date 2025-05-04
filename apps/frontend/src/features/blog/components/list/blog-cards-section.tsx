@@ -2,38 +2,18 @@
 
 import dynamic from "next/dynamic";
 
+import { BlogCard } from "@/features/blog/components/list/blog-card";
 import { SectionScaleRotate } from "@/features/common/components/animations/section-scale-rotate";
 import { Title } from "@/features/common/components/title";
-import { BlogCard, type BlogCardProps } from "@/features/blog/components/list/blog-card";
+
+import { type BlogPost } from "../../api/blog.types";
 
 const BlogFilters = dynamic(() => import("./blog-filters").then(mod => mod.BlogFilters));
 
-const MOCK_BLOG_CARDS: BlogCardProps[] = [
-  {
-    title: "The power of Product Discovery: Ensuring success before development",
-    author: "John Doe",
-    date: "March 13, 2025",
-    image: "/pic1.webp",
-    href: "/blog/product-discovery"
-  },
-  {
-    title: "The power of Product Discovery: Ensuring success before development",
-    author: "John Doe",
-    date: "March 13, 2025",
-    image: "/pic1.webp",
-    href: "/blog/product-discovery"
-  },
-  {
-    title: "The power of Product Discovery: Ensuring success before development",
-    author: "John Doe",
-    date: "March 13, 2025",
-    image: "/pic1.webp",
-    href: "/blog/product-discovery"
-  }
-];
-
-
-export const BlogCardsSection = () => {
+interface BlogCardsSectionProps {
+  articles: BlogPost[];
+}
+export const BlogCardsSection = ({ articles }: BlogCardsSectionProps) => {
   return (
     <SectionScaleRotate
       id={"blog-cards"}
@@ -45,9 +25,15 @@ export const BlogCardsSection = () => {
 
         <div className={"col-span-12 flex flex-col gap-4 md:col-span-9"}>
           <Title type={'h2'}>Artykuły</Title>
-          {MOCK_BLOG_CARDS.map((card, index) => (
-            <BlogCard key={`blogCard-${card.title}-${index}`} {...card} index={index} />
-          ))}
+          <div className="flex flex-col gap-16">
+            {articles.map((article, index) => (
+              <BlogCard
+                key={`blogCard-${article.documentId}-${index}`}
+                {...article}
+                index={index}
+              />
+            ))}
+          </div>
         </div>
         <div className={"col-span-12 md:col-span-3"}>
           <BlogFilters />
