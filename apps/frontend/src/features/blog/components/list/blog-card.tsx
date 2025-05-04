@@ -5,11 +5,16 @@ import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import dayjs from "dayjs";
 import { motion, type Variants } from 'framer-motion';
 
 import { CursorActionType } from "@/features/common/components/special/cursor-handler/cursor-handler.types";
 import { Text } from "@/features/common/components/text";
 import { Title } from "@/features/common/components/title";
+import { CMS_URL } from "@/misc/constants";
+
+import { type BlogPost } from "../../api/blog.types";
+import { BLOG_POST_URL } from "../../utils/blog.constants";
 
 const cardVariants: Variants = {
   hidden: {
@@ -22,30 +27,26 @@ const cardVariants: Variants = {
   })
 };
 
-export interface BlogCardProps {
-  title: string;
-  author: string;
-  date: string;
-  image: string;
-  categories?: string[];
-  href: string;
-  index?: number;
+export interface BlogCardProps extends BlogPost {
+  index: number;
 }
 
 export const BlogCard = ({
-  title = "The power of Product Discovery: Ensuring success before development",
-  author = "John Doe",
-  date = "March 13, 2025",
-  image = "/placeholder-image.jpg",
-  categories = ["STARTUP", "SAAS", "PRODUCT DISCOVERY", "PRODUCT DESIGN"],
-  href = "/blog/product-discovery",
+  documentId,
+  slug,
+  cover,
+  title,
+  description,
+  author,
+  categories,
+  createdAt,
   index = 0
 }: BlogCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   return (
     <Link
-      href={href}
+      href={`${BLOG_POST_URL}/${slug}`}
       data-hover={CursorActionType.CLICK}
       className={"flex size-full flex-row overflow-hidden rounded-lg hover:cursor-none md:h-48"}
     >
@@ -60,13 +61,13 @@ export const BlogCard = ({
       >
         <div className={"relative aspect-video h-full min-w-32 overflow-hidden"}>
           <Image
-            src={image}
+            src={`${CMS_URL}${cover.url}`}
             alt={title}
-            width={200}
-            height={150}
+            width={250}
+            height={200}
             loading={"lazy"}
-            sizes={"(max-width: 768px) 150px, 200px"}
-            className={"size-full object-contain transition-transform duration-500 hover:scale-105"}
+            sizes={"(max-width: 768px) 150px, 250px"}
+            className={"size-full object-cover transition-transform duration-500 hover:scale-105"}
           />
         </div>
 
@@ -75,13 +76,13 @@ export const BlogCard = ({
             <div className={"flex flex-wrap gap-2"}>
               {categories?.map((category, index) => (
                 <Text
-                  key={index}
+                  key={`category-${category.slug}-${documentId}`}
                   size={"sm"}
                   weight={"medium"}
                   color={"muted"}
                   className={"text-xs tracking-wider"}
                 >
-                  {category}{index < categories.length - 1 && " • "}
+                  {category?.name}{index < categories.length - 1 && " • "}
                 </Text>
               ))}
             </div>
@@ -94,14 +95,17 @@ export const BlogCard = ({
             >
               {title}
             </Title>
+            <Text size={"sm"} color={"muted"} className={"line-clamp-4"}>
+              {description}
+            </Text>
           </div>
 
-          <div className={"mt-auto flex items-center gap-2 pt-2"}>
+          <div className={"mt-auto flex items-end gap-2 pt-2"}>
             <Text size={"md"} weight={"medium"}>
-              {author}
+              {author?.name}
             </Text>
             <Text size={"sm"} color={"muted"}>
-              Article on {date}
+              Stworzono {dayjs(createdAt).format("DD.MM.YYYY")}
             </Text>
           </div>
         </div>
