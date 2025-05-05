@@ -6,12 +6,12 @@ import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-import { buttonVariants } from "@/features/common/components/ui/button";
-import { Card, CardContent } from "@/features/common/components/ui/card";
 
 import { MagneticWrapper } from "@/features/common/components/special/magnetic-wrapper";
 import { Text } from "@/features/common/components/text";
 import { Title } from "@/features/common/components/title";
+import { buttonVariants } from "@/features/common/components/ui/button";
+import { Card, CardContent } from "@/features/common/components/ui/card";
 import { APP_ROUTES } from "@/misc/routes";
 
 interface BentoLongItemProps {

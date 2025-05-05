@@ -1,10 +1,9 @@
-import { Carousel, CarouselContent, CarouselItem } from "@/features/common/components/ui/carousel";
-
 import { CursorActionType } from "@/features/common/components/special/cursor-handler/cursor-handler.types";
+import { Carousel, CarouselContent, CarouselItem } from "@/features/common/components/ui/carousel";
 import { type OpinionAuthorProps } from "@/features/home/components/opinions-section/opinion-author";
 
-import MePicture from "../../../../../public/team/pic2.jpg";
 import { OpinionsCarouselCard } from "./opinions-carousel-card";
+import MePicture from "../../../../../public/team/pic2.jpg";
 
 const MOCK_AUTHOR: OpinionAuthorProps = {
   image: MePicture.src,

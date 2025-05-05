@@ -2,10 +2,10 @@ import { type ComponentProps } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { Card } from "@/features/common/components/ui/card";
 
 import { Text } from "@/features/common/components/text";
 import { Title } from "@/features/common/components/title";
+import { Card } from "@/features/common/components/ui/card";
 import {
   OpinionAuthor,
   type OpinionAuthorProps,

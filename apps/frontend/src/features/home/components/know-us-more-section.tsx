@@ -1,11 +1,11 @@
 import { getTranslations } from "next-intl/server";
 
-import { Card } from "@/features/common/components/ui/card";
 
 import { SectionScaleRotate } from "@/features/common/components/animations/section-scale-rotate";
 import { Logo } from "@/features/common/components/special/logo";
 import { Text } from "@/features/common/components/text";
 import { Title } from "@/features/common/components/title";
+import { Card } from "@/features/common/components/ui/card";
 
 export const KnowUsMoreSection = async () => {
   const t = await getTranslations("/.knowUsMoreSection");

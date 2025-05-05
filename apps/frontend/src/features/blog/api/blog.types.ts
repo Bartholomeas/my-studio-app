@@ -1,6 +1,4 @@
-import { type ServerError } from "@/lib/handle-async.util";
-
-import { type ContentBlock, type Media } from "@/features/common/types/strapi.types";
+import { type ContentBlock, type Media, type SEO } from "@/features/common/types/strapi.types";
 
 export interface BlogPostCategory {
 	id: number;
@@ -21,6 +19,8 @@ export interface BlogPostAuthor {
 	createdAt: string;
 	updatedAt: string;
 	publishedAt: string;
+	role?: string;
+	avatar?: Media;
 }
 
 export interface BlogPost {
@@ -33,7 +33,7 @@ export interface BlogPost {
 	updatedAt: string;
 	publishedAt: string;
 	locale: string;
-	seo: ServerError;
+	seo: SEO;
 	cover: Media;
 	blocks?: ContentBlock[];
 	author: BlogPostAuthor;

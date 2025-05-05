@@ -10,10 +10,10 @@ import dynamic from "next/dynamic";
 
 import { motion, useInView } from "framer-motion";
 
-import { Card, CardContent } from "@/features/common/components/ui/card";
 
 import { Text } from "@/features/common/components/text";
 import { Title } from "@/features/common/components/title";
+import { Card, CardContent } from "@/features/common/components/ui/card";
 
 interface BentoHighItemProps {
   title: string;
