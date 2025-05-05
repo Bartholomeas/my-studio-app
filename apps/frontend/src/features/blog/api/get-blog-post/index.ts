@@ -18,7 +18,7 @@ export const getBlogPost = async (params: GetBlogPostParams) => {
 		const query = qs.stringify({
 			populate: {
 				cover: true,
-				author: true,
+				author: { populate: ["avatar"] },
 				categories: true,
 				seo: true,
 				blocks: true,

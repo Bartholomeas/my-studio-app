@@ -32,6 +32,7 @@ export default {
 			colors: {
 				background: {
 					DEFAULT: "var(--background)",
+					opacity: "var(--background-opacity)",
 					dark: "var(--background-dark)",
 					light: "var(--background-light)",
 					"light-2": "var(--background-light-2)",

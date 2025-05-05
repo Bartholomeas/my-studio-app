@@ -3,8 +3,9 @@
 import { AwardIcon, HammerIcon, SettingsIcon, TargetIcon, UserIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Text } from "../text";
 import { Skeleton } from "@/features/common/components/ui/skeleton";
+
+import { Text } from "../text";
 
 export const WindowMockup = () => (
 	<div

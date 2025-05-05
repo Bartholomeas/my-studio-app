@@ -27,6 +27,26 @@ export interface SEO {
 	metaTag: MetaTag[];
 }
 
+export interface MediaFormat {
+	name: string;
+	hash: string;
+	ext: string;
+	mime: string;
+	path: string | null;
+	width: number;
+	height: number;
+	size: number;
+	sizeInBytes: number;
+	url: string;
+}
+
+export interface MediaFormats {
+	thumbnail?: MediaFormat;
+	small?: MediaFormat;
+	medium?: MediaFormat;
+	large?: MediaFormat;
+}
+
 export interface Media {
 	id: number;
 	documentId: string;
@@ -35,7 +55,7 @@ export interface Media {
 	caption: string | null;
 	width: number;
 	height: number;
-	formats: unknown;
+	formats: MediaFormats;
 	hash: string;
 	ext: string;
 	mime: string;

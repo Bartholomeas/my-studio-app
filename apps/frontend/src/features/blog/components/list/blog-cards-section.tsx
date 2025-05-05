@@ -25,7 +25,7 @@ export const BlogCardsSection = ({ articles }: BlogCardsSectionProps) => {
 
         <div className={"col-span-12 flex flex-col gap-4 md:col-span-9"}>
           <Title type={'h2'}>Artykuły</Title>
-          <div className="flex flex-col gap-16">
+          <div className={"flex flex-col gap-16"}>
             {articles.map((article, index) => (
               <BlogCard
                 key={`blogCard-${article.documentId}-${index}`}

@@ -2,11 +2,12 @@ import Link from "next/link";
 
 import { getTranslations } from "next-intl/server";
 
+import { Logo } from "@/features/common/components/special/logo";
+import { MagneticWrapper } from "@/features/common/components/special/magnetic-wrapper";
 import { COMPANY_NAME } from "@/misc/constants";
 import { SOCIALS_LINKS } from "@/misc/routes";
 
-import { Logo } from "@/features/common/components/special/logo";
-import { MagneticWrapper } from "@/features/common/components/special/magnetic-wrapper";
+
 import { Text } from "../text";
 import { Title } from "../title";
 

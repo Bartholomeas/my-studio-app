@@ -10,8 +10,8 @@ import { cn } from "@/lib/utils";
 
 import { COMPANY_NAME } from "@/misc/constants";
 
-import { textVariants } from "../text";
 import LogoSvg from "../../../../../public/logo.svg";
+import { textVariants } from "../text";
 
 const logoContent = (
 	<Image src={LogoSvg} alt={`${COMPANY_NAME} logo`} className={"w-full object-contain"} />

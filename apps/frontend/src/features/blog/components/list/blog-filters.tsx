@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 
+import { Text } from "@/features/common/components/text";
+import { Title } from "@/features/common/components/title";
 import { Button } from "@/features/common/components/ui/button";
 import { Card } from "@/features/common/components/ui/card";
 import { Input } from "@/features/common/components/ui/input";
 
-import { Text } from "@/features/common/components/text";
-import { Title } from "@/features/common/components/title";
 
 const SAMPLE_CATEGORIES = [
   "STARTUP",

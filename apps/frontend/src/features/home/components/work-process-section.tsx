@@ -9,10 +9,11 @@ import {
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
-import { Text } from "@/features/common/components/text";
-import { Title } from "@/features/common/components/title";
 import { Timeline } from "src/features/common/components/timeline";
+
+import { Text } from "@/features/common/components/text";
 import { type TimelineBoxProps } from "@/features/common/components/timeline/timeline-box";
+import { Title } from "@/features/common/components/title";
 
 const t = await getTranslations("/.workProcess");
 

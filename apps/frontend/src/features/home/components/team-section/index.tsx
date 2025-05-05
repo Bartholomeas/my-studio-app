@@ -2,11 +2,11 @@ import Image from "next/image";
 
 import { getTranslations } from "next-intl/server";
 
-import { Carousel, CarouselContent, CarouselItem } from "@/features/common/components/ui/carousel";
 
 import { CursorActionType } from "@/features/common/components/special/cursor-handler/cursor-handler.types";
 import { Text } from "@/features/common/components/text";
 import { Title } from "@/features/common/components/title";
+import { Carousel, CarouselContent, CarouselItem } from "@/features/common/components/ui/carousel";
 
 export const TeamSection = async () => {
   const t = await getTranslations("/.teamSection");

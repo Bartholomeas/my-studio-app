@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
+import { MagneticWrapper } from "@/features/common/components/special/magnetic-wrapper";
 import { Button } from "@/features/common/components/ui/button";
 
-import { MagneticWrapper } from "@/features/common/components/special/magnetic-wrapper";
 
 const beforeClasses =
   'before:bg-foreground before:absolute before:left-1/2 before:-translate-x-1/2 before:block before:h-[2px] before:w-4/5 before:bg-black before:transition-all before:duration-300 before:content-[""] before:rounded-full before:z-[150]';

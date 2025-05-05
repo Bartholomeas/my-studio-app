@@ -1,14 +1,14 @@
 import { getTranslations } from "next-intl/server";
 
+
+import { Text } from "@/features/common/components/text";
+import { Title } from "@/features/common/components/title";
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from "@/features/common/components/ui/accordion";
-
-import { Text } from "@/features/common/components/text";
-import { Title } from "@/features/common/components/title";
 
 const FAQ_QUESTION = [
 	{
